@@ -1,5 +1,5 @@
 # facilino_tutorial
-This is a Facilino tutorial including Arduino and ESP and electronics. This tutorial is integrated in Facilino. If you want to use it locally you need to install a XAMPP Server and copy the files in the 'htdocs' folder.
+This is a Facilino tutorial including Arduino and ESP and electronics. This tutorial is integrated in Facilino. If you want to use it locally you need to install a XAMPP Server and copy the files inside the 'htdocs' folder.
 
 To contributors:
 To contribute to this tutorial, please send an e-mail to soporte@roboticafacil.es with your GitHub username, indicating your expertise to this topic, affiliation and how you want to contribute.
