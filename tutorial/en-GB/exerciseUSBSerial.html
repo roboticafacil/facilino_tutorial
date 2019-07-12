@@ -77,6 +77,8 @@ var currentSolutions=0;
 		<div class="media-container-row"><div id='blocklyInstruction7'></div><script>injectInstruction('inout_analog_read','blocklyInstruction7');</script></div>
 		<div class="media-container-row"><div id='blocklyInstruction8'></div><script>injectInstruction('pin_analog','blocklyInstruction8');</script></div>
 		<div class="media-container-row"><div id='blocklyInstruction9'></div><script>injectInstruction('base_delay','blocklyInstruction9');</script></div>
+		<div class="media-container-row"><div id='blocklyInstruction10'></div><script>injectInstruction('math_arithmetic','blocklyInstruction10');</script></div>
+		<div class="media-container-row"><div id='blocklyInstruction11'></div><script>injectInstruction('math_single','blocklyInstruction11');</script></div>
     </div>
 </section>
 
@@ -98,19 +100,19 @@ var currentSolutions=0;
                     <li><strong>Hello world!</strong><p>At the start up, print the sentence "Hello world!" on the console.</p><strong>Hint: </strong><p><i> Use the 'Print Line' instruction and add the text with the sentence "Hello world!".</i></p><button  type="button" onclick="showHide('solutions1','hello_world.bly','exercise1');" class="btn-primary display-4"><span class="mbri-preview mbr-iconfont mbr-iconfont-btn"></span></button>
 					<a onclick="onFileDownloaded('hello_world.bly');">
 					<button type="button" class="btn-primary display-4"><span class="mbri-save mbr-iconfont mbr-iconfont-btn"></span></button></a></li>
-					<li><strong>Hello world again!</strong><p>Now, print the sentence "Hello world!" on the console at the start up and then the sentence "Hello world again!" in the main loop.</p><strong>Hint: </strong><p><i> Use the 'wait' instruction to give some time after using the 'Print Line' instruction.</i></p><button  type="button" onclick="showHide('solutions2','hello_world.bly','exercise2');" class="btn-primary display-4"><span class="mbri-preview mbr-iconfont mbr-iconfont-btn"></span></button>
-					<a onclick="onFileDownloaded('hello_world.bly');">
+					<li><strong>Hello world again!</strong><p>Now, print the sentence "Hello world!" on the console at the start up and then the sentence "Hello world again!" in the main loop.</p><strong>Hint: </strong><p><i> Use the 'wait' instruction to give some time after using the 'Print Line' instruction.</i></p><button  type="button" onclick="showHide('solutions2','hello_world_again.bly','exercise2');" class="btn-primary display-4"><span class="mbri-preview mbr-iconfont mbr-iconfont-btn"></span></button>
+					<a onclick="onFileDownloaded('hello_world_again.bly');">
 					<button type="button" class="btn-primary display-4"><span class="mbri-save mbr-iconfont mbr-iconfont-btn"></span></button></a></li>
 					<li><strong>Serial loopback</strong><p>Create a program that sends over the serial port data received on it (loopback).</p><strong>Hint: </strong><p><i> If there's data available on the serial port, then use the 'Read String' instruction and send it back with the 'Print Line' instruction.</i></p><button  type="button" onclick="showHide('solutions3','serial_loopback.bly','exercise3');" class="btn-primary display-4"><span class="mbri-preview mbr-iconfont mbr-iconfont-btn"></span></button>
 					<a onclick="onFileDownloaded('serial_loopback.bly');">
 					<button type="button" class="btn-primary display-4"><span class="mbri-save mbr-iconfont mbr-iconfont-btn"></span></button></a></li>
-					<li><strong>Parsing integer numbers</strong><p>Modify the previous program so that it expects an integer number. Read it and print on the console the successor (add one to the read number).</p><strong>Hint: </strong><p><i>Use the 'read integer' instruction.</i></p><button  type="button" onclick="showHide('solutions4','parse_intengers.bly','exercise4');" class="btn-primary display-4"><span class="mbri-preview mbr-iconfont mbr-iconfont-btn"></span></button>
+					<li><strong>Parsing integer numbers</strong><p>Modify the previous program so that it expects an integer number. Once you read the number add one to it and print it back to the console.</p><strong>Hint: </strong><p><i>Use the 'read integer' instruction instead the 'Read String'. Use the 'math arithmetic' instruction to add one to the number.</i></p><button  type="button" onclick="showHide('solutions4','parse_intengers.bly','exercise4');" class="btn-primary display-4"><span class="mbri-preview mbr-iconfont mbr-iconfont-btn"></span></button>
 					<a onclick="onFileDownloaded('parse_intengers.bly');">
 					<button type="button" class="btn-primary display-4"><span class="mbri-save mbr-iconfont mbr-iconfont-btn"></span></button></a></li>
-					<li><strong>Parsing float numbers</strong><p>Modify the previous program so that it expects a float number . Read it and print on the console its negate value.</p><strong>Hint: </strong><p><i>Use the 'read float' instruction.</i></p><button id="but4" type="button" onclick="showHide('solutions5','parsing_float.bly','exercise5');" class="btn-primary display-4"><span class="mbri-preview mbr-iconfont mbr-iconfont-btn"></span></button>
+					<li><strong>Parsing float numbers</strong><p>Modify the previous program so that it expects a float number. The difference is that now, we can use it to perform floating point operations. For instance, you can use it to print on the console its negate value.</p><strong>Hint: </strong><p><i>Use the 'Read Float' instruction and the negation instruction (is one of the listed options in the 'floating point operations' (by default is shown 'square root' as first option).</i></p><button id="but4" type="button" onclick="showHide('solutions5','parsing_float.bly','exercise5');" class="btn-primary display-4"><span class="mbri-preview mbr-iconfont mbr-iconfont-btn"></span></button>
 					<a onclick="onFileDownloaded('parsing_float.bly');">
 					<button type="button" class="btn-primary display-4"><span class="mbri-save mbr-iconfont mbr-iconfont-btn"></span></button></a></li>
-					<li><strong>Plot a signal</strong>.<p>Using Arduino's plotter, plot the analog value of the potentiometer (connected to pin A0).</p><strong>Hint: </strong><p><i>Use the 'plot data' instruction.</i></p><button id="but5" type="button" onclick="showHide('solutions6','plotting_signals.bly','exercise6');" class="btn-primary display-4"><span class="mbri-preview mbr-iconfont mbr-iconfont-btn"></span></button>
+					<li><strong>Plot a signal</strong>.<p>Using Arduino's plotter, plot the analog value of the potentiometer (connected to pin A0).</p><strong>Hint: </strong><p><i>Use the 'plot data' instruction to plot the value return by the 'AnalogRead' instruction and select the pin A0 with the 'Analog PIN' instruction. Use a delay of 50ms with the 'Wait (ms)' instruction, so that the samples are spaced at that sampling period.</i></p><button id="but5" type="button" onclick="showHide('solutions6','plotting_signals.bly','exercise6');" class="btn-primary display-4"><span class="mbri-preview mbr-iconfont mbr-iconfont-btn"></span></button>
 					<a onclick="onFileDownloaded('plotting_signals.bly');">
 					<button type="button" class="btn-primary display-4"><span class="mbri-save mbr-iconfont mbr-iconfont-btn"></span></button></a></li>
                 </ol>
@@ -184,7 +186,7 @@ var currentSolutions=0;
 		</div>
 	</section>
 	
-	<section class="mbr-section article content1 cid-qYh5PFH3xX" id="solutions5" style="display:none">
+	<section class="mbr-section article content1 cid-qYh5PFH3xX" id="solutions6" style="display:none">
 		<div class="container">
 			<div class="media-container-row">
 				<div class="mbr-text col-12 col-md-8 mbr-fonts-style display-7">

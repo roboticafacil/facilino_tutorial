@@ -64,7 +64,7 @@
 		
 		function onExercises()
 		{
-			$(function(){var file='tutorial/'+ window.roboblocksLanguage+'/exercises.html'; $.ajax({url:file,async:false,type:"HEAD",error: function(){file='tutorial/en-GB/exercises.html';},success: function(){}}); $('#main').load(file); location.href = "#menu";});
+			$(function(){var file='tutorial/'+ window.roboblocksLanguage+'/exercises.html'; $.ajax({url:file,async:false,type:"HEAD",error: function(){file='tutorial/en-GB/exercises.html';},success: function(){}}); $('#main').load(file); location.href = "#menu";} );
 		}
 
 		function langChange(lang)

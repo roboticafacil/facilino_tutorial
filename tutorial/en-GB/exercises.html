@@ -423,6 +423,7 @@
 	$("#processor").val(window.roboblocksProcessor);
 	function onExercise(num)
 	{
+		console.log('Exercise' + num);
 		$(function(){var file= 'tutorial/'+window.roboblocksLanguage+'/exercise'+num+'.html'; $.ajax({url:file,async:false,type:"HEAD",error: function(){file= 'tutorial/'+'en-GB/exercise'+num+'.html';},success: function(){}}); $('#main').load(file); location.href = "#menu";});
 	}
 </script>
