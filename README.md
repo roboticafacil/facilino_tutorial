@@ -1,2 +1,2 @@
 # facilino_tutorial
-This is a Facilino tutorial including Arduino and ESP and electronics.
+This is a Facilino tutorial including Arduino and ESP and electronics. This tutorial is integrated in Facilino. To contribute to this tutorial, please send an e-mail to soporte@roboticafacil.es with your GitHub username, indicating your expertise to this topic, affiliation and how you want to contribute. If you want to work locally, you can use Firefox to see the actual aspect of the tutorial.
