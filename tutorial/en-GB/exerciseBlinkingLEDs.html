@@ -82,7 +82,6 @@ var currentSolutions=0;
 					<li><div><span id='tooltipInstruction4'></span></div><div  id='blocklyInstruction4'></div><script>injectInstructionTooltip('inout_digital_write','blocklyInstruction4','tooltipInstruction4');</script></li>
 					<li><div><span id='tooltipInstruction5'></span></div><div  id='blocklyInstruction5'></div><script>injectInstructionTooltip('inout_highlow','blocklyInstruction5','tooltipInstruction5');</script></li>
 					<li><div><span id='tooltipInstruction6'></span></div><div  id='blocklyInstruction6'></div><script>injectInstructionTooltip('pin_digital','blocklyInstruction6','tooltipInstruction6');</script></li>
-					<li><div><span id='tooltipInstruction7'></span></div><div  id='blocklyInstruction7'></div><script>injectInstructionTooltip('pin_pwm','blocklyInstruction7','tooltipInstruction7');</script></li>
                 </ol>
             </div>
 		</div>
@@ -105,11 +104,11 @@ var currentSolutions=0;
 		<div class="media-container-row">
 			<div class="mbr-text counter-container col-12 col-md-8 mbr-fonts-style display-7">
                 <ol id="workedInstructions">
-					<li><div><span id='tooltipInstruction8'></span></div><div  id='blocklyInstruction8'></div><script>injectInstructionTooltip('controls_if','blocklyInstruction8','tooltipInstruction8');</script></li>
-					<li><div><span id='tooltipInstruction9'></span></div><div  id='blocklyInstruction9'></div><script>injectInstructionTooltip('base_delay','blocklyInstruction9','tooltipInstruction9');</script></li>
-					<li><div><span id='tooltipInstruction10'></span></div><div  id='blocklyInstruction10'></div><script>injectInstructionTooltip('logic_compare','blocklyInstruction10','tooltipInstruction10');</script></li>
-					<li><div><span id='tooltipInstruction11'></span></div><div  id='blocklyInstruction11'></div><script>injectInstructionTooltip('base_map','blocklyInstruction11','tooltipInstruction11');</script></li>
-					<li><div><span id='tooltipInstruction12'></span></div><div  id='blocklyInstruction12'></div><script>injectInstructionTooltip('math_minmax','blocklyInstruction12','tooltipInstruction12');</script></li>
+					<li><div><span id='tooltipInstruction7'></span></div><div  id='blocklyInstruction7'></div><script>injectInstructionTooltip('controls_if','blocklyInstruction7','tooltipInstruction7');</script></li>
+					<li><div><span id='tooltipInstruction8'></span></div><div  id='blocklyInstruction8'></div><script>injectInstructionTooltip('base_delay','blocklyInstruction8','tooltipInstruction8');</script></li>
+					<li><div><span id='tooltipInstruction9'></span></div><div  id='blocklyInstruction9'></div><script>injectInstructionTooltip('logic_compare','blocklyInstruction9','tooltipInstruction9');</script></li>
+					<li><div><span id='tooltipInstruction10'></span></div><div  id='blocklyInstruction10'></div><script>injectInstructionTooltip('base_map','blocklyInstruction10','tooltipInstruction10');</script></li>
+					<li><div><span id='tooltipInstruction11'></span></div><div  id='blocklyInstruction11'></div><script>injectInstructionTooltip('math_minmax','blocklyInstruction11','tooltipInstruction11');</script></li>
                 </ol>
             </div>
 		</div>
@@ -172,6 +171,10 @@ var currentSolutions=0;
 					<li><strong>Blinking LEDs with increasing frequency</strong><p>Following the ideas of previous exercise, now increase the blinking frequency (with a max. frequency of 10Hz) every time we push the push-button connected to pin D2.</p><strong>Hint: </strong><p><i>Now, we need a variable </i>BlinkTime<i> to store the actual frequency, initalized with 500. If the push-button D2 is LOW, then decrease the value of the variable </i>BlinkTime<i> by substracting 50 to it (use the Math arithmetic instruction). We need to check that the variable is at least 50, thus we need to store the maximum between the resulting arithmetic operation and 50.</i></p>
 					<button type="button" onclick="showHide('solutions2i','Blinking_LEDs_III_wemosD1R32.bly','exercise2i');" class="btn-primary display-4"><span class="mbri-preview mbr-iconfont mbr-iconfont-btn"></span></button>
 					<a onclick="onFileDownloaded('Blinking_LEDs_III_wemosD1R32.bly');">
+					<button type="button" class="btn-primary display-4"><span class="mbri-save mbr-iconfont mbr-iconfont-btn"></span></button></a></li>
+					<li><strong>Is it blinking?</strong><p>Now, make the red LED blink so fast fast that you won't notice that it is blinking. Depending on the time the LED is HIGH compared to the time the LED is LOW, you can dimm the light intensity.</p><strong>Hint: </strong><p><i>The key now is to have different delays for the HIGH time and for the LOW time, but they have to be as small as possible. This is indeed the principle of <a onclick="onHomeFile('analog_output.html')" style="color:#1ec6c6">PWM signals</a>.</i></p>
+					<button type="button" onclick="showHide('solutions3i','blinking_led_fast_wemosD1R32.bly','exercise3i');" class="btn-primary display-4"><span class="mbri-preview mbr-iconfont mbr-iconfont-btn"></span></button>
+					<a onclick="onFileDownloaded('blinking_led_fast_wemosD1R32.bly');">
 					<button type="button" class="btn-primary display-4"><span class="mbri-save mbr-iconfont mbr-iconfont-btn"></span></button></a></li>
                 
 				</ol>
@@ -243,6 +246,17 @@ var currentSolutions=0;
 				</div>
 			</div>
 			<div class="media-container-row"><div id='exercise2i'></div></div>
+		</div>
+	</section>
+	
+	<section class="mbr-section article content1 cid-qYh5PFH3xX" id="solutions3i" style="display:none">
+		<div class="container">
+			<div class="media-container-row">
+				<div class="mbr-text col-12 col-md-8 mbr-fonts-style display-7">
+					<strong>Intermediate Exercise 3</strong>
+				</div>
+			</div>
+			<div class="media-container-row"><div id='exercise3i'></div></div>
 		</div>
 	</section>
 </section>
