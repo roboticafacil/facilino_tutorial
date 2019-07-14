@@ -72,7 +72,7 @@ document.addEventListener("DOMContentLoaded", function () {
 		}
 		function injectInstruction(block,blockDiv) {
 			var instructionPreview = document.getElementById(blockDiv);
-			var mainWorkspace = Blockly.inject(blockDiv, {readOnly:true, collapse: false, zoom: 0.5});
+			var mainWorkspace = Blockly.inject(blockDiv, {readOnly:true, collapse: false});
 			mainWorkspace.clear();
 			var block = mainWorkspace.newBlock(block);
 			block.initSvg();
