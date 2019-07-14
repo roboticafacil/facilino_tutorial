@@ -72,7 +72,7 @@ document.addEventListener("DOMContentLoaded", function () {
 		}
 		function injectInstruction(block,blockDiv) {
 			var instructionPreview = document.getElementById(blockDiv);
-			var mainWorkspace = Blockly.inject(blockDiv, {readOnly:true, collapse: false});
+			var mainWorkspace = Blockly.inject(blockDiv, {readOnly:true, collapse: false, zoom: 0.5});
 			mainWorkspace.clear();
 			var block = mainWorkspace.newBlock(block);
 			block.initSvg();
@@ -116,6 +116,23 @@ document.addEventListener("DOMContentLoaded", function () {
 			var bbox = block.getHeightWidth();
 			instructionPreview.style.height = (bbox.height+25)+ 'px';
 			instructionPreview.style.width = (bbox.width+25) + 'px';
+			window.dispatchEvent(new Event('resize'));
+		}
+		
+		function injectInstructionTooltip1(block,blockDiv,tooltipDiv) {
+			var instructionPreview = document.getElementById(blockDiv);
+			var mainWorkspace = Blockly.inject(blockDiv, {readOnly:true, collapse: false});
+			mainWorkspace.clear();
+			var block = mainWorkspace.newBlock(block);
+			document.getElementById(tooltipDiv).innerHTML=block.tooltip;
+			block.initSvg();
+			block.render();
+			block.setMovable(false);
+			block.setDeletable(false);
+			block.moveBy(15, 10);
+			var bbox = block.getHeightWidth();
+			instructionPreview.style.height = (bbox.height+25)+ 'px';
+			instructionPreview.style.width = (bbox.width+55) + 'px';
 			window.dispatchEvent(new Event('resize'));
 		}
 		

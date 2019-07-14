@@ -11,9 +11,9 @@ var currentSolutions=0;
         <div class="media-container-row">
             <div class="title col-12 col-md-8">
                 <h2 class="align-center pb-3 mbr-fonts-style display-2">
-                    Blinking LEDs</h2>
+                    Parpadeo de LEDs</h2>
                 <h3 class="mbr-section-subtitle align-center mbr-light mbr-fonts-style display-5">
-                    Learn how to work with digital inputs and outputs with Facilino to make LEDs blink.</h3>
+                    Aprende a trabajar con entradas y salidas digitales con Facilino para hacer que los LED parpadeen.</h3>
                 
             </div>
         </div>
@@ -30,23 +30,24 @@ var currentSolutions=0;
     </figure>
 </section>
 
-
 <section class="mbr-section article content1 cid-qYh0wSDsTN" id="content2-51">
     <div class="container">
         <div class="media-container-row">
             <div class="mbr-text col-12 col-md-8 mbr-fonts-style display-7">
-                <blockquote><strong>Required material. </strong><ul><li>An Arduino or ESP board, i.e.: <a onclick="onPageClicked('https://roboticafacil.es/en/prod/arduino-uno-r3/');" style="color:#1ec6c6" target="_blank">Arduino Uno</a>, <a onclick="onPageClicked('https://roboticafacil.es/en/prod/arduino-nano-v3-0-compatible/');" style="color:#1ec6c6" target="_blank">Arduino Nano</a>, <a style="color:#1ec6c6" target="_blank" onclick="onPageClicked('https://roboticafacil.es/prod/wemos-d1-r2/');">Wemos D1 R2</a> or <a style="color:#1ec6c6" target="_blank" onclick="onPageClicked('https://roboticafacil.es/en/prod/wemos-esp32-d1-r32/');">Wemos D1 R32</a>, <a onclick="onPageClicked('https://roboticafacil.es/prod/nodemcu-v3-esp8266-wifi/');" style="color:#1ec6c6" target="_blank">NodeMCU</a>, etc...</li><li>A <a onclick="onPageClicked('https://roboticafacil.es/en/prod/multisensor-shield/');" style="color:#1ec6c6" target="_blank">Multisensor shield</a> or two LEDs (red and blue connected to pins D12 and D13), a potentiometer connected to pin A0 and a push-button connected to pin D2 .</li></ul></blockquote>
+                <blockquote><strong>Material requerido. </strong><ul><li>Tarjeta de Arduino o ESP, por ejemplo: <a onclick="onPageClicked('https://roboticafacil.es/prod/tarjeta-arduino-uno-r3usb/');" style="color:#1ec6c6" target="_blank">Arduino Uno</a>, <a onclick="onPageClicked('https://roboticafacil.es/prod/arduino-nano3/');" style="color:#1ec6c6" target="_blank">Arduino Nano</a>, <a style="color:#1ec6c6" target="_blank" onclick="onPageClicked('https://roboticafacil.es/prod/wemos-d1-r2/');">Wemos D1 R2</a>, <a style="color:#1ec6c6" target="_blank" onclick="onPageClicked('https://roboticafacil.es/prod/wemos-esp32/');">Wemos D1 R32</a>, <a onclick="onPageClicked('https://roboticafacil.es/prod/nodemcu-v3-esp8266-wifi/');" style="color:#1ec6c6" target="_blank">NodeMCU</a>, etc...</li><li>Una <a onclick="onPageClicked('https://roboticafacil.es/prod/tarjeta-multifuncion-arduino-uno/');" style="color:#1ec6c6" target="_blank">tarjeta  multisensor</a> o dos LEDs (rojo y azul conectados a los pines D12 y D13), un potenciómetro conectado al pin A0 y un <a onclick="onPageClicked('https://roboticafacil.es/prod/pulsador-ky-004/');" style="color:#1ec6c6" target="_blank">pulsador</a> conectado al pin D2.</li></ul></blockquote>
             </div>
         </div>
     </div>
 </section>
+
+
 
 <section class="mbr-section article content9 cid-qYh5KdWW4b" id="content9-5u">
     <div class="container">
         <div class="inner-container" style="width: 100%;">
             <hr class="line" style="width: 25%;">
             <div class="section-text align-center mbr-fonts-style display-5">
-                    Worked instructions</div>
+                    Instrucciones Trabajadas</div>
             <hr class="line" style="width: 25%;">
         </div>
         </div>
@@ -93,7 +94,7 @@ var currentSolutions=0;
         <div class="inner-container" style="width: 100%;">
             <hr class="line" style="width: 25%;">
             <div class="section-text align-center mbr-fonts-style display-5">
-                    Additional instructions</div>
+                    Instrucciones Adicionales</div>
             <hr class="line" style="width: 25%;">
         </div>
         </div>
@@ -119,7 +120,7 @@ var currentSolutions=0;
     <div class="container">
         <div class="inner-container" style="width: 100%;">
             <hr class="line" style="width: 25%;">
-            <div class="section-text align-center mbr-fonts-style display-5">Basic Exercises</div>
+            <div class="section-text align-center mbr-fonts-style display-5">Ejercicios Básicos</div>
             <hr class="line" style="width: 25%;">
         </div>
         </div>
@@ -130,23 +131,23 @@ var currentSolutions=0;
         <div class="media-container-row">
             <div class="mbr-text counter-container col-12 col-md-8 mbr-fonts-style display-7">
                 <ol>
-                    <li><strong>Set LED</strong><p>At start up, set the LED connected to pin D12 HIGH (yes, we know, this is not very impressive, but its the beginning).</p><strong>Hint: </strong><p><i>Use the 'DigitalWrite' instruction and set the state to HIGH.</i></p>
+                    <li><strong>Enciende un LED</strong><p>Al inicio, enciende el LED conectado al pin D12, pon su estado en ALTO (sí, ya sabemos que esto no es muy impresionante, pero es el principio).</p><strong>Pista: </strong><p><i>Usa la instrucción 'Escribe en el pin digital...' y pon su estado en ALTO.</i></p>
 					<button type="button" onclick="showHide('solutions1b','set_led_setup_wemosD1R32.bly','exercise1b');" class="btn-primary display-4"><span class="mbri-preview mbr-iconfont mbr-iconfont-btn"></span></button>
 					<a onclick="onFileDownloaded('set_led_setup_wemosD1R32.bly');">
 					<button type="button" class="btn-primary display-4"><span class="mbri-save mbr-iconfont mbr-iconfont-btn"></span></button></a></li>
-					<li><strong>Read push-button</strong><p>In the main loop, print the value read from the digital pin D2 where the push-button is connected to.</p><strong>Hint: </strong><p><i>Use the 'DigitalRead' instruction and the resulting value print it with the 'Print Line' instruction (see <a onclick="onHomeFile('exerciseUSBSerial.html');" style="color:#1ec6c6">Exercise USB Serial</a>. You might need a 'Wait' instruction to avoid priting too much values.</i></p>
+					<li><strong>Estado de un pulsador</strong><p>En el bucle principal, muestra el valor del estado del pulsador (conectado al pin D2). Si su valor es ALTO deberías ver un '1', mientras que si su valor es BAJO, el valor debería ser un '0'.</p><strong>Pista: </strong><p><i>Usa la instrucción 'Lee pin digital' y muestra el valor por consola utilizando la instrucción 'Imprimir por puerto serie con salto de línea' (mira el <a onclick="onHomeFile('exerciseUSBSerial.html');" style="color:#1ec6c6">Ejercicio Comunicación Serie USB</a>). Puede que necesites incluir una instrucción de 'Esperar (ms)' para evitar imprimir demasiados valores.</i></p>
 					<button type="button" onclick="showHide('solutions2b','read_pushbutton.bly','exercise2b');" class="btn-primary display-4"><span class="mbri-preview mbr-iconfont mbr-iconfont-btn"></span></button>
 					<a onclick="onFileDownloaded('read_pushbutton.bly');">
 					<button type="button" class="btn-primary display-4"><span class="mbri-save mbr-iconfont mbr-iconfont-btn"></span></button></a></li>
-					<li><strong>Set LED when not pushed</strong><p>When the push-button connected at pin D2 is pushed, set the red LED connected to pin D12 to LOW</p><strong>Hint: </strong><p><i>Use the 'DigitalRead' instruction to get the push-button state. If pushed, it should return LOW (otherwise returns HIGH), which means that we can use this value to set the LED state using the 'DigitalWrite' instruction.</i></p>
+					<li><strong>Enciende el LED cuando no se pulsa el pulsador</strong><p>Cuando pulsamos el pulsador conectado al pin D2 su valor es BAJO, mientras que si no está pulsado, el valor es ALTO. Encender el LED conectado al pin D12 cuando no pulsamos el pulsador.</p><strong>Pista: </strong><p><i>Usa la instrucción 'Lee pin digital' para obtener el estado del pulsador y utilizar ese valor como entrada en la instrucción 'Escribe en el pin digital...'.</i></p>
 					<button type="button" onclick="showHide('solutions3b','set_led_wemosD1R32.bly','exercise3b');" class="btn-primary display-4"><span class="mbri-preview mbr-iconfont mbr-iconfont-btn"></span></button>
 					<a onclick="onFileDownloaded('set_led_wemosD1R32.bly');">
 					<button type="button" class="btn-primary display-4"><span class="mbri-save mbr-iconfont mbr-iconfont-btn"></span></button></a></li>
-					<li><strong>Blinking LED</strong><p>Make the red LED connected to pin D12 blink at a frequency of 1Hz</p><strong>Hint: </strong><p><i>'DigitalWrite' instruction to set the LED HIGH, then wait 500ms and set the LED LOW and wait again 500ms.</i></p>
+					<li><strong>Parpadeo de LED</strong><p>Haz parpadear el LED rojo conectado al pin D12. La frecuencia de parpadero debe ser de 1Hz (una vez por segundo).</p><strong>Pista: </strong><p><i>Repita la secuencia 'Escribe en el pin digital...' con el LED en estado ALTO, espera 500ms, pon el LED en estado BAJO y vuelve a esperar 500ms.</i></p>
 					<button type="button" onclick="showHide('solutions4b','blinking_LED_wemosD1R32.bly','exercise4b');" class="btn-primary display-4"><span class="mbri-preview mbr-iconfont mbr-iconfont-btn"></span></button>
 					<a onclick="onFileDownloaded('blinking_LED_wemosD1R32.bly');">
 					<button type="button" class="btn-primary display-4"><span class="mbri-save mbr-iconfont mbr-iconfont-btn"></span></button></a></li>
-					<li><strong>Blinking LEDs</strong><p>Turn on and off red and blue LEDs connected to pins D12 (red) and 13 (blue) sequentially. When one LED is HIGH, the other LED must be LOW. The time delay between each sequence must be of 500ms.</p><strong>Hint: </strong><p><i>Repeat the sequence blue HIGH and red LOW; wait 500ms; blue LOW and red HIGH; wait 500ms.</i></p>
+					<li><strong>Parpadep de LEDs</strong><p>Ahora debes encender y apagar los LEDs conectados a los pines D12 (rojo) y D13 (azul) de forma alternativa. Cuando uno está en estado ALTO, el otro debe estar en estado BAJO y viceversa. El tiempo de parpadeo de cada LED debe ser de 1Hz (una vez por segundo).</p><strong>Pista: </strong><p><i>Repite la secuencia azul ALTO, rojo BAJO, espera 500ms, azul BAJO, rojo ALTO y espera 500ms.</i></p>
 					<button type="button" onclick="showHide('solutions5b','Blinking_LEDs_I_wemosD1R32.bly','exercise5b');" class="btn-primary display-4"><span class="mbri-preview mbr-iconfont mbr-iconfont-btn"></span></button>
 					<a onclick="onFileDownloaded('Blinking_LEDs_I_wemosD1R32.bly');">
 					<button type="button" class="btn-primary display-4"><span class="mbri-save mbr-iconfont mbr-iconfont-btn"></span></button></a></li>
@@ -161,7 +162,7 @@ var currentSolutions=0;
     <div class="container">
         <div class="inner-container" style="width: 100%;">
             <hr class="line" style="width: 25%;">
-            <div class="section-text align-center mbr-fonts-style display-5">Intermediate Exercises</div>
+            <div class="section-text align-center mbr-fonts-style display-5">Ejercicios Intermedios</div>
             <hr class="line" style="width: 25%;">
         </div>
         </div>
@@ -172,15 +173,15 @@ var currentSolutions=0;
         <div class="media-container-row">
             <div class="mbr-text counter-container col-12 col-md-8 mbr-fonts-style display-7">
                 <ol>
-					<li><strong>Blinking LEDs with varying frequency</strong><p>Following the ideas of previous exercises make the LEDs wait an amount of time between 100ms and 1000ms depending on the potentiometer position (connected to pin A0).</p><strong>Hint: </strong><p><i>Use the 'map' instruction to map the value returned by the 'ReadAnalog' instruction. This is a value between 0 and 4095 (in the Wemos D1 R32) that should be mapped to 100 and 1000. Use that value as the input of the 'Wait' instruction.</i></p>
+					<li><strong>Parpadeo de LEDs con frecuencia variable</strong><p>Siguiendo las ideas de los ejercicios anteriores haz que la espera de los LEDs sea un tiempo entre 100ms y 1000ms en función del valor del potenciómetro (conectado al pin A0).</p><strong>Pista: </strong><p><i>Usa la instrucción 'Mapea' para ajustar los valores devueltos por la instrucción 'Lee el pin analógico...' a los valores 100 y 1000. En los procesadores ESP, el valor devuelto por la instrucción de la señal analógica es un valor entre 0 y 4095 que debemos mapear entre 100 y 1000. Utilizar este valor como entrada de la instrucción 'Esperar (ms)'.</i></p>
 					<button type="button" onclick="showHide('solutions1i','Blinking_LEDs_II_wemosD1R32.bly','exercise1i');" class="btn-primary display-4"><span class="mbri-preview mbr-iconfont mbr-iconfont-btn"></span></button>
 					<a onclick="onFileDownloaded('Blinking_LEDs_II_wemosD1R32.bly');">
 					<button type="button" class="btn-primary display-4"><span class="mbri-save mbr-iconfont mbr-iconfont-btn"></span></button></a></li>
-					<li><strong>Blinking LEDs with increasing frequency</strong><p>Following the ideas of previous exercise, now increase the blinking frequency (with a max. frequency of 10Hz) every time we push the push-button connected to pin D2.</p><strong>Hint: </strong><p><i>Now, we need a variable </i>BlinkTime<i> to store the actual frequency, initalized with 500. If the push-button D2 is LOW, then decrease the value of the variable </i>BlinkTime<i> by substracting 50 to it (use the Math arithmetic instruction). We need to check that the variable is at least 50, thus we need to store the maximum between the resulting arithmetic operation and 50.</i></p>
+					<li><strong>Parpadeo de LEDs con incremento de frecuencia</strong><p>Siguiendo las ideas del ejercicio anterior, ahora incrementa la frecuencia de parpadeo cada vez que pulsemos el pulsador (la máxima frecuencia de parpadeo debe ser de 10Hz, es decir 10 veces por segundo).</p><strong>Pista: </strong><p><i>Ahora, necesitamos una variable para almacenar el tiempo de espera del parpadeo. Crea una variable y asigna el nombre </i>BlinkTime<i> y un valor inicial de 500. Si el valor leído en el pin D2 del pulsador es BAJO entonces debemos primero realizar una operación aritmética para decrementar el valor del tiempo de espera (restamos el valor 50). Además, el resultado debe ser como mínimo de 50, para que la frecuencia máxima sea de 10Hz. El nuevo tiempo debemos guardarlo en la variable anteriormente creada.</i></p>
 					<button type="button" onclick="showHide('solutions2i','Blinking_LEDs_III_wemosD1R32.bly','exercise2i');" class="btn-primary display-4"><span class="mbri-preview mbr-iconfont mbr-iconfont-btn"></span></button>
 					<a onclick="onFileDownloaded('Blinking_LEDs_III_wemosD1R32.bly');">
 					<button type="button" class="btn-primary display-4"><span class="mbri-save mbr-iconfont mbr-iconfont-btn"></span></button></a></li>
-					<li><strong>Is it blinking?</strong><p>Now, make the red LED blink so fast fast that you won't notice that it is blinking. Depending on the time the LED is HIGH compared to the time the LED is LOW, you can dimm the light intensity.</p><strong>Hint: </strong><p><i>The key now is to have different delays for the HIGH time and for the LOW time, but they have to be as small as possible. This is indeed the principle of <a onclick="onHomeFile('analog_output.html')" style="color:#1ec6c6">PWM signals</a>.</i></p>
+					<li><strong>Realmente parpadea?</strong><p>Ahora, si haces que el led rojo parpadee tan rápido que no lo percibes el parpadeo, verás que permanece siempre encendido. Además, dependiendo del tiempo en el que el LED esté en estado ALTO frente al tiempo en el que esté en estado BAJO afectará al nivel de intensidad del LED (observaremos que si el tiempo de encendido es pequeño comparado al de apagado que el LED apenas brilla). Haz que el LED conectado al pin D12 brille con un 10% de su intensidad.</p><strong>Pista: </strong><p><i>La clave está ahora en utilizar diferentes retardos para el momento en el que el LED permanece en estado ALTO (por ejemplo 1ms) frente al tiempo en el que permanece en estado BAJO (por ejemplo 9ms). De hecho, este es el principio de funcionamiento de las <a onclick="onHomeFile('analog_output.html')" style="color:#1ec6c6">señales PWM</a>.</i></p>
 					<button type="button" onclick="showHide('solutions3i','blinking_led_fast_wemosD1R32.bly','exercise3i');" class="btn-primary display-4"><span class="mbri-preview mbr-iconfont mbr-iconfont-btn"></span></button>
 					<a onclick="onFileDownloaded('blinking_led_fast_wemosD1R32.bly');">
 					<button type="button" class="btn-primary display-4"><span class="mbri-save mbr-iconfont mbr-iconfont-btn"></span></button></a></li>
@@ -196,7 +197,7 @@ var currentSolutions=0;
     <div class="container">
         <div class="inner-container" style="width: 100%;">
             <hr class="line" style="width: 25%;">
-            <div class="section-text align-center mbr-fonts-style display-5">Solutions</div>
+            <div class="section-text align-center mbr-fonts-style display-5">Soluciones</div>
             <hr class="line" style="width: 25%;">
         </div>
         </div>
@@ -206,7 +207,7 @@ var currentSolutions=0;
 		<div class="container">
 			<div class="media-container-row">
 				<div class="mbr-text col-12 col-md-8 mbr-fonts-style display-7">
-					<strong>Basic Exercise 1</strong>
+					<strong>Ejercicio Básico 1</strong>
 				</div>
 			</div>
 			<div class="media-container-row"><div id='exercise1b'></div></div>
@@ -217,7 +218,7 @@ var currentSolutions=0;
 		<div class="container">
 			<div class="media-container-row">
 				<div class="mbr-text col-12 col-md-8 mbr-fonts-style display-7">
-					<strong>Basic Exercise 2</strong>
+					<strong>Ejercicio Básico 2</strong>
 				</div>
 			</div>
 			<div class="media-container-row"><div id='exercise2b'></div></div>
@@ -228,7 +229,7 @@ var currentSolutions=0;
 		<div class="container">
 			<div class="media-container-row">
 				<div class="mbr-text col-12 col-md-8 mbr-fonts-style display-7">
-					<strong>Basic Exercise 3</strong>
+					<strong>Ejercicio Básico 3</strong>
 				</div>
 			</div>
 			<div class="media-container-row"><div id='exercise3b'></div></div>
@@ -239,7 +240,7 @@ var currentSolutions=0;
 		<div class="container">
 			<div class="media-container-row">
 				<div class="mbr-text col-12 col-md-8 mbr-fonts-style display-7">
-					<strong>Basic Exercise 4</strong>
+					<strong>Ejercicio Básico 4</strong>
 				</div>
 			</div>
 			<div class="media-container-row"><div id='exercise4b'></div></div>
@@ -250,7 +251,7 @@ var currentSolutions=0;
 		<div class="container">
 			<div class="media-container-row">
 				<div class="mbr-text col-12 col-md-8 mbr-fonts-style display-7">
-					<strong>Basic Exercise 5</strong>
+					<strong>Ejercicio Básico 5</strong>
 				</div>
 			</div>
 			<div class="media-container-row"><div id='exercise5b'></div></div>
@@ -261,7 +262,7 @@ var currentSolutions=0;
 		<div class="container">
 			<div class="media-container-row">
 				<div class="mbr-text col-12 col-md-8 mbr-fonts-style display-7">
-					<strong>Intermediate Exercise 1</strong>
+					<strong>Ejercicio Intermedio 1</strong>
 				</div>
 			</div>
 			<div class="media-container-row"><div id='exercise1i'></div></div>
@@ -272,7 +273,7 @@ var currentSolutions=0;
 		<div class="container">
 			<div class="media-container-row">
 				<div class="mbr-text col-12 col-md-8 mbr-fonts-style display-7">
-					<strong>Intermediate Exercise 2</strong>
+					<strong>Ejercicio Intermedio 2</strong>
 				</div>
 			</div>
 			<div class="media-container-row"><div id='exercise2i'></div></div>
@@ -283,7 +284,7 @@ var currentSolutions=0;
 		<div class="container">
 			<div class="media-container-row">
 				<div class="mbr-text col-12 col-md-8 mbr-fonts-style display-7">
-					<strong>Intermediate Exercise 3</strong>
+					<strong>Ejercicio Intermedio 3</strong>
 				</div>
 			</div>
 			<div class="media-container-row"><div id='exercise3i'></div></div>
