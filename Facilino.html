@@ -1,0 +1,800 @@
+<html>
+<head>
+    	<meta charset="utf-8">
+    	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+    	<meta name="robots" content="Index,Allow">
+    	<meta name="description" content="Block programming environment for Arduino"/>
+		<link rel="shortcut icon" href="assets/images/facilino-cuadrado-fondo-transparente-128x128.png" type="image/x-icon">
+    	<meta name="keywords" content="facilino,robot,arduino,dyor" />
+    	<meta name="author" content="Robotica Facil"/>
+    	<title>Facilino</title>
+    	
+		<link rel="stylesheet" href="assets/web/assets/mobirise-icons/mobirise-icons.css">
+  <link rel="stylesheet" href="assets/tether/tether.min.css">
+  <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+  <link rel="stylesheet" href="assets/bootstrap/css/bootstrap-grid.min.css">
+  <link rel="stylesheet" href="assets/bootstrap/css/bootstrap-reboot.min.css">
+  <link rel="stylesheet" href="assets/dropdown/css/style.css">
+  <link rel="stylesheet" href="assets/theme/css/style.css">
+  <link rel="stylesheet" href="assets/mobirise/css/mbr-additional.css" type="text/css">
+  <link rel="stylesheet" type="text/css" href="facilino.css">
+    	<link rel="stylesheet" type="text/css" href="javascript/highlight/styles/default.css">
+	<style>
+		select.icon-menu option {
+background-repeat:no-repeat;
+background-position:bottom left;
+padding-left:30px;
+}
+	</style>
+	</head>
+<body>
+<script src="assets/web/assets/jquery/jquery.min.js"></script>
+  <script src="assets/popper/popper.min.js"></script>
+  <script src="assets/tether/tether.min.js"></script>
+  <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+  <script src="assets/smooth-scroll/smooth-scroll.js"></script>
+  <script src="assets/dropdown/js/script.min.js"></script>
+  <script src="assets/touch-swipe/jquery.touch-swipe.min.js"></script>
+  <script src="assets/theme/js/script.js"></script>
+  
+	<script src="javascript/jquery/dist/jquery.min.js"></script>
+    <script src="javascript/underscore/underscore.js"></script>
+    <script src="javascript/highlight/highlight.pack.js"></script>
+    <script src="javascript/blockly-bq/blockly_compressed.js"></script>
+    <script src="javascript/blockly-bq/blocks_compressed.js"></script>
+    <script src="javascript/blockly-bq/arduino_compressed.js"></script>
+	<script src="javascript/blockly-bq/FieldButton.js"></script>
+    <script src="facilino_new.js"></script>
+	<script src="roboblocks_compressed_new.js"></script>
+	<xml id='startBlocks' style='display: none'><block type='controls_setupLoop' deletable='true' x='20' y='5'></block></xml>
+
+	<div>
+	<section class="menu cid-qAignIVLHL" once="menu" id="menu1-e" data-rv-view="7">
+	<nav class="navbar navbar-expand beta-menu align-items-center navbar-fixed-top navbar-toggleable-sm">
+		<button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </button>
+        <div class="menu-logo">
+            <div class="navbar-brand">
+                <span class="navbar-logo">
+                    <a href="https://roboticafacil.es" target="_blank">
+                         <img src="assets/images/facilino-cuadrado-fondo-transparente-512x512.png" alt="Facilino" title="Facilino" media-simple="true" style="height: 3.8rem;">
+                    </a>
+                </span>
+                <span class="navbar-caption-wrap"><a class="navbar-caption text-white display-4" href="https://roboticafacil.es/facilino/blockly/Facilino.html" target="_blank"><h2>&nbsp;&nbsp;Facilino</h2></a></span>
+                <span class="navbar-caption-wrap"><a class="navbar-caption text-white display-4" href="https://roboticafacil.es/facilino_junior/blockly/FacilinoJunior.html" target="_blank"><h2>&nbsp;&nbsp;Facilino Junior</h2></a></span>
+                
+            </div>
+        </div>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav nav-dropdown" data-app-modern-menu="true">
+				<li class="nav-item dropdown open">
+					<a class="nav-link link text-white dropdown-toggle display-4" data-toggle="dropdown-submenu" aria-expanded="true">File</a>
+					<div class="dropdown-menu">
+						<button class="text-white dropdown-item display-4" onclick="resetWorkspace()" aria-expanded="false">New</button>
+						<button class="text-white dropdown-item display-4" onclick="document.getElementById('fileInput').click();" aria-expanded="false">Upload</button>
+						<input id="fileInput" type="file" style="display: none;" accept=".bly," onchange="fileSelected(this.files)"></input>
+						<button class="text-white dropdown-item display-4" onclick="butSave()" aria-expanded="false">Download</button>
+						<button class="text-white dropdown-item display-4" onclick="butExport()" aria-expanded="false">Export</button>
+					</div>
+				</li>
+				<li class="nav-item"><a class="nav-link link text-white display-4" aria-expanded="false"></a></li>
+				<li class="nav-item dropdown">
+					<a class="nav-link link text-white dropdown-toggle display-4" aria-expanded="false" data-toggle="dropdown-submenu">Edit</a>
+					<div class="dropdown-menu">
+						<button id="undo" class="text-white dropdown-item display-4" onclick="butUndo()" aria-expanded="false">Undo</button>
+						<button id="redo" class="text-white dropdown-item display-4" onclick="butRedo()" aria-expanded="false">Redo</button>
+					</div>
+				</li>
+			</ul>
+            <div class="navbar-buttons mbr-section-btn"><button class="btn btn-sm btn-primary-outline display-4" title="Language settings" onclick="showHideLanguage()"><span class="mbri-flag mbr-iconfont mbr-iconfont-btn" style="color: rgb(255, 148, 0);"></span></button></div>
+			<select id="language" class="text-black dropdown-toggle display-6 icon-menu" onchange="langChange(this.value)" style="display: none">
+		<option value="ca-ES" class="text-black dropdown-item display-6" style="background-image:url(img/flags/catalonia.png)">Catal&agrave;</option>
+		<option value="ch-CH" class="text-black dropdown-item display-6">中文</option>
+		<option value="da-DK" class="text-black dropdown-item display-6" style="background-image:url(img/flags/denmark.png)">Dansk</option>
+		<option value="de-DE" class="text-black dropdown-item display-6" style="background-image:url(img/flags/germany.png)">Deutsch</option>
+		<option value="en-GB" class="text-black dropdown-item display-6" style="background-image:url(img/flags/united-kingdom.png)">English</option>
+		<option value="es-ES" class="text-black dropdown-item display-6" style="background-image:url(img/flags/spain.png)">Espa&ntilde;ol</option>
+		<option value="es-LT" class="text-black dropdown-item display-6" style="background-image:url(img/flags/spain.png)">Espa&ntilde;ol (latino)</option>
+		<option value="eu-ES" class="text-black dropdown-item display-6" style="background-image:url(img/flags/basque-country.png)">Euskera</option>
+		<option value="fr-FR" class="text-black dropdown-item display-6" style="background-image:url(img/flags/france.png)">Fran&ccedil;ais</option>
+		<option value="gl-ES" class="text-black dropdown-item display-6" style="background-image:url(img/flags/galician.png)">Galego</option>
+		<option value="it-IT" class="text-black dropdown-item display-6" style="background-image:url(img/flags/italy.png)">Italiano</option>
+		<option value="nl-NL" class="text-black dropdown-item display-6" style="background-image:url(img/flags/netherlands.png)">Nederlands</option>
+		<option value="nb-NO" class="text-black dropdown-item display-6" style="background-image:url(img/flags/norway.png)">Norsk</option>
+		<option value="pl-PL" class="text-black dropdown-item display-6" style="background-image:url(img/flags/poland.png)">Polski</option>
+		<option value="pt-PT" class="text-black dropdown-item display-6" style="background-image:url(img/flags/portugal.png)">Portugues</option>
+		<option value="ru-RU" class="text-black dropdown-item display-6" style="background-image:url(img/flags/russia.png)">&#x420;&#x443;&#x441;&#x441;&#x43a;&#x438;&#x439;</option>
+		<option value="sv-SE" class="text-black dropdown-item display-6">Svenska</option>
+		<option value="zh-CN" class="text-black dropdown-item display-6">中文</option>
+		</select>
+		<div class="navbar-buttons mbr-section-btn"><button class="btn btn-sm btn-primary-outline display-4" title="Hardware settings" onclick="showHideProcessor()"><span class="mbri-setting3 mbr-iconfont mbr-iconfont-btn" style="color: rgb(255, 148, 0);"></span></button></div>
+			<select id="processor" class="text-black dropdown-toggle display-6 icon-menu" onchange="processorChange(this.value)" style="display: none">
+		<option value="ArduinoNano" class="text-black dropdown-item display-6">Arduino Nano</option>
+		<option value="ArduinoUno" class="text-black dropdown-item display-6">Arduino Uno</option>
+		<option value="ArduinoMega2560" class="text-black dropdown-item display-6">Arduino Mega 2560</option>
+		<option value="ArduinoMicro" class="text-black dropdown-item display-6">Arduino Micro</option>
+		<option value="ArduinoLilyPad" class="text-black dropdown-item display-6">Arduino LilyPAD</option>
+		<option value="ArduinoMini" class="text-black dropdown-item display-6">Arduino Mini</option>
+		<option value="ArduinoLeonardo" class="text-black dropdown-item display-6">Arduino Leonardo</option>
+		<option value="ESP8266" class="text-black dropdown-item display-6">ESP8266</option>
+		<option value="NodeMCU" class="text-black dropdown-item display-6">NodeMCU</option>
+		<option value="WEMOS D1R2" class="text-black dropdown-item display-6">WeMos D1R2</option>
+		<option value="ESP32" class="text-black dropdown-item display-6">ESP32</option>
+		<option value="WEMOS D1R32" class="text-black dropdown-item display-6">WeMos D1R32</option>
+		<option value="WEMOS D1R32 SHIELD" class="text-black dropdown-item display-6">WeMos D1R32 (Sensor Shield)</option>
+		</select>
+		<div class="navbar-buttons mbr-section-btn"><button id="licenseP" class="btn btn-sm btn-primary-outline display-4" title="Enter your license" onclick="showHideLicense()"><span class="mbri-key mbr-iconfont mbr-iconfont-btn" style="color: rgb(255, 148, 0);"></span></div>
+		<input id="license_text" name="license_text" type="text" onchange="checkLicenseFcn();" style="display: none"/>
+		<div class="navbar-buttons mbr-section-btn"><button id="button_copy" class="btn btn-sm btn-primary-outline display-4" title="Copy code to clipboard" onclick="copyToClipboard()"><span class="mbri-share mbr-iconfont mbr-iconfont-btn" style="color: rgb(255, 148, 0);"></span></button></div>
+		<div class="navbar-buttons mbr-section-btn"><button id="toolboxP" class="btn btn-sm btn-primary-outline display-4" title="Configure the toolbox" onclick="showToolbox()"><span class="mbri-preview mbr-iconfont mbr-iconfont-btn" style="color: rgb(255, 148, 0);"></span></div>
+		<div class="dropdown-menu text-white" id="toolbox_menu" style="display: none; background-color: rgb(35,35,35); position: absolute; left: 66%; ">Show/hide categories
+			<div class="dropdown">
+				<a class="text-white dropdown-item dropdown-toggle display-4" aria-expanded="false" data-toggle="dropdown-submenu">Control</a>
+				<div class="dropdown-menu dropdown-submenu">
+					<button class="text-white dropdown-item display-4" onclick="showHideCategory('LANG_SUBCATEGORY_INTERRUPTS')" aria-expanded="false"><span>Interrupt</span></button>
+					<button class="text-white dropdown-item display-4" onclick="showHideCategory('LANG_SUBCATEGORY_STATEMACHINE')" aria-expanded="false">State Machine</button>
+				</div>
+			</div>
+			<div class="dropdown">
+				<a class="text-white dropdown-item dropdown-toggle display-4" aria-expanded="false" data-toggle="dropdown-submenu">Logic</a>
+				<div class="dropdown-menu dropdown-submenu">
+					<button class="text-white dropdown-item display-4" onclick="showHideCategory('LANG_SUBCATEGORY_BITWISE')" aria-expanded="false"><span>Bitwise</span></button>
+				</div>
+			</div>
+			<div class="dropdown">
+				<a class="text-white dropdown-item dropdown-toggle display-4" aria-expanded="false" data-toggle="dropdown-submenu">Variables</a>
+				<div class="dropdown-menu dropdown-submenu">
+					<button class="text-white dropdown-item display-4" onclick="showHideCategory('LANG_SUBCATEGORY_ARRAYS')" aria-expanded="false">Arrays</button>
+					<button class="text-white dropdown-item display-4" onclick="showHideCategory('LANG_SUBCATEGORY_EEPROM')" aria-expanded="false">EEPROM</button>
+				</div>
+			</div>
+			
+			<div class="dropdown">
+				<a class="text-white dropdown-item dropdown-toggle display-4" aria-expanded="false" data-toggle="dropdown-submenu">Basic &nbsp;I/O</a>
+				<div class="dropdown-menu dropdown-submenu">
+					<button class="text-white dropdown-item display-4" onclick="showHideCategory('LANG_SUBCATEGORY_BUTTON')" aria-expanded="false">Button</button>
+					<button class="text-white dropdown-item display-4" onclick="showHideCategory('LANG_SUBCATEGORY_BUS')" aria-expanded="false">Bus</button>
+					<button class="text-white dropdown-item display-4" onclick="showHideCategory('LANG_SUBCATEGORY_OTHER')" aria-expanded="false">Other</button>
+				</div>
+			</div>
+			<div class="dropdown">
+				<a class="text-white dropdown-item dropdown-toggle display-4" aria-expanded="false" data-toggle="dropdown-submenu">Screen</a>
+				<div class="dropdown-menu dropdown-submenu">
+					<button class="text-white dropdown-item display-4" onclick="showHideCategory('LANG_SUBCATEGORY_LCD')" aria-expanded="false">LCD</button>
+					<button class="text-white dropdown-item display-4" onclick="showHideCategory('LANG_SUBCATEGORY_MAX7219')" aria-expanded="false">LED Matrix</button>
+					<button class="text-white dropdown-item display-4" onclick="showHideCategory('LANG_SUBCATERGORY_WS2812')" aria-expanded="false">RGB LEDs</button>
+					<button class="text-white dropdown-item display-4" onclick="showHideCategory('LANG_SUBCATEGORY_OLED')" aria-expanded="false">OLED</button>
+				</div>
+			</div>
+			<div class="dropdown">
+				<a class="text-white dropdown-item dropdown-toggle display-4" aria-expanded="false" data-toggle="dropdown-submenu">Communication</a>
+				<div class="dropdown-menu dropdown-submenu">
+					<button class="text-white dropdown-item display-4" onclick="showHideCategory('LANG_SUBCATEGORY_BLUETOOTH')" aria-expanded="false">Bluetooth</button>
+					<button class="text-white dropdown-item display-4" onclick="showHideCategory('LANG_SUBCATEGORY_WIFI')" aria-expanded="false">WiFi</button>
+					<button class="text-white dropdown-item display-4" onclick="showHideCategory('LANG_SUBCATEGORY_IOT')" aria-expanded="false">IoT</button>
+					<button class="text-white dropdown-item display-4" onclick="showHideCategory('LANG_SUBCATEGORY_IR')" aria-expanded="false">IR</button>
+				</div>
+			</div>
+			<div class="dropdown">
+				<a class="text-white dropdown-item dropdown-toggle display-4" aria-expanded="false" data-toggle="dropdown-submenu">Sound</a>
+				<div class="dropdown-menu dropdown-submenu">
+					<button class="text-white dropdown-item display-4" onclick="showHideCategory('LANG_SUBCATEGORY_BUZZER')" aria-expanded="false">Buzzer</button>
+					<button class="text-white dropdown-item display-4" onclick="showHideCategory('LANG_SUBCATEGORY_VOICE')" aria-expanded="false">Voice</button>
+					<button class="text-white dropdown-item display-4" onclick="showHideCategory('LANG_SUBCATEGORY_MIC')" aria-expanded="false">Mic</button>
+					<button class="text-white dropdown-item display-4" onclick="showHideCategory('LANG_SUBCATEGORY_MUSIC')" aria-expanded="false">Music</button>
+				</div>
+			</div>
+			<div class="dropdown">
+				<button class="text-white dropdown-item display-4" onclick="showHideCategory('LANG_CATEGORY_DISTANCE')" aria-expanded="false">Distance</button>
+			</div>
+			<div class="dropdown">
+				<a class="text-white dropdown-item dropdown-toggle display-4" aria-expanded="false" data-toggle="dropdown-submenu">Light</a>
+				<div class="dropdown-menu dropdown-submenu">
+					<button class="text-white dropdown-item display-4" onclick="showHideCategory('LANG_SUBCATEGORY_INFRARED')" aria-expanded="false">Infrared</button>
+					<button class="text-white dropdown-item display-4" onclick="showHideCategory('LANG_SUBCATEGORY_COLOR')" aria-expanded="false">Colour</button>
+					<button class="text-white dropdown-item display-4" onclick="showHideCategory('LANG_SUBCATEGORY_LDR')" aria-expanded="false">LDR</button>
+					<button class="text-white dropdown-item display-4" onclick="showHideCategory('LANG_SUBCATEGORY_DIMMER')" aria-expanded="false">Dimmer</button>
+				</div>
+			</div>
+			<div class="dropdown">
+				<a class="text-white dropdown-item dropdown-toggle display-4" aria-expanded="false" data-toggle="dropdown-submenu">Movement</a>
+				<div class="dropdown-menu dropdown-submenu">
+					<button class="text-white dropdown-item display-4" onclick="showHideCategory('LANG_SUBCATEGORY_MOTORS')" aria-expanded="false">Motors</button>
+					<button class="text-white dropdown-item display-4" onclick="showHideCategory('LANG_SUBCATEGORY_ROBOTBASE')" aria-expanded="false">Robot base</button>
+					<button class="text-white dropdown-item display-4" onclick="showHideCategory('LANG_SUBCATEGORY_ROBOTACC')" aria-expanded="false">Robot accessories</button>
+					<button class="text-white dropdown-item display-4" onclick="showHideCategory('LANG_SUBCATEGORY_WALK')" aria-expanded="false">Robot walk</button>
+				</div>
+			</div>
+			<div class="dropdown">
+				<a class="text-white dropdown-item dropdown-toggle display-4" aria-expanded="false" data-toggle="dropdown-submenu">System</a>
+				<div class="dropdown-menu dropdown-submenu">
+					<button class="text-white dropdown-item display-4" onclick="showHideCategory('LANG_SUBCATEGORY_SYSTEM_CONTROL')" aria-expanded="false">Controller</button>
+					<button class="text-white dropdown-item display-4" onclick="showHideCategory('LANG_SUBCATEGORY_SYSTEM_FILTER')" aria-expanded="false">Filtering</button>
+				</div>
+			</div>
+			<div class="dropdown">
+				<a class="text-white dropdown-item dropdown-toggle display-4" aria-expanded="false" data-toggle="dropdown-submenu">Environment</a>
+				<div class="dropdown-menu dropdown-submenu">
+					<button class="text-white dropdown-item display-4" onclick="showHideCategory('LANG_SUBCATEGORY_TEMPERATURE')" aria-expanded="false">Temperature</button>
+					<button class="text-white dropdown-item display-4" onclick="showHideCategory('LANG_SUBCATEGORY_HUMIDITY')" aria-expanded="false">Humidity</button>
+					<button class="text-white dropdown-item display-4" onclick="showHideCategory('LANG_SUBCATEGORY_RAIN')" aria-expanded="false">Rain</button>
+					<button class="text-white dropdown-item display-4" onclick="showHideCategory('LANG_SUBCATEGORY_GAS)" aria-expanded="false">Gas</button>
+					<button class="text-white dropdown-item display-4" onclick="showHideCategory('LANG_SUBCATEGORY_MISC')" aria-expanded="false">Miscellaneous</button>
+				</div>
+			</div>
+			<div class="dropdown">
+				<a class="text-white dropdown-item dropdown-toggle display-4" aria-expanded="false" data-toggle="dropdown-submenu">Web Interface</a>
+				<div class="dropdown-menu dropdown-submenu">
+					<button class="text-white dropdown-item display-4" onclick="showHideCategory('LANG_SUBCATEGORY_HTML')" aria-expanded="false">HTML</button>
+					<button class="text-white dropdown-item display-4" onclick="showHideCategory('LANG_SUBCATERGORY_ESPUI')" aria-expanded="false">User Interface</button>
+				</div>
+			</div>
+			<button class="text-white dropdown-item display-4" onclick="showHideCategory('LANG_CATEGORY_DEPRECATED')" aria-expanded="false">Deprecated</button>
+		</div>
+		<div class="navbar-buttons mbr-section-btn"><button class="btn btn-sm btn-primary-outline display-4" title="Create your own blocks" onclick="window.location='./FacilinoMyBlocks.html'"><span class="mbri-extension mbr-iconfont mbr-iconfont-btn" style="color: rgb(255, 148, 0);"></span></button></div>
+		<div class="navbar-buttons mbr-section-btn"><button class="btn btn-sm btn-primary-outline display-4" title="Translate Facilino" onclick="window.location='./FacilinoTranslate.html'"><span class="mbri-globe mbr-iconfont mbr-iconfont-btn" style="color: rgb(255, 148, 0);"></span></button></div>
+		</div>	
+	</nav>
+	</section>
+	</div>
+	<!-- <xml id='startBlocks' style='display: none'> <block type='controls_setupLoop' deletable='true'></block> </xml>-->
+	<div id="wrap" style="height: 89%;">
+        <div id="blockly" style="float: left; width: 66%;">
+			<span id="position"></span>
+			<div id="dragbar"></div>
+		</div>
+		<div id="code_doc" style="float: left; width: 34%;">
+          <div id="code" style="float: none; width: 100%; height: 50%;">
+		  </div>
+		  <span id="position1"></span>
+			<div id="dragbar1" style="float: none; width=100%;"></div>
+		  <div id="doc" style="float: none; width: 100%; height: 50%;">
+		  </div>
+		</div>
+    </div>
+	<div><input type="file" id="importFile" style="display:none" accept=".png," onchange="imageSelected(this.files)"></input><canvas id="canvas" width="578" height="400" style="display:none"></div>
+	
+    <script language="JavaScript">
+		if (localStorage.getItem("language")===undefined || localStorage.getItem("language")===null)
+			localStorage.setItem('language', 'en-GB');
+		if (localStorage.getItem("processor")===undefined || localStorage.getItem("processor")===null)
+			localStorage.setItem('processor', 'ArduinoNano');
+		if (localStorage.getItem("license")===undefined ||localStorage.getItem("license")===null)
+		  localStorage.setItem('license', '');
+		if (localStorage.getItem("saved")===undefined || localStorage.getItem("saved")===null)
+			localStorage.setItem('saved', '');
+		window.roboblocksLanguage = localStorage.getItem("language");
+		window.roboblocksProcessor = localStorage.getItem("processor");
+		$.ajax({url: 'lang/facilino_'+window.roboblocksLanguage+'.json',dataType: "text",async: false,}).done(function(text) {window.langKeys = $.parseJSON(text).langs[window.roboblocksLanguage].keys;});
+		$.ajax({url: 'lang/facilino_en-GB.json',dataType: "text",async: false,}).done(function(text) {window.langKeysEng = $.parseJSON(text).langs['en-GB'].keys;});
+		var lic = localStorage.getItem("license");
+		$("#language").val(window.roboblocksLanguage);
+		$("#processor").val(window.roboblocksProcessor);
+		$("#license_text").val(lic);
+		checkLicense(lic);
+	    window.FacilinoLanguage = window.roboblocksLanguage; 
+		window.FacilinoProcessor = window.roboblocksProcessor;
+		var ev = document.createEvent('Event');
+		ev.initEvent('resize', true, true);
+		
+	    //document.getElementById("doc").innerHTML = window.roboblocksLanguage;
+		//document.getElementById("doc").innerHTML = license;
+		var file = "doc/"+window.roboblocksLanguage+"/index.html";
+		$.ajax({url:file,type:'HEAD',error: function(){file="doc/en-GB/index.html";},success: function(){}});
+		$(function(){$("#doc").load(file);});
+		if (localStorage.getItem("MyBlocks")===undefined || localStorage.getItem("MyBlocks")===null)
+		{
+			localStorage.setItem('MyBlocks', '[]');
+		}
+		MyBlocks = JSON.parse(localStorage.getItem('MyBlocks'));
+		Blockly.Doc = [];
+		window.toolbox = ['LANG_CATEGORY_PROCEDURES','LANG_SUBCATEGORY_CONTROL','LANG_SUBCATEGORY_INTERRUPTS','LANG_SUBCATEGORY_STATEMACHINE','LANG_CATEGORY_LOGIC','LANG_SUBCATEGORY_BITWISE','LANG_CATEGORY_MATH','LANG_CATEGORY_CURVE','LANG_CATEGORY_TEXT','LANG_CATEGORY_VARIABLES','LANG_SUBCATEGORY_ARRAYS','LANG_SUBCATEGORY_EEPROM','LANG_SUBCATEGORY_ANALOG','LANG_SUBCATEGORY_DIGITAL','LANG_SUBCATEGORY_BUTTON','LANG_SUBCATEGORY_BUS','LANG_SUBCATEGORY_OTHER','LANG_SUBCATEGORY_USB','LANG_SUBCATEGORY_BLUETOOTH','LANG_SUBCATEGORY_WIFI','LANG_SUBCATEGORY_IOT','LANG_SUBCATEGORY_IR','LANG_SUBCATEGORY_BLE','LANG_CATEGORY_DISTANCE','LANG_SUBCATEGORY_LCD','LANG_SUBCATEGORY_MAX7219','LANG_SUBCATEGORY_INFRARED','LANG_SUBCATEGORY_COLOR','LANG_SUBCATEGORY_LDR','LANG_SUBCATEGORY_DIMMER','LANG_SUBCATEGORY_BUZZER','LANG_SUBCATEGORY_VOICE','LANG_SUBCATEGORY_MIC','LANG_SUBCATEGORY_MUSIC','LANG_SUBCATEGORY_MOTORS','LANG_SUBCATEGORY_ROBOTBASE','LANG_SUBCATEGORY_ROBOTACC','LANG_SUBCATEGORY_ROBOTACC','LANG_SUBCATEGORY_WALK','LANG_SUBCATEGORY_SYSTEM_FILTER','LANG_SUBCATEGORY_SYSTEM_CONTROL','LANG_SUBCATEGORY_TEMPERATURE','LANG_SUBCATEGORY_HUMIDITY','LANG_SUBCATEGORY_RAIN','LANG_SUBCATEGORY_GAS','LANG_SUBCATEGORY_MISC','LANG_SUBCATERGORY_HTML','LANG_SUBCATERGORY_ESPUI','LANG_SUBCATERGORY_WS2812','LANG_SUBCATEGORY_OLED','LANG_CATEGORY_DEPRECATED'];
+		window.toolboxNames = getToolboxNames(window.toolbox);
+		//options = {zoom: 1, interrupts: {subcategory: 'LANG_SUBCATEGORY_INTERRUPTS', view:false}, ss: false, arrays: false, lcd: false, led_matrix: false, led_strip: false, oled: false, bluetooth: false, wifi: false, iot: false, buzzer: false, voice: false, mic: false, music: false, sonar: false, infrared: false, colour: false, motors: false, robot_base: false, robot_accessories: false, robot_walk: false, system_control: false, system_filtering: false, temperature: false, humidity: false, rain: false, gas: false, environment_other: false, html: false, web_ui: false, deprecated: false};
+		options = {zoom: 1};
+		RoboBlocks.load(options);
+		Facilino.load(options);
+		//MyBlocks
+		MyBlocks.forEach(function (block){
+			eval(block.code);
+		});
+		//	$.getScript( "my_blocks.js", function( data, textStatus, jqxhr ) {
+			  //eval(data);
+			  // New workspace for each test case
+            var el = document.getElementById('blockly');
+			//console.log(Blockly.createToolbox());
+            Blockly.inject(el, {toolbox: Blockly.createToolbox(toolboxNames), zoom: {controls: true, wheel: true, startScale: 1.0, maxScale: 3, minScale: 0.3, scaleSpeed: 1.2}});
+            // Create a default setup/loop block
+			//Blockly.getMainWorkspace().clear();
+            if (localStorage.getItem("saved")!=='')
+			  Blockly.Xml.domToWorkspace(document.getElementById('startBlocks'),Blockly.getMainWorkspace());
+			$('.blocklySvg, #blockly').height('100%');
+            $('.blocklySvg').width('100%');
+			
+			$("#redo").hide();
+			
+			if (localStorage.getItem("saved")!=='')
+			{
+			  Blockly.getMainWorkspace().clear();
+			  Blockly.Xml.domToWorkspace(Blockly.Xml.textToDom(localStorage.getItem("saved")),Blockly.getMainWorkspace())
+			}
+			var History = {};
+			History.stack = [];
+			History.initialState ='';
+			History.position=0;
+			History.limit=200;
+			History.updating=false;
+			History.stack[0]=Blockly.Xml.domToText(Blockly.Xml.workspaceToDom(Blockly.getMainWorkspace()));
+			
+			if (localStorage.getItem("saved")=='')
+              Blockly.Xml.domToWorkspace(document.getElementById('startBlocks'),Blockly.getMainWorkspace());
+			$('.blocklySvg, #blockly').height('100%');
+            $('.blocklySvg').width('100%');
+			
+	
+	    /*var colors = [
+                "",
+				RoboBlocks.LANG_COLOUR_PROCEDURES,
+				RoboBlocks.LANG_COLOUR_CONTROL,
+				RoboBlocks.LANG_COLOUR_LOGIC,
+				RoboBlocks.LANG_COLOUR_MATH,
+				RoboBlocks.LANG_COLOUR_VARIABLES,
+				RoboBlocks.LANG_COLOUR_TEXT,
+				RoboBlocks.LANG_COLOUR_COMMUNICATION,
+				RoboBlocks.LANG_COLOUR_DISTANCE,
+				RoboBlocks.LANG_COLOUR_LCD,
+				RoboBlocks.LANG_COLOUR_LIGHT,
+				RoboBlocks.LANG_COLOUR_SOUND,
+                RoboBlocks.LANG_COLOUR_MOVEMENT,
+				RoboBlocks.LANG_COLOUR_SYSTEM,
+				RoboBlocks.LANG_COLOUR_AMBIENT,
+				RoboBlocks.LANG_COLOUR_HTML,
+				RoboBlocks.LANG_COLOUR_ADVANCED,
+				RoboBlocks.LANG_COLOUR_DEPRECATED
+		];
+		colors.push(Blockly.createToolboxColours());*/
+		
+		
+		
+
+            /*$('.blocklyTreeRow').each( function (i,e) {
+                $(e).prepend('<span class="treeLabelBlock" style="background-color:' + colors[i] + '"></span>');
+            });*/
+			/*$('.blocklyTreeRow').each( function (i,e) {
+                $(e).prepend('<span class="treeLabelBlock"></span>');
+            });*/
+            // Update code
+				
+                Blockly.getMainWorkspace().addChangeListener(function (event) {
+				if (event.type== Blockly.Events.DELETE)
+				{
+					Facilino.removedBlocks(event.ids);
+				}
+		$('#code').html('<code class="c++"><pre>'
+		  + escapeCode(Blockly.Arduino.workspaceToCode(Blockly.getMainWorkspace()))
+		  + '</pre></code>');
+		  // Highlight
+		$("pre").each(function (i, e) {
+		  hljs.highlightBlock(e);
+		});
+			//Save History
+			var current = Blockly.Xml.domToText(Blockly.Xml.workspaceToDom(Blockly.getMainWorkspace()));
+			if ((current !== History.stack[History.position])&&(current!==History.initialState))
+				History.updating=true;
+			//console.log(History.updating);
+			if (History.updating)
+			{
+				while (History.stack.length > History.limit) {
+					History.stack.shift();
+				}
+				History.position = Math.min(History.position,History.stack.length - 1);
+				History.stack = History.stack.slice(0, History.position + 1);
+				History.stack.push(current);
+				localStorage.setItem('saved',current);
+				History.position++;
+				if (History.position > 0)
+					$("#undo").show();
+				else
+					$("#undo").hide();
+				if (History.position<(History.stack.length-1))
+					$("#redo").show();
+				else
+					$("#redo").hide();
+				//console.log('Saving position '+History.position);
+				History.updating=false;
+				//console.log(History.updating);
+			}
+		});
+			//});
+            
+            // Show/hide code
+            function escapeCode(code) {
+                var str = code;
+                str = str.replace(/</g, "&lt;");
+                str = str.replace(/>/g, "&gt;");
+                return str;
+            }
+
+            function resetWorkspace() {
+				History.stack = [];
+				History.initialState ='';
+				History.position=0;
+                Blockly.mainWorkspace.clear();
+                Blockly.Xml.domToWorkspace(document.getElementById('startBlocks'),Blockly.getMainWorkspace());
+            }
+			
+		var dragging = false;
+		var dragging1 = false;
+			
+		$('#dragbar').mousedown(function(e){
+			e.preventDefault();
+       
+			dragging = true;
+			var code = $('#code_doc');
+			var ghostbar = $('<div>',
+                        {id:'ghostbar',
+                         css: {
+                                height: code.outerHeight(),
+                                top: code.offset().top,
+                                left: code.offset().left
+                               }
+                        }).appendTo('body');
+       
+				$(document).mousemove(function(e){
+					ghostbar.css("left",e.pageX+2);
+				});
+       
+		});
+		
+		$('#dragbar1').mousedown(function(e){
+			e.preventDefault();
+       
+			dragging1 = true;
+			var doc = $('#doc');
+			var ghostbar = $('<div>',
+                        {id:'ghostbar1',
+                         css: {
+                                width: doc.outerWidth(),
+                                top: doc.offset().top,
+                                left: doc.offset().left
+                               }
+                        }).appendTo('body');
+       
+				$(document).mousemove(function(e){
+					ghostbar.css("top",e.pageY+2);
+				});
+       
+		});
+
+		$(document).mouseup(function(e){
+			if (dragging) 
+			{
+				var percentage = (e.pageX / window.innerWidth) * 100;
+				var mainPercentage = 100-percentage;
+           
+				//$('#console').text("side:" + percentage + " main:" + mainPercentage);
+				
+				$('#blockly').css("width",percentage + "%");
+				$('#code_doc').css("width",mainPercentage + "%");
+				$('#ghostbar').remove();
+				$(document).unbind('mousemove');
+				Blockly.svgResize(Blockly.getMainWorkspace());
+				dragging = false;
+			}
+			
+			if (dragging1) 
+			{
+				var percentage = (e.pageY / window.innerHeight) * 100;
+				var mainPercentage = 100-percentage;
+           
+				//$('#console').text("side:" + percentage + " main:" + mainPercentage);
+           
+				$('#code').css("height",percentage + "%");
+				$('#doc').css("height",mainPercentage + "%");
+				$('#ghostbar1').remove();
+				$(document).unbind('mousemove');
+				dragging1 = false;
+			}
+		});
+		
+		function fileSelected(input){
+			if (input.length>0)
+			{
+				var file = input[0];
+				var reader = new FileReader();
+				reader.readAsText(file);
+				reader.onload = function(e){
+					var xmlData = $(reader.result);
+					Blockly.mainWorkspace.clear();
+					Blockly.Xml.domToWorkspace(xmlData[0],Blockly.getMainWorkspace());
+				};
+			}
+		}
+		
+		function imageSelected(input){
+			if (input.length>0)
+			{
+				var file = input[0];
+				var reader = new FileReader();
+				reader.addEventListener("load", function () {		
+					var img = new Image();
+					img.onload = function(){
+					  var height = img.height;
+					  var width = img.width;
+					  var canvas = document.getElementById('canvas');
+						var context = canvas.getContext('2d');
+						context.drawImage(img,0,0);
+						var imageData = context.getImageData(0,0,width,height);
+						var data = imageData.data;
+						var row = [];
+						var data1 =[];
+						var j=0;
+						var data_str='';
+						for (var i=0;i<data.length;i+=32)
+						{
+							row[0] = 0.34*data[i]+0.5*data[i+1]+0.16*data[i+2];
+							row[1] = 0.34*data[i+4]+0.5*data[i+5]+0.16*data[i+6];
+							row[2] = 0.34*data[i+8]+0.5*data[i+9]+0.16*data[i+10];
+							row[3] = 0.34*data[i+12]+0.5*data[i+13]+0.16*data[i+14];
+							row[4] = 0.34*data[i+16]+0.5*data[i+17]+0.16*data[i+18];
+							row[5] = 0.34*data[i+20]+0.5*data[i+21]+0.16*data[i+22];
+							row[6] = 0.34*data[i+24]+0.5*data[i+25]+0.16*data[i+26];
+							row[7] = 0.34*data[i+28]+0.5*data[i+29]+0.16*data[i+30];
+							data1[j]=((row[0]%2)<1? 128: 0) + ((row[1]%2)<1? 64:0) + ((row[2]%2)<1? 32:0) + ((row[3]%2)<1? 16:0) + ((row[4]%2)<1? 8:0) + ((row[5]%2)<1? 4:0) + ((row[6]%2)<1? 2:0) + ((row[7]%2)<1? 1:0);
+							j++;
+							if (j==8)
+							{
+								data_str+=  data1[0] + ',' + data1[1] + ','+ data1[2] + ','+ data1[3] + ','+ data1[4] + ','+ data1[5] + ','+ data1[6] + ','+ data1[7]+',';
+								j=0;
+							}
+						}
+						//console.log(data_str);
+						data_str=data_str.substring(0,data_str.length-1);
+						Blockly.currentInterestingBlock.data = JSON.stringify({name: file.name.substring(0,file.name.length-4), width: img.width, height: img.height, data: data_str});
+					}
+
+					img.src = reader.result;
+
+
+				  }, false);
+
+				  if (file) {
+					reader.readAsDataURL(file);
+				  }
+			}
+		}
+		
+		function toogleCode() {
+			if ($('#code').css('display') == 'none') {
+				// Show
+				$('#code').show();
+				$('#blockly').width('66%');
+				if ($('#doc').css('display') == 'none' )
+				  $('#code').height('100%');
+				else
+				{
+				  $('#code').height('50%');
+				  $('#doc').width('100%');
+				  $('#doc').height('50%');
+				}
+			} else {
+				// Hide
+				$('#code').hide();
+				if ($('#doc').css('display') == 'none' )
+				  $('#blockly').width('100%');
+				else {
+				  $('#blockly').width('66%');
+				  $('#doc').width('100%');
+				  $('#doc').height('100%');
+				}
+				
+			}
+			// Resize workspace
+			//Blockly.fireUiEvent(window,"resize");
+			window.dispatchEvent(ev);
+			//$('.blocklySvg, #blockly').height('100%');
+			//$('.blocklySvg').width('100%');
+		}
+		
+		function toogleDoc() {
+			if ($('#doc').css('display') == 'none') {
+				// Show
+				$('#doc').show();
+				$('#blockly').width('66%');
+				if ($('#code').css('display') == 'none' )
+				  $('#doc').height('100%');
+				else
+				{
+				  $('#doc').height('50%');
+				  $('#code').width('100%');
+				  $('#code').height('50%');
+				}
+			} else {
+				// Hide
+				$('#doc').hide();
+				if ($('#code').css('display') == 'none' )
+				  $('#blockly').width('100%');
+				else {
+				  $('#blockly').width('66%');
+				  $('#code').width('100%');
+				  $('#code').height('100%');
+				}
+			}
+			// Resize workspace
+			//Blockly.fireUiEvent(window, "resize");
+			window.dispatchEvent(ev);
+			//$('.blocklySvg, #blockly').height('100%');
+			//$('.blocklySvg').width('100%');
+		}
+		
+		function butSave()
+		{
+			var link = document.createElement('a');
+			var text = Blockly.Xml.domToText(Blockly.Xml.workspaceToDom(Blockly.getMainWorkspace()));
+			link.href = 'data:text/plain;charset=utf-8,' + encodeURIComponent(text);
+			link.download = 'filename.bly';
+			document.body.appendChild(link);
+			link.click();
+		}
+		
+		function butExport()
+		{
+			var link = document.createElement('a');
+			var text = Blockly.Arduino.workspaceToCode(Blockly.getMainWorkspace());
+			link.href = 'data:text/plain;charset=utf-8,' + encodeURIComponent(text);
+			link.download = 'filename.ino';
+			document.body.appendChild(link);
+			link.click();
+		}
+		
+		function checkLicenseFcn()
+		{
+			var lic = $("#license_text").val();
+			console.log('Checking license...');
+			checkLicense(lic);
+			localStorage.setItem("license",lic);
+		}
+		
+		function butUndo()
+		{
+			if (History.position>0){
+				var item =  History.stack[--History.position];
+				if (History.position > 0)
+					$("#undo").show();
+				else
+					$("#undo").hide();
+				if (History.position<(History.stack.length-1))
+					$("#redo").show();
+				else
+					$("#redo").hide();
+				Blockly.getMainWorkspace().clear();
+				Blockly.Xml.domToWorkspace(Blockly.Xml.textToDom(item),Blockly.getMainWorkspace());
+				//console.log('Undo: '+History.position);
+			}
+		}
+		
+		function butRedo()
+		{
+			if (History.position<(History.stack.length-1))
+			{
+				var item = History.stack[++History.position];
+				if (History.position > 0)
+					$("#undo").show();
+				else
+					$("#undo").hide();
+				if (History.position<(History.stack.length-1))
+					$("#redo").show();
+				else
+					$("#redo").hide();
+				Blockly.getMainWorkspace().clear();
+				Blockly.Xml.domToWorkspace(Blockly.Xml.textToDom(item),Blockly.getMainWorkspace());
+				//console.log('Redo: '+History.position);
+			}
+		}
+		
+		function langChange(lang)
+		{
+			localStorage.setItem('language',lang);
+			window.location.reload();
+		}
+		
+		function processorChange(processor)
+		{
+			localStorage.setItem('processor',processor);
+			window.location.reload();
+		}
+		
+		function copyToClipboard()
+		{ 
+			var r = document.createRange();
+			r.selectNode(document.getElementById("code"));
+			window.getSelection().addRange(r);
+			document.execCommand("copy");
+			r.selectNode(document.body);
+			window.getSelection().addRange(r);
+			clearSelection();
+		}
+		
+		function showHideLanguage()
+		{
+			var lang=document.getElementById('language');
+			//console.log(lang.style.display);
+			if (lang.style.display==='none')
+				lang.style.display='initial';
+			else
+				lang.style.display='none';
+		}
+		
+		function showHideProcessor()
+		{
+			var proc=document.getElementById('processor');
+			if (proc.style.display==='none')
+				proc.style.display='initial';
+			else
+				proc.style.display='none';
+		}
+		
+		function showHideLicense()
+		{
+			var lic=document.getElementById('license_text');
+			if (lic.style.display==='none')
+				lic.style.display='initial';
+			else
+				lic.style.display='none';
+		}
+		
+		function getToolboxNames(keys)
+		{
+			var toolboxNames = [];
+			keys.forEach(function (key){toolboxNames.push(window.langKeys[key]);});			
+			return toolboxNames;
+		}
+		
+		function showToolbox()
+		{
+			var menu=document.getElementById('toolbox_menu');
+			if (menu.style.display==='none')
+			{
+				menu.style.display='initial';
+				$("#toolboxP").attr("class","btn btn-sm btn-primary");
+			}
+			else
+			{
+				menu.style.display='none';
+				$("#toolboxP").attr("class","btn btn-sm btn-primary-outline");
+			}
+		}
+		function showHideCategory(key)
+		{
+			var found = window.toolbox.find(function(element) {return (element===key);});
+			if (found)
+			{
+				window.toolbox = window.toolbox.filter(function(item) { return item !== key});
+			}
+			else
+			{
+				window.toolbox.push(key);
+			}
+			window.toolboxNames=getToolboxNames(window.toolbox);
+			Blockly.getMainWorkspace().updateToolbox(Blockly.updateToolboxXml(toolboxNames));
+		}
+		function clearSelection() {
+			if ( document.selection ) {
+				document.selection.empty();
+			} else if ( window.getSelection ) {
+				window.getSelection().removeAllRanges();
+			}
+		}
+		
+		function checkLicense(lic){delete window["\x6C\x69\x63\x65\x6E\x73\x65"];$("\x23\x6C\x69\x63\x65\x6E\x73\x65\x50")["\x61\x74\x74\x72"]("\x63\x6C\x61\x73\x73","\x62\x74\x6E\x20\x62\x74\x6E\x2D\x73\x6D\x20\x62\x74\x6E\x2D\x70\x72\x69\x6D\x61\x72\x79\x2D\x6F\x75\x74\x6C\x69\x6E\x65");if(lic["\x6C\x65\x6E\x67\x74\x68"]== 13){$(function(){$["\x61\x6A\x61\x78"]({url:"\x68\x74\x74\x70\x73\x3A\x2F\x2F\x72\x6F\x62\x6F\x74\x69\x63\x61\x66\x61\x63\x69\x6C\x2E\x65\x73\x2F\x66\x61\x63\x69\x6C\x69\x6E\x6F\x2F\x62\x6C\x6F\x63\x6B\x6C\x79\x2F\x6C\x6F\x67\x69\x6E\x5F\x66\x61\x63\x69\x6C\x69\x6E\x6F\x2E\x70\x68\x70\x3F\x6C\x69\x63\x65\x6E\x73\x65\x3D"+ lic,data:"",type:"\x47\x45\x54",dataType:"\x6A\x73\x6F\x6E",async:true,success:function(data,textStatus,jqXHR){if(data[1]=== "\x6F\x6B"){window["\x6C\x69\x63\x65\x6E\x73\x65"]= lic;$("\x23\x6C\x69\x63\x65\x6E\x73\x65\x50")["\x61\x74\x74\x72"]("\x63\x6C\x61\x73\x73","\x62\x74\x6E\x20\x62\x74\x6E\x2D\x73\x6D\x20\x62\x74\x6E\x2D\x70\x72\x69\x6D\x61\x72\x79")}else {if(data[1]=== "\x65\x72\x72\x6F\x72"){delete window["\x6C\x69\x63\x65\x6E\x73\x65"];$("\x23\x6C\x69\x63\x65\x6E\x73\x65\x50")["\x61\x74\x74\x72"]("\x63\x6C\x61\x73\x73","\x62\x74\x6E\x20\x62\x74\x6E\x2D\x73\x6D\x20\x62\x74\x6E\x2D\x70\x72\x69\x6D\x61\x72\x79\x2D\x6F\x75\x74\x6C\x69\x6E\x65");alert("\x57\x72\x6F\x6E\x67\x20\x6C\x69\x63\x65\x6E\x73\x65\x21")}}},error:function(jqXHR,textStatus,errorThrown){if(lic["\x6C\x65\x6E\x67\x74\x68"]!= 0){alert("\x4C\x69\x63\x65\x6E\x73\x65\x20\x63\x6F\x75\x6C\x64\x20\x6E\x6F\x74\x20\x62\x65\x20\x76\x61\x6C\x69\x64\x61\x74\x65\x64\x21\x20\x50\x6C\x65\x61\x73\x65\x20\x63\x68\x65\x63\x6B\x20\x66\x69\x72\x65\x77\x61\x6C\x6C\x20\x73\x65\x74\x74\x69\x6E\x67\x73")};delete window["\x6C\x69\x63\x65\x6E\x73\x65"];$("\x23\x6C\x69\x63\x65\x6E\x73\x65\x50")["\x61\x74\x74\x72"]("\x63\x6C\x61\x73\x73","\x62\x74\x6E\x20\x62\x74\x6E\x2D\x73\x6D\x20\x62\x74\x6E\x2D\x70\x72\x69\x6D\x61\x72\x79\x2D\x6F\x75\x74\x6C\x69\x6E\x65")}})})}}
+		
+		</script>
+</body>
+</html>
