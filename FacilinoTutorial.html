@@ -46,7 +46,7 @@ document.addEventListener("DOMContentLoaded", function () {
 		new QWebChannel(qt.webChannelTransport, function (channel) { window.webHelper = channel.objects.webHelper;});
 		}
 		catch(e) {}
-		
+
 });
 </script>
 <script>
@@ -56,7 +56,7 @@ document.addEventListener("DOMContentLoaded", function () {
 			localStorage.setItem('processor', 'WEMOS D1R32 SHIELD');
 		window.roboblocksLanguage = localStorage.getItem("language");
 		window.roboblocksProcessor = localStorage.getItem("processor");
-		
+
 		function openFunction(bly) {
 			$.ajax({
 				type: "GET" ,
@@ -85,7 +85,7 @@ document.addEventListener("DOMContentLoaded", function () {
 			instructionPreview.style.width = (bbox.width+25) + 'px';
 			window.dispatchEvent(new Event('resize'));
 		}
-		
+
 		function injectInstruction1(block,blockDiv) {
 			var instructionPreview = document.getElementById(blockDiv);
 			var mainWorkspace = Blockly.inject(blockDiv, {readOnly:true, collapse: false});
@@ -101,7 +101,7 @@ document.addEventListener("DOMContentLoaded", function () {
 			instructionPreview.style.width = (bbox.width+55) + 'px';
 			window.dispatchEvent(new Event('resize'));
 		}
-		
+
 		function injectInstructionTooltip(block,blockDiv,tooltipDiv) {
 			var instructionPreview = document.getElementById(blockDiv);
 			var mainWorkspace = Blockly.inject(blockDiv, {readOnly:true, collapse: false});
@@ -118,7 +118,7 @@ document.addEventListener("DOMContentLoaded", function () {
 			instructionPreview.style.width = (bbox.width+25) + 'px';
 			window.dispatchEvent(new Event('resize'));
 		}
-		
+
 		function injectInstructionTooltip1(block,blockDiv,tooltipDiv) {
 			var instructionPreview = document.getElementById(blockDiv);
 			var mainWorkspace = Blockly.inject(blockDiv, {readOnly:true, collapse: false});
@@ -135,15 +135,15 @@ document.addEventListener("DOMContentLoaded", function () {
 			instructionPreview.style.width = (bbox.width+55) + 'px';
 			window.dispatchEvent(new Event('resize'));
 		}
-		
+
 		function injectExample(exercise,exampleDiv) {
-			var instructionPreview = document.getElementById(exampleDiv);
-			var mainWorkspace = Blockly.inject(exampleDiv, {readOnly:true, collapse: false});
+      var instructionPreview = document.getElementById(exampleDiv);
+      var mainWorkspace = Blockly.inject(exampleDiv, {readOnly:true, collapse: false});
 			openFunction('tutorial/exercises/'+exercise);
-			var bbox = mainWorkspace.svgBlockCanvas_.getBBox();
+      var bbox = mainWorkspace.svgBlockCanvas_.getBBox();
 			instructionPreview.style.height = (bbox.height+25)+ 'px';
-			instructionPreview.style.width = (bbox.width+25) + 'px';
-			window.dispatchEvent(new Event('resize'));
+      instructionPreview.style.width = (bbox.width+25) + 'px';
+      window.dispatchEvent(new Event('resize'));
 		}
 
 
@@ -171,7 +171,61 @@ document.addEventListener("DOMContentLoaded", function () {
 				injectExample(ex,el);
 			}
 		}
-		
+
+    function showHideBasic(el1,ex,el) {
+			var y = document.getElementById(el1);
+			if (y.style.display === "none") {
+				y.style.display = "block";
+				currentBasicSolutions=currentBasicSolutions+1;
+			} else {
+				y.style.display = "none";
+				currentBasicSolutions=currentBasicSolutions-1;
+			}
+			var solutions_basic = document.getElementById('solutions_basic');
+			if (currentBasicSolutions>0)
+      {
+				solutions_basic.style.display="block";
+      }
+			else
+				solutions_basic.style.display="none";
+			var x = document.getElementById(el);
+			if (y.style.display === "block"){
+				var parent = x.parentNode;
+				parent.removeChild(x);
+				var div = document.createElement("div");
+				div.setAttribute("id",el);
+				parent.appendChild(div);
+				injectExample(ex,el);
+        location.hash = "#solutions_basic";
+			}
+		}
+
+    function showHideIntermediate(el1,ex,el) {
+			var y = document.getElementById(el1);
+			if (y.style.display === "none") {
+				y.style.display = "block";
+				currentIntermediateSolutions=currentIntermediateSolutions+1;
+			} else {
+				y.style.display = "none";
+				currentIntermediateSolutions=currentIntermediateSolutions-1;
+			}
+			var solutions_intermediate = document.getElementById('solutions_intermediate');
+			if (currentIntermediateSolutions>0)
+				solutions_intermediate.style.display="block";
+			else
+				solutions_intermediate.style.display="none";
+			var x = document.getElementById(el);
+			if (y.style.display === "block"){
+				var parent = x.parentNode;
+				parent.removeChild(x);
+				var div = document.createElement("div");
+				div.setAttribute("id",el);
+				parent.appendChild(div);
+				injectExample(ex,el);
+        location.hash = "#solutions_intermediate";
+			}
+		}
+
 		function HideButton(el)
 		{
 			if (localStorage.getItem("solutions")===undefined || localStorage.getItem("solutions")===null)
@@ -180,14 +234,14 @@ document.addEventListener("DOMContentLoaded", function () {
 				y.style.display = "none";
 			}
 		}
-		
+
 		function onPageClicked(page)
 		{
 			window.open(page, '_blank');
 			if (window.webHelper.pageClicked !== undefined)
 				window.webHelper.pageClicked(page);
 		}
-		
+
 		function onFileDownloaded(file)
 		{
 			//window.open('tutorial/'+file, '_blank');
@@ -200,14 +254,14 @@ document.addEventListener("DOMContentLoaded", function () {
 			if (window.webHelper.fileDownloaded !== undefined)
 				window.webHelper.fileDownloaded(file);
 		}
-		
-		window.FacilinoLanguage = window.roboblocksLanguage; 
+
+		window.FacilinoLanguage = window.roboblocksLanguage;
 		window.FacilinoProcessor = window.roboblocksProcessor;
 		$.ajax({url: 'lang/facilino_'+window.roboblocksLanguage+'.json',dataType: "text",async: false,}).done(function(text) {window.langKeys = $.parseJSON(text).langs[window.roboblocksLanguage].keys;});
 		$.ajax({url: 'lang/facilino_en-GB.json',dataType: "text",async: false,}).done(function(text) {window.langKeysEng = $.parseJSON(text).langs['en-GB'].keys;});
 		RoboBlocks.load({ zoom: 1 });
 		Facilino.load({ zoom: 1});
-		
+
 </script>
 	<div id="menu"></div>
 <script>$(function(){var file='tutorial/'+ window.roboblocksLanguage+'/menu.html'; $.ajax({url:file,async:false,type:"HEAD",error: function(){file='tutorial/en-GB/menu.html';},success: function(){}}); $('#menu').load(file);});</script>
@@ -236,7 +290,7 @@ document.addEventListener("DOMContentLoaded", function () {
   <script src="tutorial/assets/touchswipe/jquery.touch-swipe.min.js"></script>
   <script src="tutorial/assets/smoothscroll/smooth-scroll.js"></script>
   <script src="tutorial/assets/theme/js/script.js"></script>
-  
-  
+
+
 </body>
 </html>
