@@ -42,7 +42,7 @@
     <div class="container">
         <div class="media-container-row">
             <div class="mbr-text col-12 col-md-8 mbr-fonts-style display-7">
-                <blockquote><strong>Required material. </strong><ul><li>Arduino Uno (and compatible) or Wemos D1R2/D1R32.</li><li>A Multisensor Shield.</li></ul></blockquote>
+                <blockquote><strong>Required material. </strong><ul><li>An Arduino or ESP board, i.e.: <a onclick="onPageClicked('https://roboticafacil.es/en/prod/arduino-uno-r3/');" style="color:#1ec6c6" target="_blank">Arduino Uno</a>, <a onclick="onPageClicked('https://roboticafacil.es/en/prod/arduino-nano-v3-0-compatible/');" style="color:#1ec6c6" target="_blank">Arduino Nano</a>, <a style="color:#1ec6c6" target="_blank" onclick="onPageClicked('https://roboticafacil.es/prod/wemos-d1-r2/');">Wemos D1 R2</a> or <a style="color:#1ec6c6" target="_blank" onclick="onPageClicked('https://roboticafacil.es/en/prod/wemos-esp32-d1-r32/');">Wemos D1 R32</a>, <a onclick="onPageClicked('https://roboticafacil.es/prod/nodemcu-v3-esp8266-wifi/');" style="color:#1ec6c6" target="_blank">NodeMCU</a>, etc...</li><li>A <a onclick="onPageClicked('https://roboticafacil.es/en/prod/multisensor-shield/');" style="color:#1ec6c6" target="_blank">Multisensor shield</a> or two LEDs (red and blue connected to pins D12 and D13), a potentiometer connected to A0 and a <a onclick="onPageClicked('https://roboticafacil.es/en/prod/ky-006-buzzer/');" style="color:#1ec6c6" target="_blank">passive buzzer</a> connected to D5.</li></ul></blockquote>
             </div>
         </div>
     </div>
@@ -225,10 +225,14 @@
 					<li><div><span id='tooltipInstruction5'></span></div><div  id='blocklyInstruction5'></div><script>injectInstructionTooltip('serial_available','blocklyInstruction5','tooltipInstruction5');</script></li>
 					<li><div><span id='tooltipInstruction6'></span></div><div  id='blocklyInstruction6'></div><script>injectInstructionTooltip('serial_parseint','blocklyInstruction6','tooltipInstruction6');</script></li>
 					<li><div><span id='tooltipInstruction7'></span></div><div  id='blocklyInstruction7'></div><script>injectInstructionTooltip('variables_local','blocklyInstruction7','tooltipInstruction7');</script></li>
+					<li><div><span id='tooltipInstruction7a'></span></div><div  id='blocklyInstruction7a'></div><script>injectInstructionTooltip('variables_local_type','blocklyInstruction7a','tooltipInstruction7a');</script></li>
 					<li><div><span id='tooltipInstruction8'></span></div><div  id='blocklyInstruction8'></div><script>injectInstructionTooltip1('variables_get','blocklyInstruction8','tooltipInstruction8');</script></li>
+					<li><div><span id='tooltipInstruction8a'></span></div><div  id='blocklyInstruction8a'></div><script>injectInstructionTooltip1('variables_set','blocklyInstruction8a','tooltipInstruction8a');</script></li>
 					<li><div><span id='tooltipInstruction9'></span></div><div  id='blocklyInstruction9'></div><script>injectInstructionTooltip1('controls_for','blocklyInstruction9','tooltipInstruction9');</script></li>
+					<li><div><span id='tooltipInstruction9a'></span></div><div  id='blocklyInstruction9a'></div><script>injectInstructionTooltip1('controls_repeat','blocklyInstruction9a','tooltipInstruction9a');</script></li>
 					<li><div><span id='tooltipInstruction10'></span></div><div  id='blocklyInstruction10'></div><script>injectInstructionTooltip('inout_digital_write','blocklyInstruction10','tooltipInstruction10');</script></li>
 					<li><div><span id='tooltipInstruction11'></span></div><div  id='blocklyInstruction11'></div><script>injectInstructionTooltip('pin_digital','blocklyInstruction11','tooltipInstruction11');</script></li>
+					<li><div><span id='tooltipInstruction11a'></span></div><div  id='blocklyInstruction11a'></div><script>injectInstructionTooltip('math_arithmetic','blocklyInstruction11a','tooltipInstruction11a');</script></li>
 					<li><div><span id='tooltipInstruction12'></span></div><div  id='blocklyInstruction12'></div><script>injectInstructionTooltip('text_append','blocklyInstruction12','tooltipInstruction12');</script></li>
 					<li><div><span id='tooltipInstruction13'></span></div><div  id='blocklyInstruction13'></div><script>injectInstructionTooltip('text_length','blocklyInstruction13','tooltipInstruction13');</script></li>
 					<li><div><span id='tooltipInstruction14'></span></div><div  id='blocklyInstruction14'></div><script>injectInstructionTooltip('text_charAt','blocklyInstruction14','tooltipInstruction14');</script></li>
@@ -263,6 +267,9 @@
 
 					<li><strong>Sum two numbers</strong><p>Implement a function that takes two input arguments and returns the sum of them. Parse two integer numbers received from the serial monitor and call the function to perform the sum. Print back on the serial monitor the result of the sum.</p><strong>Hint: </strong><p><i>Create a function with two input arguments of type 'int' and return the sum of them in 'return' section. When you introduce two numbers, you may notice that the program eventually returns 0 even if you don't type anything. This is because is receiving additional characters and interpreting them as 0.</i></p><button  type="button" onclick="showHideBasic('solutions3b','sum.bly','exercise3b');" class="btn-primary display-4"><span class="mbri-preview mbr-iconfont mbr-iconfont-btn"></span></button>
 					<a onclick="onFileDownloaded('sum.bly');">
+					<button  type="button" class="btn-primary display-4"><span class="mbri-save mbr-iconfont mbr-iconfont-btn"></span></button></a></li>
+					<li><strong>Mean analog read</strong><p>Implement a function that performs 30 consecutive measurements of the analog input A0 corresponding to the potentiometer. The function must return the mean value (output argument is a 'float'). Call the function in the main loop to plot the mean value on the Arduino Plotter.</p><strong>Hint: </strong><p><i>Create a function without input arguments and a floating point output argument. Inside the function repeat 30 times the measurement and accumulate the readings on a 'float' variable. After that, you can return the resulting value divided by 30.</i></p><button  type="button" onclick="showHideBasic('solutions4b','mean_analogA0_wemosD1R32.bly','exercise4b');" class="btn-primary display-4"><span class="mbri-preview mbr-iconfont mbr-iconfont-btn"></span></button>
+					<a onclick="onFileDownloaded('mean_analogA0_wemosD1R32.bly');">
 					<button  type="button" class="btn-primary display-4"><span class="mbri-save mbr-iconfont mbr-iconfont-btn"></span></button></a></li>
                 </ol>
             </div>
@@ -311,6 +318,17 @@
 			</div>
 		</div>
 		<div class="media-container-row"><div id='exercise3b'></div></div>
+	</div>
+</section>
+
+<section class="mbr-section article content1 cid-qYh5PFH3xX" id="solutions4b" style="display:none">
+	<div class="container">
+		<div class="media-container-row">
+			<div class="mbr-text col-12 col-md-8 mbr-fonts-style display-7">
+				<strong>Basic Exercise 4</strong>
+			</div>
+		</div>
+		<div class="media-container-row"><div id='exercise4b'></div></div>
 	</div>
 </section>
 
