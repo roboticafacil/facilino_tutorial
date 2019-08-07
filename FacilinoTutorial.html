@@ -173,21 +173,16 @@ document.addEventListener("DOMContentLoaded", function () {
 		}
 
     function showHideBasic(el1,ex,el) {
-			var y = document.getElementById(el1);
-			if (y.style.display === "none") {
-				y.style.display = "block";
-				currentBasicSolutions=currentBasicSolutions+1;
-			} else {
-				y.style.display = "none";
-				currentBasicSolutions=currentBasicSolutions-1;
-			}
-			var solutions_basic = document.getElementById('solutions_basic');
-			if (currentBasicSolutions>0)
+      var solutions_basic = document.getElementById('solutions_basic');
+      solutions_basic.style.display="block";
+      if (currentBasicSolutions>0)
       {
-				solutions_basic.style.display="block";
+        var x = document.getElementById('solutions'+currentBasicSolutions+'b');
+        x.style.display = "none";
       }
-			else
-				solutions_basic.style.display="none";
+      currentBasicSolutions=el1.substring(el1.length-2,el1.length-1);
+      var y = document.getElementById(el1);
+			y.style.display = "block";
 			var x = document.getElementById(el);
 			if (y.style.display === "block"){
 				var parent = x.parentNode;
@@ -201,19 +196,16 @@ document.addEventListener("DOMContentLoaded", function () {
 		}
 
     function showHideIntermediate(el1,ex,el) {
-			var y = document.getElementById(el1);
-			if (y.style.display === "none") {
-				y.style.display = "block";
-				currentIntermediateSolutions=currentIntermediateSolutions+1;
-			} else {
-				y.style.display = "none";
-				currentIntermediateSolutions=currentIntermediateSolutions-1;
-			}
-			var solutions_intermediate = document.getElementById('solutions_intermediate');
-			if (currentIntermediateSolutions>0)
-				solutions_intermediate.style.display="block";
-			else
-				solutions_intermediate.style.display="none";
+      var solutions_intermediate = document.getElementById('solutions_intermediate');
+      solutions_intermediate.style.display="block";
+      if (currentIntermediateSolutions>0)
+      {
+        var x = document.getElementById('solutions'+currentIntermediateSolutions+'i');
+        x.style.display = "none";
+      }
+      currentIntermediateSolutions=el1.substring(el1.length-2,el1.length-1);
+      var y = document.getElementById(el1);
+			y.style.display = "block";
 			var x = document.getElementById(el);
 			if (y.style.display === "block"){
 				var parent = x.parentNode;
