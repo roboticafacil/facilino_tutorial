@@ -84,7 +84,7 @@
                 <ol id="workedInstructions">
 					<li><div><span id='tooltipInstruction7'></span></div><div  id='blocklyInstruction7'></div><script>injectInstructionTooltip('variables_local','blocklyInstruction7','tooltipInstruction7');</script></li>
 					<li><div><span id='tooltipInstruction8'></span></div><div  id='blocklyInstruction8'></div><script>injectInstructionTooltip1('variables_get','blocklyInstruction8','tooltipInstruction8');</script></li>
-					<li><div><span id='tooltipInstruction9'></span></div><div  id='blocklyInstruction9'></div><script>injectInstructionTooltip('variables_set','blocklyInstruction9','tooltipInstruction9');</script></li>
+					<li><div><span id='tooltipInstruction9'></span></div><div  id='blocklyInstruction9'></div><script>injectInstructionTooltip1('variables_set','blocklyInstruction9','tooltipInstruction9');</script></li>
 					<li><div><span id='tooltipInstruction10'></span></div><div  id='blocklyInstruction10'></div><script>injectInstructionTooltip('text_join','blocklyInstruction10','tooltipInstruction10');</script></li>
 					<li><div><span id='tooltipInstruction11'></span></div><div  id='blocklyInstruction11'></div><script>injectInstructionTooltip('zum_piezo_buzzerav','blocklyInstruction11','tooltipInstruction11');</script></li>
 				  </ol>
@@ -108,10 +108,12 @@
         <div class="media-container-row">
             <div class="mbr-text counter-container col-12 col-md-8 mbr-fonts-style display-7">
                 <ol>
-                    <li><strong>Repeating a sentence</strong><p>Old teaching school used to punish you by repeating the same sentence many times on a blackboard. Now, times are different and you can use your Arduino to print it as many times as you want. Print on the console 'I will not burp in class' 100 times.</p><p><strong>Hint: </strong></p><p><i> USe the repeat instruction for that.</i></p><button  type="button" onclick="showHideBasic('solutions1b','repeat_sentence.bly','exercise1b');" class="btn-primary display-4"><span class="mbri-preview mbr-iconfont mbr-iconfont-btn"></span></button>
+                    <li><strong>Repeating a sentence</strong><p>Old teaching school used to punish you by repeating the same sentence many times on a blackboard. Now, times are different and you can use your Arduino to print it as many times as you want. Print on the console 'I will not burp in class' 100 times.</p><p><strong>Hint: </strong></p><p><i> USe the repeat instruction for that.</i></p><button  type="button" onclick="showHideBasic('solutions1b','repeat_sentence.bly','exercise1b');" class="btn-primary display-4"><span class="mbri-extension mbr-iconfont mbr-iconfont-btn"></span></button>
+										&nbsp;<button type="button"  class="btn-primary display-4" onclick="showHideBasicCode('solutions1b','repeat_sentence.bly','exercise1b','exercise1bc');"><span class="mbri-align-justify mbr-iconfont mbr-iconfont-btn"></span></button>
 					<a onclick="onFileDownloaded('repeat_sentence.bly');">
 					<button  type="button" class="btn-primary display-4"><span class="mbri-save mbr-iconfont mbr-iconfont-btn"></span></button></a></li>
-					<li><strong>Repeating a numbered sentence</strong></p>Now, do the same as before, but the sentence must numbered at the beginning starting from 1.</p><strong>Hint: </strong><p><i>Use a variable and increase its value inside the loop. You can use the 'create text with' instruction to join the number and the sentence.</i></p><button  type="button" onclick="showHideBasic('solutions2b','repeat_numbered_sentence.bly','exercise2b');" class="btn-primary display-4"><span class="mbri-preview mbr-iconfont mbr-iconfont-btn"></span></button>
+					<li><strong>Repeating a numbered sentence</strong></p>Now, do the same as before, but the sentence must numbered at the beginning starting from 1.</p><strong>Hint: </strong><p><i>Use a variable and increase its value inside the loop. You can use the 'create text with' instruction to join the number and the sentence.</i></p><button  type="button" onclick="showHideBasic('solutions2b','repeat_numbered_sentence.bly','exercise2b');" class="btn-primary display-4"><span class="mbri-extension mbr-iconfont mbr-iconfont-btn"></span></button>
+					&nbsp;<button type="button"  class="btn-primary display-4" onclick="showHideBasicCode('solutions2b','repeat_numbered_sentence.bly','exercise2b','exercise2bc');"><span class="mbri-align-justify mbr-iconfont mbr-iconfont-btn"></span></button>
 					<a onclick="onFileDownloaded('repeat_numbered_sentence.bly');">
 					<button  type="button" class="btn-primary display-4"><span class="mbri-save mbr-iconfont mbr-iconfont-btn"></span></button></a></li>
                 </ol>
@@ -137,7 +139,7 @@
 				<strong>Basic Exercise 1</strong>
 			</div>
 		</div>
-		<div class="media-container-row"><div id='exercise1b'></div></div>
+		<div class="media-container-row"><div id='exercise1b'></div><div id='exercise1bc'></div></div>
 	</div>
 </section>
 
@@ -148,7 +150,7 @@
 				<strong>Basic Exercise 2</strong>
 			</div>
 		</div>
-		<div class="media-container-row"><div id='exercise2b'></div></div>
+		<div class="media-container-row"><div id='exercise2b'></div><div id='exercise2bc'></div></div>
 	</div>
 </section>
 
@@ -167,17 +169,18 @@
         <div class="media-container-row">
             <div class="mbr-text counter-container col-12 col-md-8 mbr-fonts-style display-7">
                 <ol>
-                    <li><strong>Hysteresis</strong><p>Implement a hysteresis effect to 'binarize' analog readings of potentiometer A0 position. If the value is higher than 2000 then the LED D12 must be on, while if the value is below 800, LED D12 must be off. Otherwise, the LED state doesn't change.</p><strong>Hint: </strong><p><i> Define a global boolean variable to determine the state of the LED D12 (HIGH or LOW). Then if the value of the potentiometer and the state of LED D12 is LOW then turn LED on and set the state to HIGH. Implement the same logic for the other case, but with opposite logic. That is if the value is below 800 and LED state is HIGH then turn off LED and set state to LOW.</i></p><button  type="button" onclick="showHideIntermediate('solutions1i','hysteresis_wemosD1R32.bly','exercise1i');" class="btn-primary display-4"><span class="mbri-preview mbr-iconfont mbr-iconfont-btn"></span></button>
-					<a onclick="onFileDownloaded('hysteresis_wemosD1R32.bly');">
+                    <li><strong>Hysteresis</strong><p>Implement a hysteresis effect to 'binarize' analog readings of potentiometer A0 position. If the value is higher than 2000 (Wemos D1 R32) or 500 (Arduino Uno) then the LED D12 must be on, while if the value is below 800 (Wemos D1 R32) or 200 (Arduino Uno), LED D12 must be off. Otherwise, the LED state doesn't change.</p><strong>Hint: </strong><p><i> Define a global boolean variable to determine the state of the LED D12 (HIGH or LOW). Then if the value of the potentiometer and the state of LED D12 is LOW then turn LED on and set the state to HIGH. Implement the same logic for the other case, but with opposite logic. That is if the value is below 800 (Wemos D1 R32) or 200 (Arduino Uno) and LED state is HIGH then turn off LED and set state to LOW.</i></p><button  type="button" onclick="showHideIntermediate('solutions1i','hysteresis'+window.board+'.bly','exercise1i');" class="btn-primary display-4"><span class="mbri-extension mbr-iconfont mbr-iconfont-btn"></span></button>
+										&nbsp;<button type="button"  class="btn-primary display-4" onclick="showHideIntermediateCode('solutions1i','hysteresis'+window.board+'.bly','exercise1i','exercise1ic');"><span class="mbri-align-justify mbr-iconfont mbr-iconfont-btn"></span></button>
+					<a onclick="onFileDownloaded('hysteresis'+window.board+'.bly');">
 					<button  type="button" class="btn-primary display-4"><span class="mbri-save mbr-iconfont mbr-iconfont-btn"></span></button></a></li>
 
-					<li><strong>Wait until and break loop</strong><p>At start up, wait for push-button D2 being pushed. Afterwards, start blinking LED D12 at a 1Hz frequency. In order to stop blinking use push-button D3 and repeat the sequence (wait-blink).</p><strong>Hint: </strong><p><i>Use the 'wait until' instruction with push-button begin LOW in the main loop. Then, use 'While' loop to implement the blinking routine. In order to stop blinking use the 'break out of loop' instruction if push-button D3 is LOW.</i></p><button  type="button" onclick="showHideIntermediate('solutions2i','wait_break_wemosD1R32.bly','exercise2i');" class="btn-primary display-4"><span class="mbri-preview mbr-iconfont mbr-iconfont-btn"></span></button>
-					<a onclick="onFileDownloaded('wait_break_wemosD1R32.bly');">
+					<li><strong>Wait until and break loop</strong><p>At start up, wait for push-button D2 being pushed. Afterwards, start blinking LED D12 at a 1Hz frequency. In order to stop blinking use push-button D3 and repeat the sequence (wait-blink).</p><strong>Hint: </strong><p><i>Use the 'wait until' instruction with push-button begin LOW in the main loop. Then, use 'While' loop to implement the blinking routine. In order to stop blinking use the 'break out of loop' instruction if push-button D3 is LOW.</i></p><button  type="button" onclick="showHideIntermediate('solutions2i','wait_break'+window.board+'.bly','exercise2i');" class="btn-primary display-4"><span class="mbri-extension mbr-iconfont mbr-iconfont-btn"></span></button>
+						&nbsp;<button type="button"  class="btn-primary display-4" onclick="showHideIntermediateCode('solutions2i','wait_break'+window.board+'.bly','exercise2i','exercise2ic');"><span class="mbri-align-justify mbr-iconfont mbr-iconfont-btn"></span></button>
+					<a onclick="onFileDownloaded('wait_break'+window.board+'.bly');">
 					<button  type="button" class="btn-primary display-4"><span class="mbri-save mbr-iconfont mbr-iconfont-btn"></span></button></a></li>
-					<li><strong>Alarm effect</strong><p>Generate an alarm effect with the buzzer (pin D5). The alarm effect consists of two varying tones. The first one generates increasing frequencies that will exponentially increase 3\% starting from 1318.51Hz to 1567.98Hz with a duration of 22ms. The second one generates increasing frequencies that will exponentially increase 4\% starting from 1318.51Hz to 2349.32Hz with a duration of 12ms.</p><strong>Hint: </strong><p><i>Use 'While' instructions to generate the exponentially increasing frequencies. Initialize the frequency to 1318.51Hz and repeat the 'Advanced Buzzer' instruction until the maximum frequency is reached. Set the current frequency and tone duration as indicated.</i></p><button  type="button" onclick="showHideIntermediate('solutions3i','alarm_effect_wemosD1R32.bly','exercise3i');" class="btn-primary display-4"><span class="mbri-preview mbr-iconfont mbr-iconfont-btn"></span></button>
-					<a onclick="onFileDownloaded('alarm_effect_wemosD1R32.bly');">
+					<li><strong>Alarm effect</strong><p>Generate an alarm effect with the buzzer (pin D5). The alarm effect consists of two varying tones. The first one generates increasing frequencies that will exponentially increase 3% starting from 1318.51Hz to 1567.98Hz with a duration of 22ms. The second one generates increasing frequencies that will exponentially increase 4% starting from 1318.51Hz to 2349.32Hz with a duration of 12ms.</p><strong>Hint: </strong><p><i>Use 'While' instructions to generate the exponentially increasing frequencies. Initialize the frequency to 1318.51Hz and repeat the 'Advanced Buzzer' instruction until the maximum frequency is reached. Set the current frequency and tone duration as indicated.</i></p><button  type="button" onclick="showHideIntermediate('solutions3i','alarm_effect'+window.board+'.bly','exercise3i');" class="btn-primary display-4"><span class="mbri-extension mbr-iconfont mbr-iconfont-btn"></span></button>
+					<a onclick="onFileDownloaded('alarm_effect'+window.board+'.bly');">
 					<button  type="button" class="btn-primary display-4"><span class="mbri-save mbr-iconfont mbr-iconfont-btn"></span></button></a></li>
-
                 </ol>
             </div>
         </div>
@@ -202,7 +205,7 @@
 					<strong>Intermediate Exercise 1</strong>
 				</div>
 			</div>
-			<div class="media-container-row"><div id='exercise1i'></div></div>
+			<div class="media-container-row"><div id='exercise1i'></div><div id='exercise1ic'></div></div>
 		</div>
 	</section>
 
@@ -213,7 +216,7 @@
 					<strong>Intermediate Exercise 2</strong>
 				</div>
 			</div>
-			<div class="media-container-row"><div id='exercise2i'></div></div>
+			<div class="media-container-row"><div id='exercise2i'></div><div id='exercise2ic'></div></div>
 		</div>
 	</section>
 
@@ -224,7 +227,7 @@
 					<strong>Intermediate Exercise 3</strong>
 				</div>
 			</div>
-			<div class="media-container-row"><div id='exercise3i'></div></div>
+			<div class="media-container-row"><div id='exercise3i'></div><div id='exercise3ic'></div></div>
 		</div>
 	</section>
 

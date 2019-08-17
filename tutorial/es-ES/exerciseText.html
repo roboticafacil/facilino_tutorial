@@ -84,14 +84,17 @@
         <div class="media-container-row">
             <div class="mbr-text counter-container col-12 col-md-8 mbr-fonts-style display-7">
                 <ol>
-                  <li><strong>Unir Texto</strong><p>Usa la instrucción 'Crea texto con' para unir texto con números para imprimiar el valor del potenciómetro conectado al pin A0 con un mensaje justo antes del valor, por ejmplo: 'The value of the potentiometer is '.</p><strong>Pista: </strong><p><i>Recuerda introducir un espacio al final del texto para que el texto y el número estén separados.</i></p><button  type="button" onclick="showHideBasic('solutions1b','text_join_wemosD1R32.bly','exercise1b');" class="btn-primary display-4"><span class="mbri-preview mbr-iconfont mbr-iconfont-btn"></span></button>
-  					<a onclick="onFileDownloaded('text_join_wemosD1R32.bly');">
+                  <li><strong>Unir Texto</strong><p>Usa la instrucción 'Crea texto con' para unir texto con números para imprimiar el valor del potenciómetro conectado al pin A0 con un mensaje justo antes del valor, por ejmplo: 'The value of the potentiometer is '.</p><strong>Pista: </strong><p><i>Recuerda introducir un espacio al final del texto para que el texto y el número estén separados.</i></p><button  type="button" onclick="showHideBasic('solutions1b','text_join'+window.board+'.bly','exercise1b');" class="btn-primary display-4"><span class="mbri-preview mbr-iconfont mbr-iconfont-btn"></span></button>
+  					&nbsp;<button type="button"  class="btn-primary display-4" onclick="showHideBasicCode('solutions1b','text_join'+window.board+'.bly','exercise1b','exercise1bc');"><span class="mbri-align-justify mbr-iconfont mbr-iconfont-btn"></span></button>
+						<a onclick="onFileDownloaded('text_join'+window.board+'.bly');">
   					<button  type="button" class="btn-primary display-4"><span class="mbri-save mbr-iconfont mbr-iconfont-btn"></span></button></a></li>
               <li><strong>Deletréalo</strong><p>Deletrea cualquier palabra recibida por el monitor serie. Para deletrear una palabra utiliza el tabulador para separar las letras.</p><strong>Pista: </strong><p><i>Usa la instrucción para obtener un caracter en una posición indicada. En un bucle 'Mientras', lee y obtén todos los caracteres de la cadena de texto e imprímelos (sin salto de línea) junto con el tabulador. De hecho, la instrucción de imprimir sin salto de línea no imprime hasta que se recibe el salto de línea, sólo envía los caracteres por el puerto serie, por lo tanto, una vez se ha deletreado toda la palabra, utiliza la instrucción de imprimir con salto de línea, pero con una cadena de texto vacía, para que imprima el texto</i>.</p><button  type="button" onclick="showHideBasic('solutions2b','spell_it_out.bly','exercise2b');" class="btn-primary display-4"><span class="mbri-preview mbr-iconfont mbr-iconfont-btn"></span></button>
-      <a onclick="onFileDownloaded('spell_it_out.bly');">
+      &nbsp;<button type="button"  class="btn-primary display-4" onclick="showHideBasicCode('solutions2b','spell_it_out.bly','exercise2b','exercise2bc');"><span class="mbri-align-justify mbr-iconfont mbr-iconfont-btn"></span></button>
+			<a onclick="onFileDownloaded('spell_it_out.bly');">
       <button  type="button" class="btn-primary display-4"><span class="mbri-save mbr-iconfont mbr-iconfont-btn"></span></button></a></li>
-									<li><strong>Minúsculas y mayúsculas</strong><p>Lee una cadena de texto por el puerto serie. Si el pulsador conectado al pin D2 está BAJO, entonces imprime el texto leido en minúsculas, si el pulsador conectado al pin D3 está BAJO entonces imprime el texto en mayúsculas, de lo contrario, deja el texto tal y como está.</p><strong>Pista: </strong><p><i>Usa las instrucciones para establecer un texto en 'minúscula' y 'mayúscula' para modificar la cadena de texto leía por el puerto serie.</i></p><button  type="button" onclick="showHideBasic('solutions3b','lower_upper_case_wemosD1R32.bly','exercise3b');" class="btn-primary display-4"><span class="mbri-preview mbr-iconfont mbr-iconfont-btn"></span></button>
-				<a onclick="onFileDownloaded('lower_upper_case_wemosD1R32.bly');">
+									<li><strong>Minúsculas y mayúsculas</strong><p>Lee una cadena de texto por el puerto serie. Si el pulsador conectado al pin D2 está BAJO, entonces imprime el texto leido en minúsculas, si el pulsador conectado al pin D3 está BAJO entonces imprime el texto en mayúsculas, de lo contrario, deja el texto tal y como está.</p><strong>Pista: </strong><p><i>Usa las instrucciones para establecer un texto en 'minúscula' y 'mayúscula' para modificar la cadena de texto leía por el puerto serie.</i></p><button  type="button" onclick="showHideBasic('solutions3b','lower_upper_case'+window.board+'.bly','exercise3b');" class="btn-primary display-4"><span class="mbri-preview mbr-iconfont mbr-iconfont-btn"></span></button>
+									&nbsp;<button type="button"  class="btn-primary display-4" onclick="showHideBasicCode('solutions3b','lower_upper_case'+window.board+'.bly','exercise3b','exercise3bc');"><span class="mbri-align-justify mbr-iconfont mbr-iconfont-btn"></span></button>
+				<a onclick="onFileDownloaded('lower_upper_case'+window.board+'.bly');">
 				<button  type="button" class="btn-primary display-4"><span class="mbri-save mbr-iconfont mbr-iconfont-btn"></span></button></a></li>
                 </ol>
             </div>
@@ -116,7 +119,7 @@
 				<strong>Ejercicio Básico 1</strong>
 			</div>
 		</div>
-		<div class="media-container-row"><div id='exercise1b'></div></div>
+		<div class="media-container-row"><div id='exercise1b'></div><div id='exercise1bc'></div></div>
 	</div>
 </section>
 
@@ -127,7 +130,7 @@
 				<strong>Ejercicio Básico 2</strong>
 			</div>
 		</div>
-		<div class="media-container-row"><div id='exercise2b'></div></div>
+		<div class="media-container-row"><div id='exercise2b'></div><div id='exercise2bc'></div></div>
 	</div>
 </section>
 
@@ -138,7 +141,7 @@
 				<strong>Ejercicio Básico 3</strong>
 			</div>
 		</div>
-		<div class="media-container-row"><div id='exercise3b'></div></div>
+		<div class="media-container-row"><div id='exercise3b'></div><div id='exercise3bc'></div></div>
 	</div>
 </section>
 
@@ -158,12 +161,16 @@
             <div class="mbr-text counter-container col-12 col-md-8 mbr-fonts-style display-7">
                 <ol>
                     <li><strong>Cadena de texto al revés</strong><p>Crea un programa que lea un mensaje, una cadena de texto, por el monitor serie e imprima el mensaje al revés.</p><strong>Pista: </strong><p><i>Primero lee un mensaje por el puerto serie usando la instrucción </i>'leer cadena de texto'<i> (comprueba la disponibilidad de caracteres en el puerto serie, como viene siendo habitual). Después, en un bucle </i>Cuenta con<i>, itera con cada uno de los caracteres de la cadena de texto del mensaje en orden inverso (desde n-1 hasta 0, siendo n la longitud de la cadena de texto del mensaje) y añade cada uno de los caracteres al final de una variable del tipo texto, de forma que después del bucle </i>Cuenta con<i>, tendrás el mensaje de texto al revés.</i></p><button  type="button" onclick="showHideIntermediate('solutions1i','reverse_string.bly','exercise1i');" class="btn-primary display-4"><span class="mbri-preview mbr-iconfont mbr-iconfont-btn"></span></button>
+											&nbsp;<button type="button"  class="btn-primary display-4" onclick="showHideIntermediateCode('solutions1i','reverse_string.bly','exercise1i','exercise1ic');"><span class="mbri-align-justify mbr-iconfont mbr-iconfont-btn"></span></button>
 					<a onclick="onFileDownloaded('reverse_string.bly');">
 					<button  type="button" class="btn-primary display-4"><span class="mbri-save mbr-iconfont mbr-iconfont-btn"></span></button></a></li>
 					<li><strong>Número de palabras</strong><p>Crea un programa que real una cadena de texto por el monitor serie y cuente el número de palabras separadas por espacios (imprime un mensaje con "Number of words: xxx", siendo xxx el número de palabras).</p><strong>Pista: </strong><p><i>Implementa un bucle 'Mientras' y comprueba que la longitud del mensaje es mayor que  0. En el bucle, busca en qué posición aparece por primera vez un espacio y almacena el resultado en la varaible "new_pos". Comprueba que la diferencia entre la nueva posición del espacio es mayor que la anterior (con una variable 'pos' que se inicializa en 0). En caso de que sea cierto, aumenta el contador de palabras. Luego, recorta el mensaje original de forma que nos quedamos con la sub-cadena de texto que va desde el caracter 'new_pos+1' hasta el final, es decir, 'n-1', being 'n' la longitud actual del mensaje. Cuando salga del bucle 'Mientras' imprime el mensaje con las palabras contadas utilizando la instrucción 'Crea texto con' para unir un texto preliminar con el número de palabras contadas</i>.</p><button  type="button" onclick="showHideIntermediate('solutions2i','num_words.bly','exercise2i');" class="btn-primary display-4"><span class="mbri-preview mbr-iconfont mbr-iconfont-btn"></span></button>
+					&nbsp;<button type="button"  class="btn-primary display-4" onclick="showHideIntermediateCode('solutions2i','num_words.bly','exercise2i','exercise2ic');"><span class="mbri-align-justify mbr-iconfont mbr-iconfont-btn"></span></button>
 					<a onclick="onFileDownloaded('num_words.bly');">
 					<button  type="button" class="btn-primary display-4"><span class="mbri-save mbr-iconfont mbr-iconfont-btn"></span></button></a></li>
 					<li><strong>Buscando Texto</strong><p>Crea un programa que haga parpadear al LED rojo conectado al pin D12 cada vez que el usuario envía un mensaje que incluya la palabra 'Facilino' y haga parpadear al LED azul conectado al pin D13 cada vez que incluya la palabra 'Arduino'.</p><strong>Pista: </strong><p><i>Usa la instrucción 'Contiene...expresión' de la categoría de texto para determinar si el mensaje contiene o no una palabra determinada</i>.</p><button  type="button" onclick="showHideIntermediate('solutions3i','searching_text.bly','exercise3i');" class="btn-primary display-4"><span class="mbri-preview mbr-iconfont mbr-iconfont-btn"></span></button>
+						&nbsp;<button type="button"  class="btn-primary display-4" onclick="showHideIntermediateCode('solutions3i','searching_text.bly','exercise3i','exercise3ic');"><span class="mbri-align-justify mbr-iconfont mbr-iconfont-btn"></span></button>
+						<a onclick="onFileDownloaded('searching_text.bly');">
 					<a onclick="onFileDownloaded('searching_text.bly');">
 					<button  type="button" class="btn-primary display-4"><span class="mbri-save mbr-iconfont mbr-iconfont-btn"></span></button></a></li>
 				</ol>
@@ -189,7 +196,7 @@
 					<strong>Ejercicio Intermedio 1</strong>
 				</div>
 			</div>
-			<div class="media-container-row"><div id='exercise1i'></div></div>
+			<div class="media-container-row"><div id='exercise1i'></div><div id='exercise1ic'></div></div>
 		</div>
 	</section>
 
@@ -200,7 +207,7 @@
 					<strong>Ejercicio Intermedio 2</strong>
 				</div>
 			</div>
-			<div class="media-container-row"><div id='exercise2i'></div></div>
+			<div class="media-container-row"><div id='exercise2i'></div><div id='exercise2ic'></div></div>
 		</div>
 	</section>
 
@@ -211,7 +218,7 @@
 					<strong>Ejercicio Intermedio 3</strong>
 				</div>
 			</div>
-			<div class="media-container-row"><div id='exercise3i'></div></div>
+			<div class="media-container-row"><div id='exercise3i'></div><div id='exercise3ic'></div></div>
 		</div>
 	</section>
 

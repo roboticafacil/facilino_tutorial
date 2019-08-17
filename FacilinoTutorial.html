@@ -56,6 +56,17 @@ document.addEventListener("DOMContentLoaded", function () {
 			localStorage.setItem('processor', 'WEMOS D1R32 SHIELD');
 		window.roboblocksLanguage = localStorage.getItem("language");
 		window.roboblocksProcessor = localStorage.getItem("processor");
+    if (window.roboblocksProcessor==='WEMOS D1R32 SHIELD')
+    {
+      window.board='_wemosD1R32';
+    }
+    else if (window.roboblocksProcessor==='ArduinoUno')
+    {
+      window.board='_uno';
+    }
+    else {
+      window.board='_wemosD1R32';
+    }
 
 		function openFunction(bly) {
 			$.ajax({
@@ -146,6 +157,32 @@ document.addEventListener("DOMContentLoaded", function () {
       window.dispatchEvent(new Event('resize'));
 		}
 
+    function injectExampleCode(exercise,exampleDiv,exampleDivCode) {
+      var instructionPreview = document.getElementById(exampleDiv);
+      var instructionPreviewCode = document.getElementById(exampleDivCode);
+      instructionPreview.style="width: 0%;";
+      instructionPreviewCode.style="width: 100%; margin-left: 3em; margin-right: 3em; line-height: 1.1em;";
+      var mainWorkspace = Blockly.inject(exampleDiv, {readOnly:true, collapse: false});
+			openFunction('tutorial/exercises/'+exercise);
+      instructionPreviewCode.innerHTML="<br/>&nbsp;&nbsp;&nbsp;&nbsp;"+escapeCode(Blockly.Arduino.workspaceToCode(Blockly.getMainWorkspace()))+"<br/>";
+		}
+
+    function escapeCode(code) {
+        var str = code;
+        str = str.replace(/</g, "&lt;");
+        str = str.replace(/>/g, "&gt;");
+        str = str.replace(/\/\*.*\*?\n/g,"");
+        str = str.replace(/\n/g, "<br/>&nbsp;&nbsp;&nbsp;&nbsp;");
+        var len = str.length;
+        while(true)
+        {
+          str = str.replace("<br/>&nbsp;&nbsp;&nbsp;&nbsp;<br/>", "<br/>");
+          if (str.length==len)
+            break;
+          len=str.length;
+        }
+        return str;
+    }
 
 		function showHide(el1,ex,el) {
 			var y = document.getElementById(el1);
@@ -183,6 +220,8 @@ document.addEventListener("DOMContentLoaded", function () {
       currentBasicSolutions=el1.substring(el1.length-2,el1.length-1);
       var y = document.getElementById(el1);
 			y.style.display = "block";
+      var yc = document.getElementById(el+'c');
+			yc.style.display = "none";
 			var x = document.getElementById(el);
 			if (y.style.display === "block"){
 				var parent = x.parentNode;
@@ -191,6 +230,35 @@ document.addEventListener("DOMContentLoaded", function () {
 				div.setAttribute("id",el);
 				parent.appendChild(div);
 				injectExample(ex,el);
+        location.hash = "#solutions_basic";
+			}
+		}
+
+    function showHideBasicCode(el1,ex,el,elc) {
+      var solutions_basic = document.getElementById('solutions_basic');
+      solutions_basic.style.display="block";
+      if (currentBasicSolutions>0)
+      {
+        var x = document.getElementById('solutions'+currentBasicSolutions+'b');
+        x.style.display = "none";
+      }
+      currentBasicSolutions=el1.substring(el1.length-2,el1.length-1);
+      var y = document.getElementById(el1);
+			y.style.display = "block";
+			var x = document.getElementById(el);
+      var xCode = document.getElementById(elc);
+			if (y.style.display === "block"){
+				var parent = x.parentNode;
+				parent.removeChild(x);
+        var parentCode = xCode.parentNode;
+        parentCode.removeChild(xCode);
+        var div = document.createElement("div");
+        var divCode = document.createElement("div");
+        div.setAttribute("id",el);
+        divCode.setAttribute("id",elc);
+				parent.appendChild(div);
+        parentCode.appendChild(divCode);
+        injectExampleCode(ex,el,elc);
         location.hash = "#solutions_basic";
 			}
 		}
@@ -206,6 +274,8 @@ document.addEventListener("DOMContentLoaded", function () {
       currentIntermediateSolutions=el1.substring(el1.length-2,el1.length-1);
       var y = document.getElementById(el1);
 			y.style.display = "block";
+      var yc = document.getElementById(el+'c');
+			yc.style.display = "none";
 			var x = document.getElementById(el);
 			if (y.style.display === "block"){
 				var parent = x.parentNode;
@@ -214,6 +284,35 @@ document.addEventListener("DOMContentLoaded", function () {
 				div.setAttribute("id",el);
 				parent.appendChild(div);
 				injectExample(ex,el);
+        location.hash = "#solutions_intermediate";
+			}
+		}
+
+    function showHideIntermediateCode(el1,ex,el,elc) {
+      var solutions_intermediate = document.getElementById('solutions_intermediate');
+      solutions_intermediate.style.display="block";
+      if (currentIntermediateSolutions>0)
+      {
+        var x = document.getElementById('solutions'+currentIntermediateSolutions+'i');
+        x.style.display = "none";
+      }
+      currentIntermediateSolutions=el1.substring(el1.length-2,el1.length-1);
+      var y = document.getElementById(el1);
+			y.style.display = "block";
+			var x = document.getElementById(el);
+      var xCode = document.getElementById(elc);
+			if (y.style.display === "block"){
+				var parent = x.parentNode;
+				parent.removeChild(x);
+        var parentCode = xCode.parentNode;
+        parentCode.removeChild(xCode);
+        var div = document.createElement("div");
+        var divCode = document.createElement("div");
+        div.setAttribute("id",el);
+        divCode.setAttribute("id",elc);
+				parent.appendChild(div);
+        parentCode.appendChild(divCode);
+        injectExampleCode(ex,el,elc);
         location.hash = "#solutions_intermediate";
 			}
 		}
@@ -236,6 +335,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 		function onFileDownloaded(file)
 		{
+      console.log(file);
 			//window.open('tutorial/'+file, '_blank');
 			var anchor=document.createElement('a');
 			anchor.setAttribute('href','tutorial/exercises/'+file);

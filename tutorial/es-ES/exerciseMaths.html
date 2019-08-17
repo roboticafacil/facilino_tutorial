@@ -108,16 +108,20 @@
             <div class="mbr-text counter-container col-12 col-md-8 mbr-fonts-style display-7">
                 <ol>
                   <li><strong>Multiplicar dos números</strong><p>Crea un simple programa que toma dos números y calcula el resultado de su multiplicación (los números son en representación Decimal y se obtienen a partir de los valores interpretados por el monitor serie). El resultado de la operación debe mostrarse por el monitor serie.</p><strong>Pista: </strong><p><i>Usa las instrucciones para interpretar un decimal y con la instrucción para realizar una operación aritmética calcula la multiplicación.</i></p><button  type="button" onclick="showHideBasic('solutions1b','multiply.bly','exercise1b');" class="btn-primary display-4"><span class="mbri-preview mbr-iconfont mbr-iconfont-btn"></span></button>
-  					<a onclick="onFileDownloaded('multiply.bly');">
+  					&nbsp;<button type="button"  class="btn-primary display-4" onclick="showHideBasicCode('solutions1b','multiply.bly','exercise1b','exercise1bc');"><span class="mbri-align-justify mbr-iconfont mbr-iconfont-btn"></span></button>
+            <a onclick="onFileDownloaded('multiply.bly');">
   					<button  type="button" class="btn-primary display-4"><span class="mbri-save mbr-iconfont mbr-iconfont-btn"></span></button></a></li>
               <li><strong>Resto de una división</strong><p>Ahora calcula el resto de una división de dos números enteros (obtenidos desde el monitor serie, siendo el primer número introducido el dividendo y el segundo número el divisor).</p><strong>Pista: </strong><p><i>Usar la instrucción para el cálculo del 'modulo' con el símbolo '%' para calcular el resto de una división entre dos números. Debe siempre devolver un número entre 0 y N-1, siendo N el divisor.</i></p><button  type="button" onclick="showHideBasic('solutions2b','modulo.bly','exercise2b');" class="btn-primary display-4"><span class="mbri-preview mbr-iconfont mbr-iconfont-btn"></span></button>
+            &nbsp;<button type="button"  class="btn-primary display-4" onclick="showHideBasicCode('solutions2b','modulo.bly','exercise2b','exercise2bc');"><span class="mbri-align-justify mbr-iconfont mbr-iconfont-btn"></span></button>
       <a onclick="onFileDownloaded('modulo.bly');">
       <button  type="button" class="btn-primary display-4"><span class="mbri-save mbr-iconfont mbr-iconfont-btn"></span></button></a></li>
 									<li><strong>Distancia al origen</strong><p>Calcula la distancia al origen de un punto dado por sus coordenadas X e Y (introducido por el usuario a través del monitor serie).</p><strong>Pista: </strong><p><i>Usa la instrucción para interpretar números decimales para obtener los valores, después calcula el producto de cada uno de los números por sí mismo (es lo mismo que elevar al cuadrado) y suma el resultado de ambos productos y calcula su raíz cuadrada, siendo éste el valor a mostrar por el monitor serie</i>.</p><button  type="button" onclick="showHideBasic('solutions3b','distance_origin.bly','exercise3b');" class="btn-primary display-4"><span class="mbri-preview mbr-iconfont mbr-iconfont-btn"></span></button>
-				<a onclick="onFileDownloaded('distance_origin.bly');">
+				&nbsp;<button type="button"  class="btn-primary display-4" onclick="showHideBasicCode('solutions3b','distance_origin.bly','exercise3b','exercise3bc');"><span class="mbri-align-justify mbr-iconfont mbr-iconfont-btn"></span></button>
+        <a onclick="onFileDownloaded('distance_origin.bly');">
 				<button  type="button" class="btn-primary display-4"><span class="mbri-save mbr-iconfont mbr-iconfont-btn"></span></button></a></li>
-					<li><strong>Escalado lineal</strong><p>Escala los valores leídos desde el potenciómetro, conectado al pin A0, de forma que su rango esté comprendido entre 0 y 100 y dibuja el valor para que se muestre por el Plotter de Arduino.</p><strong>Pista: </strong><p><i>Usa la instrucción 'Mapea' para realizar la operación de escalo lineal.</i></p><button  type="button" onclick="showHideBasic('solutions4b','linear_scaling_wemosD1R32.bly','exercise4b');" class="btn-primary display-4"><span class="mbri-preview mbr-iconfont mbr-iconfont-btn"></span></button>
-					<a onclick="onFileDownloaded('linear_scaling_wemosD1R32.bly');">
+					<li><strong>Escalado lineal</strong><p>Escala los valores leídos desde el potenciómetro, conectado al pin A0, de forma que su rango esté comprendido entre 0 y 100 y dibuja el valor para que se muestre por el Plotter de Arduino.</p><strong>Pista: </strong><p><i>Usa la instrucción 'Mapea' para realizar la operación de escalo lineal.</i></p><button  type="button" onclick="showHideBasic('solutions4b','linear_scaling'+window.board+'.bly','exercise4b');" class="btn-primary display-4"><span class="mbri-preview mbr-iconfont mbr-iconfont-btn"></span></button>
+					&nbsp;<button type="button"  class="btn-primary display-4" onclick="showHideBasicCode('solutions4b','linear_scaling'+window.board+'.bly','exercise4b','exercise4bc');"><span class="mbri-align-justify mbr-iconfont mbr-iconfont-btn"></span></button>
+          <a onclick="onFileDownloaded('linear_scaling'+window.board+'.bly');">
 					<button  type="button" class="btn-primary display-4"><span class="mbri-save mbr-iconfont mbr-iconfont-btn"></span></button></a></li>
                 </ol>
             </div>
@@ -142,7 +146,7 @@
 				<strong>Ejercicio Básico 1</strong>
 			</div>
 		</div>
-		<div class="media-container-row"><div id='exercise1b'></div></div>
+		<div class="media-container-row"><div id='exercise1b'></div><div id='exercise1bc'></div></div>
 	</div>
 </section>
 
@@ -153,7 +157,7 @@
 				<strong>Ejercicio Básico 2</strong>
 			</div>
 		</div>
-		<div class="media-container-row"><div id='exercise2b'></div></div>
+		<div class="media-container-row"><div id='exercise2b'></div><div id='exercise2bc'></div></div>
 	</div>
 </section>
 
@@ -164,7 +168,7 @@
 				<strong>Ejercicio Básico 3</strong>
 			</div>
 		</div>
-		<div class="media-container-row"><div id='exercise3b'></div></div>
+		<div class="media-container-row"><div id='exercise3b'></div><div id='exercise3bc'></div></div>
 	</div>
 </section>
 
@@ -175,7 +179,7 @@
 				<strong>Ejercicio Básico 4</strong>
 			</div>
 		</div>
-		<div class="media-container-row"><div id='exercise4b'></div></div>
+		<div class="media-container-row"><div id='exercise4b'></div><div id='exercise4bc'></div></div>
 	</div>
 </section>
 
@@ -195,13 +199,16 @@
             <div class="mbr-text counter-container col-12 col-md-8 mbr-fonts-style display-7">
                 <ol>
                     <li><strong>Digitos Binarios</strong><p>Calcula el número de digitos necesarios para representar un número entero en su prepresentación binaria. Implementar una función que acepta como argumento de entrada el número entero y devuelve el número de dígitos. Usar, por ejemplo el número '123'.</p><strong>Pista: </strong><p><i> En un bucle </i>Mientras<i>, comprobar si el número es mayor o igual que la base en potencias de 2 (empezando por 2). Cada vez que eso sea cierto, el contador de dígitos debe aumentar (inicializado a 1).</i></p><button  type="button" onclick="showHideIntermediate('solutions1i','binary_digits.bly','exercise1i');" class="btn-primary display-4"><span class="mbri-preview mbr-iconfont mbr-iconfont-btn"></span></button>
-					<a onclick="onFileDownloaded('binary_digits.bly');">
+					&nbsp;<button type="button"  class="btn-primary display-4" onclick="showHideIntermediateCode('solutions1i','binary_digits.bly','exercise1i','exercise1ic');"><span class="mbri-align-justify mbr-iconfont mbr-iconfont-btn"></span></button>
+          <a onclick="onFileDownloaded('binary_digits.bly');">
 					<button  type="button" class="btn-primary display-4"><span class="mbri-save mbr-iconfont mbr-iconfont-btn"></span></button></a></li>
-					<li><strong>Minimo y máximo</strong><p>Usando las medidas obtenidas del potenciómetro (conectado al pin A0), calcular los valores máximo y mínimo de los mismos (los valores estarán escalados para estar entre 0 y 100). Al iniciar, enciende el LED rojo (conectado al pin D12) y realiza los cálculos para obtener el máximo y mínimo histórico hasta que se pulse el pulsador conectado al pin D2. Una vez pulsado, apagad el LED rojo y mostrar por consola los valores del máximo y mínimo de todas las medidas registradas.</p><strong>Pista: </strong><p><i>En un bucle </i>Mientras<i>, leer la señal analógica del pin A0 y convertir el valor en un número entre 0 y 100 usando la instrucción </i>mapea<i>. Usa las instrucciones </i>min <i>y </i>max<i> para calcular el valor mínimo y máximo obtenidos hasta el momento y almacena los resultados en dos variables diferentes (la variable que almacena el mínimo se inicializa a 100, mientras que la variable que almacena el máximo se inicializa a 0).</i></p><button  type="button" onclick="showHideIntermediate('solutions2i','min_max_wemosD1R32.bly','exercise2i');" class="btn-primary display-4"><span class="mbri-preview mbr-iconfont mbr-iconfont-btn"></span></button>
-					<a onclick="onFileDownloaded('min_max_wemosD1R32.bly');">
+					<li><strong>Minimo y máximo</strong><p>Usando las medidas obtenidas del potenciómetro (conectado al pin A0), calcular los valores máximo y mínimo de los mismos (los valores estarán escalados para estar entre 0 y 100). Al iniciar, enciende el LED rojo (conectado al pin D12) y realiza los cálculos para obtener el máximo y mínimo histórico hasta que se pulse el pulsador conectado al pin D2. Una vez pulsado, apagad el LED rojo y mostrar por consola los valores del máximo y mínimo de todas las medidas registradas.</p><strong>Pista: </strong><p><i>En un bucle </i>Mientras<i>, leer la señal analógica del pin A0 y convertir el valor en un número entre 0 y 100 usando la instrucción </i>mapea<i>. Usa las instrucciones </i>min <i>y </i>max<i> para calcular el valor mínimo y máximo obtenidos hasta el momento y almacena los resultados en dos variables diferentes (la variable que almacena el mínimo se inicializa a 100, mientras que la variable que almacena el máximo se inicializa a 0).</i></p><button  type="button" onclick="showHideIntermediate('solutions2i','min_max'+window.board+'.bly','exercise2i');" class="btn-primary display-4"><span class="mbri-preview mbr-iconfont mbr-iconfont-btn"></span></button>
+					&nbsp;<button type="button"  class="btn-primary display-4" onclick="showHideIntermediateCode('solutions2i','min_max'+window.board+'.bly','exercise2i','exercise2ic');"><span class="mbri-align-justify mbr-iconfont mbr-iconfont-btn"></span></button>
+          <a onclick="onFileDownloaded('min_max'+window.board+'.bly');">
 					<button  type="button" class="btn-primary display-4"><span class="mbri-save mbr-iconfont mbr-iconfont-btn"></span></button></a></li>
 					<li><strong>Onda Senoidal</strong><p>Crea una onda senoidal con una frecuencia de 1Hz, una amplitud de &#x221A;2, usando la instrucción 'senoidal'. Dibuja la señal usando el Serial Plotter de Arduino.</p><button  type="button" onclick="showHideIntermediate('solutions3i','sinusoidal_wave.bly','exercise3i');" class="btn-primary display-4"><span class="mbri-preview mbr-iconfont mbr-iconfont-btn"></span></button>
-					<a onclick="onFileDownloaded('sinusoidal_wave.bly');">
+					&nbsp;<button type="button"  class="btn-primary display-4" onclick="showHideIntermediateCode('solutions3i','sinusoidal_wave.bly','exercise3i','exercise3ic');"><span class="mbri-align-justify mbr-iconfont mbr-iconfont-btn"></span></button>
+          <a onclick="onFileDownloaded('sinusoidal_wave.bly');">
 					<button  type="button" class="btn-primary display-4"><span class="mbri-save mbr-iconfont mbr-iconfont-btn"></span></button></a></li>
 				</ol>
             </div>
@@ -226,7 +233,7 @@
 					<strong>Ejercicio Intermedio 1</strong>
 				</div>
 			</div>
-			<div class="media-container-row"><div id='exercise1i'></div></div>
+			<div class="media-container-row"><div id='exercise1i'></div><div id='exercise1ic'></div></div>
 		</div>
 	</section>
 
@@ -237,7 +244,7 @@
 					<strong>Ejercicio Intermedio 2</strong>
 				</div>
 			</div>
-			<div class="media-container-row"><div id='exercise2i'></div></div>
+			<div class="media-container-row"><div id='exercise2i'></div><div id='exercise2ic'></div></div>
 		</div>
 	</section>
 
@@ -248,7 +255,7 @@
 					<strong>Ejercicio Intermedio 3</strong>
 				</div>
 			</div>
-			<div class="media-container-row"><div id='exercise3i'></div></div>
+			<div class="media-container-row"><div id='exercise3i'></div><div id='exercise3ic'></div></div>
 		</div>
 	</section>
 

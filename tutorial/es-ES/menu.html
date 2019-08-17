@@ -41,18 +41,7 @@
 				<li class="nav-item"><input style="margin-left: 0.25em;" type="image" src="tutorial/assets/images/catala.png" onclick="langChange('ca-ES')"/>
 				</li>
 				<li class="nav-item"><button class="btn btn-sm btn-primary-outline display-4" title="Hardware settings" onclick="showHideProcessor()" style=" padding-left: 6px;padding-right: 0px;margin-right: 0px;margin-left: 6px;"><span class="mbri-setting3 mbr-iconfont mbr-iconfont-btn" style="color: rgb(255, 148, 0);"></span></button><select id="processor" class="text-black dropdown-toggle display-6 icon-menu" onchange="processorChange(this.value)" style="display: none">
-		<option value="ArduinoNano" class="text-black dropdown-item display-6">Arduino Nano</option>
 		<option value="ArduinoUno" class="text-black dropdown-item display-6">Arduino Uno</option>
-		<option value="ArduinoMega2560" class="text-black dropdown-item display-6">Arduino Mega 2560</option>
-		<option value="ArduinoMicro" class="text-black dropdown-item display-6">Arduino Micro</option>
-		<option value="ArduinoLilyPad" class="text-black dropdown-item display-6">Arduino LilyPAD</option>
-		<option value="ArduinoMini" class="text-black dropdown-item display-6">Arduino Mini</option>
-		<option value="ArduinoLeonardo" class="text-black dropdown-item display-6">Arduino Leonardo</option>
-		<option value="ESP8266" class="text-black dropdown-item display-6">ESP8266</option>
-		<option value="NodeMCU" class="text-black dropdown-item display-6">NodeMCU</option>
-		<option value="WEMOS D1R2" class="text-black dropdown-item display-6">WeMos D1R2</option>
-		<option value="ESP32" class="text-black dropdown-item display-6">ESP32</option>
-		<option value="WEMOS D1R32" class="text-black dropdown-item display-6">WeMos D1R32</option>
 		<option value="WEMOS D1R32 SHIELD" class="text-black dropdown-item display-6">WeMos D1R32 (Sensor Shield)</option>
 		</select></li>
       <li class="nav-item"><button class="btn btn-sm btn-primary-outline display-4" title="Imprimir" onclick="print()" style=" padding-left: 6px;padding-right: 0px;margin-right: 0px;margin-left: 6px;"><span class="mbri-print mbr-iconfont mbr-iconfont-btn" style="color: rgb(255,148,0);"></span></button></li>
@@ -68,7 +57,18 @@
 		window.roboblocksProcessor = localStorage.getItem("processor");
 		$("#language").val(window.roboblocksLanguage);
 		$("#processor").val(window.roboblocksProcessor);
-		function onHome()
+    if (window.roboblocksProcessor==='WEMOS D1R32 SHIELD')
+    {
+      window.board='_wemosD1R32';
+    }
+    else if (window.roboblocksProcessor==='ArduinoUno')
+    {
+      window.board='_uno';
+    }
+    else {
+      window.board='_wemosD1R32';
+    }
+    function onHome()
 		{
 			$(function(){var file='tutorial/'+ window.roboblocksLanguage+'/home.html'; $.ajax({url:file,async:false,type:"HEAD",error: function(){file='tutorial/en-GB/home.html';},success: function(){}}); $('#main').load(file); location.href = "#menu";});
 		}

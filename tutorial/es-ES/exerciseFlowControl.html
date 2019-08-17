@@ -83,7 +83,7 @@
                 <ol id="workedInstructions">
 					<li><div><span id='tooltipInstruction7'></span></div><div  id='blocklyInstruction7'></div><script>injectInstructionTooltip('variables_local','blocklyInstruction7','tooltipInstruction7');</script></li>
 					<li><div><span id='tooltipInstruction8'></span></div><div  id='blocklyInstruction8'></div><script>injectInstructionTooltip1('variables_get','blocklyInstruction8','tooltipInstruction8');</script></li>
-					<li><div><span id='tooltipInstruction9'></span></div><div  id='blocklyInstruction9'></div><script>injectInstructionTooltip('variables_set','blocklyInstruction9','tooltipInstruction9');</script></li>
+					<li><div><span id='tooltipInstruction9'></span></div><div  id='blocklyInstruction9'></div><script>injectInstructionTooltip1('variables_set','blocklyInstruction9','tooltipInstruction9');</script></li>
 					<li><div><span id='tooltipInstruction10'></span></div><div  id='blocklyInstruction10'></div><script>injectInstructionTooltip('text_join','blocklyInstruction10','tooltipInstruction10');</script></li>
 					<li><div><span id='tooltipInstruction11'></span></div><div  id='blocklyInstruction11'></div><script>injectInstructionTooltip('zum_piezo_buzzerav','blocklyInstruction11','tooltipInstruction11');</script></li>
 				  </ol>
@@ -108,9 +108,11 @@
             <div class="mbr-text counter-container col-12 col-md-8 mbr-fonts-style display-7">
                 <ol>
                     <li><strong>Repitiendo una secuencia</strong><p>Las enseñanzas antiguas de la escuela solían castigarte haciéndote repetir la misma frase muchas veces en la pizzara. Ahora, los tiempos son diferentes y puedes utilizar tu Arduino para imprimirla tantas veces como quieras. Imprime en la consola 'No eruptaré en clase' 100 veces.</p><p><strong>Pista: </strong></p><p><i> Usa la instrucción de repetir para este propósito.</i></p><button  type="button" onclick="showHideBasic('solutions1b','repeat_sentence.bly','exercise1b');" class="btn-primary display-4"><span class="mbri-preview mbr-iconfont mbr-iconfont-btn"></span></button>
+					&nbsp;<button type="button"  class="btn-primary display-4" onclick="showHideBasicCode('solutions1b','repeat_sentence.bly','exercise1b','exercise1bc');"><span class="mbri-align-justify mbr-iconfont mbr-iconfont-btn"></span></button>
 					<a onclick="onFileDownloaded('repeat_sentence.bly');">
 					<button  type="button" class="btn-primary display-4"><span class="mbri-save mbr-iconfont mbr-iconfont-btn"></span></button></a></li>
-					<li><strong>Repitiendo una sencuencia numerada</strong></p>Ahora, haz los mismo que antes, pero las frases deben estar numeradas empezando por el 1.</p><strong>Pista: </strong><p><i>Usa una variable e incrementa su valor dentro del bucle. Puedes utilizar la instrucción 'Crear texto con' para unir el número con la frase.</i></p><button  type="button" onclick="showHideBasic('solutions2b','repeat_numbered_sentence.bly','exercise2b');" class="btn-primary display-4"><span class="mbri-preview mbr-iconfont mbr-iconfont-btn"></span></button>
+					<li><strong>Repitiendo una sencuencia numerada</strong><p>Ahora, haz los mismo que antes, pero las frases deben estar numeradas empezando por el 1.</p><strong>Pista: </strong><p><i>Usa una variable e incrementa su valor dentro del bucle. Puedes utilizar la instrucción 'Crear texto con' para unir el número con la frase.</i></p><button  type="button" onclick="showHideBasic('solutions2b','repeat_numbered_sentence.bly','exercise2b');" class="btn-primary display-4"><span class="mbri-preview mbr-iconfont mbr-iconfont-btn"></span></button>
+					&nbsp;<button type="button"  class="btn-primary display-4" onclick="showHideBasicCode('solutions2b','repeat_numbered_sentence.bly','exercise2b','exercise2bc');"><span class="mbri-align-justify mbr-iconfont mbr-iconfont-btn"></span></button>
 					<a onclick="onFileDownloaded('repeat_numbered_sentence.bly');">
 					<button  type="button" class="btn-primary display-4"><span class="mbri-save mbr-iconfont mbr-iconfont-btn"></span></button></a></li>
                 </ol>
@@ -136,7 +138,7 @@
 				<strong>Ejercicio Básico 1</strong>
 			</div>
 		</div>
-		<div class="media-container-row"><div id='exercise1b'></div></div>
+		<div class="media-container-row"><div id='exercise1b'></div><div id='exercise1bc'></div></div>
 	</div>
 </section>
 
@@ -147,7 +149,7 @@
 				<strong>Ejercicio Básico 2</strong>
 			</div>
 		</div>
-		<div class="media-container-row"><div id='exercise2b'></div></div>
+		<div class="media-container-row"><div id='exercise2b'></div><div id='exercise2bc'></div></div>
 	</div>
 </section>
 
@@ -166,15 +168,17 @@
         <div class="media-container-row">
             <div class="mbr-text counter-container col-12 col-md-8 mbr-fonts-style display-7">
                 <ol>
-                    <li><strong>Histéresis</strong><p>Implementa un efecto de histéresis para 'binarizar' las medidas analógicas de la posición del potenciómetro A0. Si la medida es mayor que 2000, entonces el LED D12 debe estar en ALTO, mientras que si la medida está por debajo de 800, el LED D12 debe estar en BAJO. De lo contrario, el estado del LED no cambia.</p><strong>Pista: </strong><p><i> Define una variable global Booleana para determinar el estado del LED D12 (ALTO o BAJO). Después, si el valor del potenciómetro está por encima de 2000 y el estado del LED es BAJO, entonces activa el LED y pon la variable de estado a ALTO. Si el valor del potenciómetro está por debajo de 800 y el estado es ALTO, entoces por el LED a BAJO y la variable de estado también.</i></p><button  type="button" onclick="showHideIntermediate('solutions1i','hysteresis_wemosD1R32.bly','exercise1i');" class="btn-primary display-4"><span class="mbri-preview mbr-iconfont mbr-iconfont-btn"></span></button>
-					<a onclick="onFileDownloaded('hysteresis_wemosD1R32.bly');">
+                    <li><strong>Histéresis</strong><p>Implementa un efecto de histéresis para 'binarizar' las medidas analógicas de la posición del potenciómetro A0. Si la medida es mayor que 2000 (Wemos D1 R32) o 500 (Arduino Uno), entonces el LED D12 debe estar en ALTO, mientras que si la medida está por debajo de 800 (Wemos D1 R32) o 200 (Arduino Uno), el LED D12 debe estar en BAJO. De lo contrario, el estado del LED no cambia.</p><strong>Pista: </strong><p><i> Define una variable global Booleana para determinar el estado del LED D12 (ALTO o BAJO). Después, si el valor del potenciómetro está por encima de 2000 (Wemos D1R32) o 500 (Arduino Uno) y el estado del LED es BAJO, entonces activa el LED y pon la variable de estado a ALTO. Si el valor del potenciómetro está por debajo de 800 y el estado es ALTO, entoces por el LED a BAJO y la variable de estado también.</i></p><button  type="button" onclick="showHideIntermediate('solutions1i','hysteresis'+window.board+'.bly','exercise1i');" class="btn-primary display-4"><span class="mbri-preview mbr-iconfont mbr-iconfont-btn"></span></button>
+											&nbsp;<button type="button"  class="btn-primary display-4" onclick="showHideIntermediateCode('solutions1i','hysteresis'+window.board+'.bly','exercise1i','exercise1ic');"><span class="mbri-align-justify mbr-iconfont mbr-iconfont-btn"></span></button>
+					<a onclick="onFileDownloaded('hysteresis'+window.board+'.bly');">
 					<button  type="button" class="btn-primary display-4"><span class="mbri-save mbr-iconfont mbr-iconfont-btn"></span></button></a></li>
 
-					<li><strong>Espera hasta y salir del bucle</strong><p>Al principio, espera a que el pulsador D2 sea pulsado. Después, haz que parpadee el LED D12 a una frecuencia de 1 Hz. Para hacer parar el parpadeo, debes pulsar D3 y esto saldrá de esa secuencia y volverá a esperar a que pulsemos D2 para repetir de nuevo la misma operación.</p><strong>Pista: </strong><p><i>Usa la instrucción 'Espera hasta' a que se pulse el pulsador D2 (condición de espera a que esté en BAJO) en el bucle principal. Entonces, usa la instrucción 'Mientras' para implementar el bucle en el que parpadeará el LED. Para parar el parpadeo usa la instrucción 'Interrumpir bucle' si se pulsa el pulsador D3 (es decir que su valor leído es BAJO).</i></p><button  type="button" onclick="showHideIntermediate('solutions2i','wait_break_wemosD1R32.bly','exercise2i');" class="btn-primary display-4"><span class="mbri-preview mbr-iconfont mbr-iconfont-btn"></span></button>
-					<a onclick="onFileDownloaded('wait_break_wemosD1R32.bly');">
+					<li><strong>Espera hasta y salir del bucle</strong><p>Al principio, espera a que el pulsador D2 sea pulsado. Después, haz que parpadee el LED D12 a una frecuencia de 1 Hz. Para hacer parar el parpadeo, debes pulsar D3 y esto saldrá de esa secuencia y volverá a esperar a que pulsemos D2 para repetir de nuevo la misma operación.</p><strong>Pista: </strong><p><i>Usa la instrucción 'Espera hasta' a que se pulse el pulsador D2 (condición de espera a que esté en BAJO) en el bucle principal. Entonces, usa la instrucción 'Mientras' para implementar el bucle en el que parpadeará el LED. Para parar el parpadeo usa la instrucción 'Interrumpir bucle' si se pulsa el pulsador D3 (es decir que su valor leído es BAJO).</i></p><button  type="button" onclick="showHideIntermediate('solutions2i','wait_break'+window.board+'.bly','exercise2i');" class="btn-primary display-4"><span class="mbri-preview mbr-iconfont mbr-iconfont-btn"></span></button>
+					&nbsp;<button type="button"  class="btn-primary display-4" onclick="showHideIntermediateCode('solutions2i','wait_break'+window.board+'.bly','exercise2i','exercise2ic');"><span class="mbri-align-justify mbr-iconfont mbr-iconfont-btn"></span></button>
+					<a onclick="onFileDownloaded('wait_break'+window.board+'.bly');">
 					<button  type="button" class="btn-primary display-4"><span class="mbri-save mbr-iconfont mbr-iconfont-btn"></span></button></a></li>
-					<li><strong>Ejecto Alamra</strong><p>Genera un efecto alarma con el zumbador de sonido (pin D5). El efecto alarma consisten en variar los tonos a los que vibra el zumbador. Primero, se genera una frecuencia ascendente que aumenta exponencialmente un 3\% en cada iteración, empezando por la frecuencia 1318.51Hz hasta 1567.98Hz con una duración de 22ms de pitido en cada iteración. Después, se vuelve a incrementar la frecuencia, pero esta vez aumenta un 4%, empezando desde 1318.51Hz hasta 2349.32Hz con una duración del pitido de 12ms.</p><strong>Pista: </strong><p><i>Usa la instrucción 'Mientras' para generar el aumento exponencial de las frecuencias. Inicializa una variable con la frecuencia a  1318.51Hz y usa la instrucción 'Zumbador Avanzado' para generar la frecuencia correspondiente con la duración indicada en cada caso. Para generar el aumento exponencial de la frecuencia debes multiplicar por 1.03 o 1.04 según el caso el valor de la frecuencia actual y almacenarlo en la variable de frecuencia.</i></p><button  type="button" onclick="showHideIntermediate('solutions3i','alarm_effect_wemosD1R32.bly','exercise3i');" class="btn-primary display-4"><span class="mbri-preview mbr-iconfont mbr-iconfont-btn"></span></button>
-					<a onclick="onFileDownloaded('alarm_effect_wemosD1R32.bly');">
+					<li><strong>Efecto Alarma</strong><p>Genera un efecto alarma con el zumbador de sonido (pin D5). El efecto alarma consisten en variar los tonos a los que vibra el zumbador. Primero, se genera una frecuencia ascendente que aumenta exponencialmente un 3% en cada iteración, empezando por la frecuencia 1318.51Hz hasta 1567.98Hz con una duración de 22ms de pitido en cada iteración. Después, se vuelve a incrementar la frecuencia, pero esta vez aumenta un 4%, empezando desde 1318.51Hz hasta 2349.32Hz con una duración del pitido de 12ms.</p><strong>Pista: </strong><p><i>Usa la instrucción 'Mientras' para generar el aumento exponencial de las frecuencias. Inicializa una variable con la frecuencia a  1318.51Hz y usa la instrucción 'Zumbador Avanzado' para generar la frecuencia correspondiente con la duración indicada en cada caso. Para generar el aumento exponencial de la frecuencia debes multiplicar por 1.03 o 1.04 según el caso el valor de la frecuencia actual y almacenarlo en la variable de frecuencia.</i></p><button  type="button" onclick="showHideIntermediate('solutions3i','alarm_effect'+window.board+'.bly','exercise3i');" class="btn-primary display-4"><span class="mbri-preview mbr-iconfont mbr-iconfont-btn"></span></button>
+					<a onclick="onFileDownloaded('alarm_effect'+window.board+'.bly');">
 					<button  type="button" class="btn-primary display-4"><span class="mbri-save mbr-iconfont mbr-iconfont-btn"></span></button></a></li>
 
                 </ol>
@@ -201,7 +205,7 @@
 					<strong>Ejercicio Intermedio 1</strong>
 				</div>
 			</div>
-			<div class="media-container-row"><div id='exercise1i'></div></div>
+			<div class="media-container-row"><div id='exercise1i'></div><div id='exercise1ic'></div></div>
 		</div>
 	</section>
 
@@ -212,7 +216,7 @@
 					<strong>Ejercicio Intermedio 2</strong>
 				</div>
 			</div>
-			<div class="media-container-row"><div id='exercise2i'></div></div>
+			<div class="media-container-row"><div id='exercise2i'></div><div id='exercise2ic'></div></div>
 		</div>
 	</section>
 
@@ -223,7 +227,7 @@
 					<strong>Ejercicio Intermedio 3</strong>
 				</div>
 			</div>
-			<div class="media-container-row"><div id='exercise3i'></div></div>
+			<div class="media-container-row"><div id='exercise3i'></div><div id='exercise3ic'></div></div>
 		</div>
 	</section>
 

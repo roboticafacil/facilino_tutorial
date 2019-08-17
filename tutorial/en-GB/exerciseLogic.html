@@ -276,17 +276,21 @@ var currentIntermediateSolutions=0;
         <div class="media-container-row">
             <div class="mbr-text counter-container col-12 col-md-8 mbr-fonts-style display-7">
                 <ol>
-                    <li><strong>Set LED when pushed</strong><p>Following the ideas of basic exercise 3 of <a onclick="onHomeFile('exerciseBlinkingLEDs.html');" style="color:#1ec6c6">Set LED when not pushed</a>, we want to set the LED connected to pin D12 when we push the push-button (connected to pin D2).</p><strong>Hint: </strong><p>Use the 'DigitalRead' instruction to get the value and its returned value to the 'not' instruction to negate its value. The resulting value must be used as the state input of the 'DigitalWrite' instruction.</p><button  type="button" onclick="showHideBasic('solutions1b','negate_led_wemosD1R32.bly','exercise1b');" class="btn-primary display-4"><span class="mbri-preview mbr-iconfont mbr-iconfont-btn"></span></button>
-					<a onclick="onFileDownloaded('negate_led_wemosD1R32.bly');">
+                    <li><strong>Set LED when pushed</strong><p>Following the ideas of basic exercise 3 of <a onclick="onHomeFile('exerciseBlinkingLEDs.html');" style="color:#1ec6c6">Set LED when not pushed</a>, we want to set the LED connected to pin D12 when we push the push-button (connected to pin D2).</p><strong>Hint: </strong><p>Use the 'DigitalRead' instruction to get the value and its returned value to the 'not' instruction to negate its value. The resulting value must be used as the state input of the 'DigitalWrite' instruction.</p><button  type="button" onclick="showHideBasic('solutions1b','negate_led'+window.board+'.bly','exercise1b');" class="btn-primary display-4"><span class="mbri-extension mbr-iconfont mbr-iconfont-btn"></span></button>
+					&nbsp;<button type="button"  class="btn-primary display-4" onclick="showHideBasicCode('solutions1b','negate_led'+window.board+'.bly','exercise1b','exercise1bc');"><span class="mbri-align-justify mbr-iconfont mbr-iconfont-btn"></span></button>
+					<a onclick="onFileDownloaded('negate_led'+window.board+'.bly');">
 					<button  type="button" class="btn-primary display-4"><span class="mbri-save mbr-iconfont mbr-iconfont-btn"></span></button></a></li>
-					<li><strong>AND operation</strong></p>Implement Boolean operation using the two push-buttons (connected to pins D2 and D3) and the red LED (connected to pin D12). When both of them are pushed, the pin of the LED must be set to HIGH.</p> <strong>Hint: </strong><p><i> Considering push-button D2 as PB1 and push-button D3 as PB2, the resulting operation for setting the LED state is LED=NOT(PB1) AND NOT(PB2).</i></p><button  type="button" onclick="showHideBasic('solutions2b','and_wemosD1R32.bly','exercise2b');" class="btn-primary display-4"><span class="mbri-preview mbr-iconfont mbr-iconfont-btn"></span></button>
-					<a onclick="onFileDownloaded('and_wemosD1R32.bly');">
+					<li><strong>AND operation</strong><p>Implement Boolean operation using the two push-buttons (connected to pins D2 and D3) and the red LED (connected to pin D12). When both of them are pushed, the pin of the LED must be set to HIGH.</p> <strong>Hint: </strong><p><i> Considering push-button D2 as PB1 and push-button D3 as PB2, the resulting operation for setting the LED state is LED=NOT(PB1) AND NOT(PB2).</i></p><button  type="button" onclick="showHideBasic('solutions2b','and'+window.board+'.bly','exercise2b');" class="btn-primary display-4"><span class="mbri-extension mbr-iconfont mbr-iconfont-btn"></span></button>
+					&nbsp;<button type="button"  class="btn-primary display-4" onclick="showHideBasicCode('solutions2b','and'+window.board+'.bly','exercise2b','exercise2bc');"><span class="mbri-align-justify mbr-iconfont mbr-iconfont-btn"></span></button>
+					<a onclick="onFileDownloaded('and'+window.board+'.bly');">
 					<button  type="button" class="btn-primary display-4"><span class="mbri-save mbr-iconfont mbr-iconfont-btn"></span></button></a></li>
-					<li><strong>Equivalent AND operation</strong><p>Now, using De Morgan's Law, find an equivalent implementation of previous exercise but with less operations.</p><strong>Hint: </strong><i><p>In this case, you need to implement LED=NOT(PB1 OR PB2).</i></p><button  type="button" onclick="showHideBasic('solutions3b','and_equivalent_wemosD1R32.bly','exercise3b');" class="btn-primary display-4"><span class="mbri-preview mbr-iconfont mbr-iconfont-btn"></span></button>
-					<a onclick="onFileDownloaded('and_equivalent_wemosD1R32.bly');">
+					<li><strong>Equivalent AND operation</strong><p>Now, using De Morgan's Law, find an equivalent implementation of previous exercise but with less operations.</p><strong>Hint: </strong><i><p>In this case, you need to implement LED=NOT(PB1 OR PB2).</i><p><button  type="button" onclick="showHideBasic('solutions3b','and_equivalent'+window.board+'.bly','exercise3b');" class="btn-primary display-4"><span class="mbri-extension mbr-iconfont mbr-iconfont-btn"></span></button>
+					&nbsp;<button type="button"  class="btn-primary display-4" onclick="showHideBasicCode('solutions3b','and_equivalent'+window.board+'.bly','exercise3b','exercise3bc');"><span class="mbri-align-justify mbr-iconfont mbr-iconfont-btn"></span></button>
+					<a onclick="onFileDownloaded('and_equivalent'+window.board+'.bly');">
 					<button  type="button" class="btn-primary display-4"><span class="mbri-save mbr-iconfont mbr-iconfont-btn"></span></button></a></li>
-					<li><strong>Simple comparison</strong><p>Set the LED connected to pin D12 to HIGH when the value read from the analog pin A0 (potentiometer) is higher than 512.</p><strong>Hint: </strong><i><p>Use the '>' instruction to compare the number return by the instruction 'AnalogRead' and the constant number 512. The result of this operation can be used as input decision of an 'If' instruction to decide whether or not to set the LED.</i></p><button  type="button" onclick="showHideBasic('solutions4b','simple_comparison_wemosD1R32.bly','exercise4b');" class="btn-primary display-4"><span class="mbri-preview mbr-iconfont mbr-iconfont-btn"></span></button>
-					<a onclick="onFileDownloaded('simple_comparison_wemosD1R32.bly');">
+					<li><strong>Simple comparison</strong><p>Set the LED connected to pin D12 to HIGH when the value read from the analog pin A0 (potentiometer) is higher than 512.</p><strong>Hint: </strong><i><p>Use the '>' instruction to compare the number return by the instruction 'AnalogRead' and the constant number 512. The result of this operation can be used as input decision of an 'If' instruction to decide whether or not to set the LED.</i></p><button  type="button" onclick="showHideBasic('solutions4b','simple_comparison'+window.board+'.bly','exercise4b');" class="btn-primary display-4"><span class="mbri-extension mbr-iconfont mbr-iconfont-btn"></span></button>
+					&nbsp;<button type="button"  class="btn-primary display-4" onclick="showHideBasicCode('solutions4b','simple_comparison'+window.board+'.bly','exercise4b','exercise4bc');"><span class="mbri-align-justify mbr-iconfont mbr-iconfont-btn"></span></button>
+					<a onclick="onFileDownloaded('simple_comparison'+window.board+'.bly');">
 					<button  type="button" class="btn-primary display-4"><span class="mbri-save mbr-iconfont mbr-iconfont-btn"></span></button></a></li>
                 </ol>
             </div>
@@ -311,7 +315,7 @@ var currentIntermediateSolutions=0;
 				<strong>Basic Exercise 1</strong>
 			</div>
 		</div>
-		<div class="media-container-row"><div id='exercise1b'></div></div>
+		<div class="media-container-row"><div id='exercise1b'></div><div id='exercise1bc'></div></div>
 	</div>
 </section>
 
@@ -322,7 +326,7 @@ var currentIntermediateSolutions=0;
 				<strong>Basic Exercise 2</strong>
 			</div>
 		</div>
-		<div class="media-container-row"><div id='exercise2b'></div></div>
+		<div class="media-container-row"><div id='exercise2b'></div><div id='exercise2bc'></div></div>
 	</div>
 </section>
 
@@ -333,7 +337,7 @@ var currentIntermediateSolutions=0;
 				<strong>Basic Exercise 3</strong>
 			</div>
 		</div>
-		<div class="media-container-row"><div id='exercise3b'></div></div>
+		<div class="media-container-row"><div id='exercise3b'></div><div id='exercise3bc'></div></div>
 	</div>
 </section>
 
@@ -344,7 +348,7 @@ var currentIntermediateSolutions=0;
 				<strong>Basic Exercise 4</strong>
 			</div>
 		</div>
-		<div class="media-container-row"><div id='exercise4b'></div></div>
+		<div class="media-container-row"><div id='exercise4b'></div><div id='exercise4bc'></div></div>
 	</div>
 </section>
 
@@ -363,14 +367,17 @@ var currentIntermediateSolutions=0;
         <div class="media-container-row">
             <div class="mbr-text counter-container col-12 col-md-8 mbr-fonts-style display-7">
                 <ol>
-                    <li><strong>AND and OR Operations</strong><p>Implement binary operations using the button switches (connected to pins D2 and D3) and the red and blue LEDs (connected to pin D12 and D13). The aim is to implement the following logic operations: RED=NO(PB1 AND PB2), BLUE=NO(PB1 OR PB2).</p><button  type="button" onclick="showHideIntermediate('solutions1i','and_or_wemosD1R32.bly','exercise1i');" class="btn-primary display-4"><span class="mbri-preview mbr-iconfont mbr-iconfont-btn"></span></button>
-					<a onclick="onFileDownloaded('and_or_wemosD1R32.bly');">
+                    <li><strong>AND and OR Operations</strong><p>Implement binary operations using the button switches (connected to pins D2 and D3) and the red and blue LEDs (connected to pin D12 and D13). The aim is to implement the following logic operations: RED=NO(PB1 AND PB2), BLUE=NO(PB1 OR PB2).</p><button  type="button" onclick="showHideIntermediate('solutions1i','and_or'+window.board+'.bly','exercise1i');" class="btn-primary display-4"><span class="mbri-extension mbr-iconfont mbr-iconfont-btn"></span></button>
+										&nbsp;<button type="button"  class="btn-primary display-4" onclick="showHideIntermediateCode('solutions1i','and_or'+window.board+'.bly','exercise1i','exercise1ic');"><span class="mbri-align-justify mbr-iconfont mbr-iconfont-btn"></span></button>
+					<a onclick="onFileDownloaded('and_or'+window.board+'.bly');">
 					<button  type="button" class="btn-primary display-4"><span class="mbri-save mbr-iconfont mbr-iconfont-btn"></span></button></a></li>
-					<li><strong>Even or Odd (Bitwise And)</strong></p>Turn on LED D12 whenever we introduce an even number on the USB serial console. Turn on LED D13 when it's odd.</p> <strong>Hint: </strong><p><i> Use a bitwise 'and' to mask the number with '1'. If the result is greater than zero then the number is odd. To parse an integer number Intermediate Exercise 1 in <a onclick="onHomeFile('exerciseUSBSerial.html');" style="color:#1ec6c6">USB Serial Communication</a>.</i></p><button  type="button" onclick="showHideIntermediate('solutions2i','bitwise_and_wemosD1R32.bly','exercise2i');" class="btn-primary display-4"><span class="mbri-preview mbr-iconfont mbr-iconfont-btn"></span></button>
-					<a onclick="onFileDownloaded('bitwise_and_wemosD1R32.bly');">
+					<li><strong>Even or Odd (Bitwise And)</strong><p>Turn on LED D12 whenever we introduce an even number on the USB serial console. Turn on LED D13 when it's odd.</p> <strong>Hint: </strong><p><i> Use a bitwise 'and' to mask the number with '1'. If the result is greater than zero then the number is odd. To parse an integer number Intermediate Exercise 1 in <a onclick="onHomeFile('exerciseUSBSerial.html');" style="color:#1ec6c6">USB Serial Communication</a>.</i></p><button  type="button" onclick="showHideIntermediate('solutions2i','bitwise_and'+window.board+'.bly','exercise2i');" class="btn-primary display-4"><span class="mbri-extension mbr-iconfont mbr-iconfont-btn"></span></button>
+					&nbsp;<button type="button"  class="btn-primary display-4" onclick="showHideIntermediateCode('solutions2i','bitwise_and'+window.board+'.bly','exercise2i','exercise2ic');"><span class="mbri-align-justify mbr-iconfont mbr-iconfont-btn"></span></button>
+					<a onclick="onFileDownloaded('bitwise_and'+window.board+'.bly');">
 					<button  type="button" class="btn-primary display-4"><span class="mbri-save mbr-iconfont mbr-iconfont-btn"></span></button></a></li>
-					<li><strong>Comparison</strong><p>Read the analog input A0 corresponding to the potentiometer position. Divide the analog read range into 4 sub-ranges and turn on LEDs D12 and D13 based on the binary codification of each range.</p><strong>Hint: </strong><i><p>If the number is between 0 and 1023, then both LEDs must be off, if the value is between 1024 and 2047 then LED D12 must be on and D13 off, if the value is between 2048 and 3071 then LED D13 must be on and D12 off. Otherwise, both LEDs must be on. <strong>Remember that for ESP processor the range for analog inputs is from 0 to 4096, while if you use Arduino, the range is from 0 to 1023.</strong></i></p><button  type="button" onclick="showHideIntermediate('solutions3i','comparison_wemosD1R32.bly','exercise3i');" class="btn-primary display-4"><span class="mbri-preview mbr-iconfont mbr-iconfont-btn"></span></button>
-					<a onclick="onFileDownloaded('comparison_wemosD1R32.bly');">
+					<li><strong>Comparison</strong><p>Read the analog input A0 corresponding to the potentiometer position. Divide the analog read range into 4 sub-ranges and turn on LEDs D12 and D13 based on the binary codification of each range.</p><strong>Hint: </strong><i><p>If the number is between 0 and 1023, then both LEDs must be off, if the value is between 1024 and 2047 then LED D12 must be on and D13 off, if the value is between 2048 and 3071 then LED D13 must be on and D12 off. Otherwise, both LEDs must be on. <strong>Remember that for ESP processor the range for analog inputs is from 0 to 4096, while if you use Arduino, the range is from 0 to 1023.</strong></i><p><button  type="button" onclick="showHideIntermediate('solutions3i','comparison'+window.board+'.bly','exercise3i');" class="btn-primary display-4"><span class="mbri-extension mbr-iconfont mbr-iconfont-btn"></span></button>
+					&nbsp;<button type="button"  class="btn-primary display-4" onclick="showHideIntermediateCode('solutions3i','comparison'+window.board+'.bly','exercise3i','exercise3ic');"><span class="mbri-align-justify mbr-iconfont mbr-iconfont-btn"></span></button>
+					<a onclick="onFileDownloaded('comparison'+window.board+'.bly');">
 					<button  type="button" class="btn-primary display-4"><span class="mbri-save mbr-iconfont mbr-iconfont-btn"></span></button></a></li>
                 </ol>
             </div>
@@ -395,7 +402,7 @@ var currentIntermediateSolutions=0;
 					<strong>Intermediate Exercise 1</strong>
 				</div>
 			</div>
-			<div class="media-container-row"><div id='exercise1i'></div></div>
+			<div class="media-container-row"><div id='exercise1i'></div><div id='exercise1ic'></div></div>
 		</div>
 	</section>
 
@@ -406,7 +413,7 @@ var currentIntermediateSolutions=0;
 					<strong>Intermediate Exercise 2</strong>
 				</div>
 			</div>
-			<div class="media-container-row"><div id='exercise2i'></div></div>
+			<div class="media-container-row"><div id='exercise2i'></div><div id='exercise2ic'></div></div>
 		</div>
 	</section>
 
@@ -417,7 +424,7 @@ var currentIntermediateSolutions=0;
 					<strong>Intermediate Exercise 3</strong>
 				</div>
 			</div>
-			<div class="media-container-row"><div id='exercise3i'></div></div>
+			<div class="media-container-row"><div id='exercise3i'></div><div id='exercise3ic'></div></div>
 		</div>
 	</section>
 <script>

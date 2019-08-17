@@ -248,18 +248,22 @@
         <div class="media-container-row">
             <div class="mbr-text counter-container col-12 col-md-8 mbr-fonts-style display-7">
                 <ol>
-									<li><strong>Parpadea un LED cuantas veces quieras</strong><p>Implementa un prodecimiento en el que un LED, conectado al pin D12, parpadee tantas veces como se indique a través de su único argumento de entrada (tipo entero) con una frecuencia de 1Hz. Después, en el bucle principal, interpreta un entero recibido por el puerto serie USB y llama al procedimiento para hacer parpadear al LED.</p><strong>Pista: </strong><p><i>Añade un argumento de entrada del tipo entero, con nombre, por ejemplo 'n' y dentro del procedimiento, cuenta desde '1' hasta 'n' dentro de un bucle. Dentro de ese bucle, haz parpadear el LED a la frecuencia indicada, con un retardo de  500ms entre las instrucciones para poner el LED a ALTO y BAJO. Para interpretar un número entero desde el puerto serie observa el Ejercicio Intermedio 1 en <a onclick="onHomeFile('exerciseUSBSerial.html');" style="color:#1ec6c6">Comunicación Serie USB</a></i>.</p><button  type="button" onclick="showHideBasic('solutions1b','blink_as_you_wish_wemosD1R32.bly','exercise1b');" class="btn-primary display-4"><span class="mbri-preview mbr-iconfont mbr-iconfont-btn"></span></button>
-				<a onclick="onFileDownloaded('blink_as_you_wish_wemosD1R32.bly');">
+									<li><strong>Parpadea un LED cuantas veces quieras</strong><p>Implementa un prodecimiento en el que un LED, conectado al pin D12, parpadee tantas veces como se indique a través de su único argumento de entrada (tipo entero) con una frecuencia de 1Hz. Después, en el bucle principal, interpreta un entero recibido por el puerto serie USB y llama al procedimiento para hacer parpadear al LED.</p><strong>Pista: </strong><p><i>Añade un argumento de entrada del tipo entero, con nombre, por ejemplo 'n' y dentro del procedimiento, cuenta desde '1' hasta 'n' dentro de un bucle. Dentro de ese bucle, haz parpadear el LED a la frecuencia indicada, con un retardo de  500ms entre las instrucciones para poner el LED a ALTO y BAJO. Para interpretar un número entero desde el puerto serie observa el Ejercicio Intermedio 1 en <a onclick="onHomeFile('exerciseUSBSerial.html');" style="color:#1ec6c6">Comunicación Serie USB</a></i>.</p><button  type="button" onclick="showHideBasic('solutions1b','blink_as_you_wish'+window.board+'.bly','exercise1b');" class="btn-primary display-4"><span class="mbri-preview mbr-iconfont mbr-iconfont-btn"></span></button>
+				&nbsp;<button type="button"  class="btn-primary display-4" onclick="showHideBasicCode('solutions1b','blink_as_you_wish'+window.board+'.bly','exercise1b','exercise1bc');"><span class="mbri-align-justify mbr-iconfont mbr-iconfont-btn"></span></button>
+				<a onclick="onFileDownloaded('blink_as_you_wish'+window.board+'.bly');">
 				<button  type="button" class="btn-primary display-4"><span class="mbri-save mbr-iconfont mbr-iconfont-btn"></span></button></a></li>
-								<li><strong>Parpadea un LED como quieras</strong><p>Ahora, mejora el ejercicio anterior para que el procedimiento incluya también un argumento de entrada con el tiempo de retardo del LED. </p><strong>Pista: </strong><p><i>Ahora, necesitas añadir un segundo argumento del tipo entero y reemplazar la constante '500' del ejercicio anterior por el valor del tiempo correspondiente según indica la variable (segundo argumento de entrada). Ahora, en el monitor serie, <strong>debes introducir dos números consecutivos</strong> cada vez que quieras hacer parpadear el LED</i>.</p><button  type="button" onclick="showHideBasic('solutions2b','blink_as_you_wish2_wemosD1R32.bly','exercise2b');" class="btn-primary display-4"><span class="mbri-preview mbr-iconfont mbr-iconfont-btn"></span></button>
-					<a onclick="onFileDownloaded('sos_wemosD1R32.bly');">
+								<li><strong>Parpadea un LED como quieras</strong><p>Ahora, mejora el ejercicio anterior para que el procedimiento incluya también un argumento de entrada con el tiempo de retardo del LED. </p><strong>Pista: </strong><p><i>Ahora, necesitas añadir un segundo argumento del tipo entero y reemplazar la constante '500' del ejercicio anterior por el valor del tiempo correspondiente según indica la variable (segundo argumento de entrada). Ahora, en el monitor serie, <strong>debes introducir dos números consecutivos</strong> cada vez que quieras hacer parpadear el LED</i>.</p><button  type="button" onclick="showHideBasic('solutions2b','blink_as_you_wish2'+window.board+'.bly','exercise2b');" class="btn-primary display-4"><span class="mbri-preview mbr-iconfont mbr-iconfont-btn"></span></button>
+					&nbsp;<button type="button"  class="btn-primary display-4" onclick="showHideBasicCode('solutions2b','blink_as_you_wish2'+window.board+'.bly','exercise2b','exercise2bc');"><span class="mbri-align-justify mbr-iconfont mbr-iconfont-btn"></span></button>
+					<a onclick="onFileDownloaded('blink_as_you_wish2'+window.board+'.bly');">
 					<button  type="button" class="btn-primary display-4"><span class="mbri-save mbr-iconfont mbr-iconfont-btn"></span></button></a></li>
 
 					<li><strong>Suma dos números</strong><p>Implementa una función que toma como argumentos de entradas dos números y devuelve la suma de los mismos. Interpreta dos números enteros recibidos por el monitor serie y llama a la función para realizar la suma. Muestra el resultado de la suma por el monitor serie.</p><strong>Pista: </strong><p><i>Crea una función con dos argumentos de entrada del tipo entero y devuevle la suma de los mismos en la sección 'devuelve'. Cuando introduzcas dos números, puede que en ocasiones, el programa devuelva 0 incluso si no tecleeas nada. Esto se debe a que se reciben caracteres adicionales (como fin de línea, etc...) que se interpretan como un 0</i>.</p><button  type="button" onclick="showHideBasic('solutions3b','sum.bly','exercise3b');" class="btn-primary display-4"><span class="mbri-preview mbr-iconfont mbr-iconfont-btn"></span></button>
+					&nbsp;<button type="button"  class="btn-primary display-4" onclick="showHideBasicCode('solutions3b','sum.bly','exercise3b','exercise3bc');"><span class="mbri-align-justify mbr-iconfont mbr-iconfont-btn"></span></button>
 					<a onclick="onFileDownloaded('sum.bly');">
 					<button  type="button" class="btn-primary display-4"><span class="mbri-save mbr-iconfont mbr-iconfont-btn"></span></button></a></li>
-					<li><strong>Media de la lectura analógica</strong><p>Implementa una función que realiza la media de 30 medidas consecutivas de la entrada analógica A0 correspondiente al potenciómetro. La función debe devolver el valor medio (el argumento de salida debe ser del tipo decimal). Llama a la función en el bucle principal y dibuja el valro medio por el monitor serie utilizando el Plotter de Arduino.</p><strong>Pista: </strong><p><i>Crea una función sin argumentos de entrada y un argumento de salida del tipo decimal. Dentro de la función repite 30 veces la medición y acumula sus valores en una variable del tipo decimal. Posteriormente, devuelve el valor resultante dividiendo el resultado entre 30 (para realizar la media)</i>.</p><button  type="button" onclick="showHideBasic('solutions4b','mean_analogA0_wemosD1R32.bly','exercise4b');" class="btn-primary display-4"><span class="mbri-preview mbr-iconfont mbr-iconfont-btn"></span></button>
-					<a onclick="onFileDownloaded('mean_analogA0_wemosD1R32.bly');">
+					<li><strong>Media de la lectura analógica</strong><p>Implementa una función que realiza la media de 30 medidas consecutivas de la entrada analógica A0 correspondiente al potenciómetro. La función debe devolver el valor medio (el argumento de salida debe ser del tipo decimal). Llama a la función en el bucle principal y dibuja el valro medio por el monitor serie utilizando el Plotter de Arduino.</p><strong>Pista: </strong><p><i>Crea una función sin argumentos de entrada y un argumento de salida del tipo decimal. Dentro de la función repite 30 veces la medición y acumula sus valores en una variable del tipo decimal. Posteriormente, devuelve el valor resultante dividiendo el resultado entre 30 (para realizar la media)</i>.</p><button  type="button" onclick="showHideBasic('solutions4b','mean_analogA0'+window.board+'.bly','exercise4b');" class="btn-primary display-4"><span class="mbri-preview mbr-iconfont mbr-iconfont-btn"></span></button>
+					&nbsp;<button type="button"  class="btn-primary display-4" onclick="showHideBasicCode('solutions4b','mean_analogA0'+window.board+'.bly','exercise4b','exercise4bc');"><span class="mbri-align-justify mbr-iconfont mbr-iconfont-btn"></span></button>
+					<a onclick="onFileDownloaded('mean_analogA0'+window.board+'.bly');">
 					<button  type="button" class="btn-primary display-4"><span class="mbri-save mbr-iconfont mbr-iconfont-btn"></span></button></a></li>
                 </ol>
             </div>
@@ -285,7 +289,7 @@
 				<strong>Ejercicio Básico 1</strong>
 			</div>
 		</div>
-		<div class="media-container-row"><div id='exercise1b'></div></div>
+		<div class="media-container-row"><div id='exercise1b'></div><div id='exercise1bc'></div></div>
 	</div>
 </section>
 
@@ -296,7 +300,7 @@
 				<strong>Ejercicio Básico 2</strong>
 			</div>
 		</div>
-		<div class="media-container-row"><div id='exercise2b'></div></div>
+		<div class="media-container-row"><div id='exercise2b'></div><div id='exercise2bc'></div></div>
 	</div>
 </section>
 
@@ -307,7 +311,7 @@
 				<strong>Ejercicio Básico 3</strong>
 			</div>
 		</div>
-		<div class="media-container-row"><div id='exercise3b'></div></div>
+		<div class="media-container-row"><div id='exercise3b'></div><div id='exercise3bc'></div></div>
 	</div>
 </section>
 
@@ -318,7 +322,7 @@
 				<strong>Ejercicio Básico 4</strong>
 			</div>
 		</div>
-		<div class="media-container-row"><div id='exercise4b'></div></div>
+		<div class="media-container-row"><div id='exercise4b'></div><div id='exercise4bc'></div></div>
 	</div>
 </section>
 
@@ -337,14 +341,17 @@
         <div class="media-container-row">
             <div class="mbr-text counter-container col-12 col-md-8 mbr-fonts-style display-7">
                 <ol>
-									<li><strong>S.O.S Básico.</strong><p>Implementa dos procedimientos: <i>dash</i> y <i>dot</i>. Los procedimientos encenderán y apagarán el LED azul conectado al pin D13. El tiempo base de las funciones será de 200ms. Trata de transmitir un mensaje de S.O.S. en código Morse según se indica al principio, en la tabla del Código Morse. Después de transmitir el mensaje, puedes hacer una pausa grande, por ejemplo de 10000ms y repetir de nuevo el mensaje.</p><strong>Pista: </strong><p><i>la secuencia para el punto es: enciende el LED, espera 200ms, apaga el LED y espera 200ms. De forma similar, la secuencia para el procedimiento raya es: enciende el LED, espera 600ms, apaga el LED y espera 200ms. Observa que, por simplicidad, se ha incluido el tiempo de espera entre puntos y rayas, lo que implica que el tiempo entre letras debe ser de 400ms (porque ya se incluyen 200ms al final de los procedimientos)</i>.</p><button  type="button" onclick="showHideIntermediate('solutions1i','sos_basic_wemosD1R32.bly','exercise1i');" class="btn-primary display-4"><span class="mbri-preview mbr-iconfont mbr-iconfont-btn"></span></button>
-				<a onclick="onFileDownloaded('sos_basic_wemosD1R32.bly');">
+									<li><strong>S.O.S Básico.</strong><p>Implementa dos procedimientos: <i>dash</i> y <i>dot</i>. Los procedimientos encenderán y apagarán el LED azul conectado al pin D13. El tiempo base de las funciones será de 200ms. Trata de transmitir un mensaje de S.O.S. en código Morse según se indica al principio, en la tabla del Código Morse. Después de transmitir el mensaje, puedes hacer una pausa grande, por ejemplo de 10000ms y repetir de nuevo el mensaje.</p><strong>Pista: </strong><p><i>la secuencia para el punto es: enciende el LED, espera 200ms, apaga el LED y espera 200ms. De forma similar, la secuencia para el procedimiento raya es: enciende el LED, espera 600ms, apaga el LED y espera 200ms. Observa que, por simplicidad, se ha incluido el tiempo de espera entre puntos y rayas, lo que implica que el tiempo entre letras debe ser de 400ms (porque ya se incluyen 200ms al final de los procedimientos)</i>.</p><button  type="button" onclick="showHideIntermediate('solutions1i','sos_basic'+window.board+'.bly','exercise1i');" class="btn-primary display-4"><span class="mbri-preview mbr-iconfont mbr-iconfont-btn"></span></button>
+				&nbsp;<button type="button"  class="btn-primary display-4" onclick="showHideIntermediateCode('solutions1i','sos_basic'+window.board+'.bly','exercise1i','exercise1ic');"><span class="mbri-align-justify mbr-iconfont mbr-iconfont-btn"></span></button>
+				<a onclick="onFileDownloaded('sos_basic'+window.board+'.bly');">
 				<button  type="button" class="btn-primary display-4"><span class="mbri-save mbr-iconfont mbr-iconfont-btn"></span></button></a></li>
-								<li><strong>S.O.S.</strong><p>Siguiendo las ideas del ejercicio anterior, implementa dos procedimientos que aceptan el número de repeticiones para cada <i>punto</i> y <i>raya</i>. Ahora, en vez de hacer parpadear el LED, haz que pite el zumbador de sonido (conectado al pin D5).</p><strong>Pista: </strong><p><i>Añade un argumento de entrada del tipo entero repite la secuencia anterior dentro de un bucle </i>Contar con...<i>. Ahora, el zumbador de sonido debe esperar según se indica en la base de tiempos una vez para los puntos y tres veces para las rayas. En ambos casos, el tiempo de espera una vez ha dejado de pitar es de una unidad el tiempo base (200ms). Usad, por ejemplo, una frecuencia de 1500Hz para el zumbador de sonido para realizar el pitido</i>.</p><button  type="button" onclick="showHideIntermediate('solutions2i','sos_wemosD1R32.bly','exercise2i');" class="btn-primary display-4"><span class="mbri-preview mbr-iconfont mbr-iconfont-btn"></span></button>
-					<a onclick="onFileDownloaded('sos_wemosD1R32.bly');">
+								<li><strong>S.O.S.</strong><p>Siguiendo las ideas del ejercicio anterior, implementa dos procedimientos que aceptan el número de repeticiones para cada <i>punto</i> y <i>raya</i>. Ahora, en vez de hacer parpadear el LED, haz que pite el zumbador de sonido (conectado al pin D5).</p><strong>Pista: </strong><p><i>Añade un argumento de entrada del tipo entero repite la secuencia anterior dentro de un bucle </i>Contar con...<i>. Ahora, el zumbador de sonido debe esperar según se indica en la base de tiempos una vez para los puntos y tres veces para las rayas. En ambos casos, el tiempo de espera una vez ha dejado de pitar es de una unidad el tiempo base (200ms). Usad, por ejemplo, una frecuencia de 1500Hz para el zumbador de sonido para realizar el pitido</i>.</p><button  type="button" onclick="showHideIntermediate('solutions2i','sos'+window.board+'.bly','exercise2i');" class="btn-primary display-4"><span class="mbri-preview mbr-iconfont mbr-iconfont-btn"></span></button>
+					&nbsp;<button type="button"  class="btn-primary display-4" onclick="showHideIntermediateCode('solutions2i','sos'+window.board+'.bly','exercise2i','exercise2ic');"><span class="mbri-align-justify mbr-iconfont mbr-iconfont-btn"></span></button>
+					<a onclick="onFileDownloaded('sos'+window.board+'.bly');">
 					<button  type="button" class="btn-primary display-4"><span class="mbri-save mbr-iconfont mbr-iconfont-btn"></span></button></a></li>
 
 					<li><strong>Encriptar</strong><p>Implementa una <strong>función que acepta un mensaje de entrada del tipo cadena de texto</strong> y <strong>devuelve una cadena de texto</strong>. La función debe encriptar el mensaje de la entrada según se indica en la tabla de encriptación de Atbash y devolver el resultado en el argumento de salida. Llama a la función con el mensaje que se lea desde el monitor serie y muestra (imprime) el resultado de vuelta por el propio monitor.</p><strong>Pista: </strong><p><i>Dentro de la función, implenta un bucle del tipo </i>Mientras<i>, que itera por cada uno de los caracteres de la cadena de texto (extrae cada uno de los caracteres de la cadena de texto y realiza una operación como se indica). Haz que new_c&#8592;'z'-c+'a', siendo </i>c<i> el caracter leído y </i>new_c</i> el caracter codificado que debes añadir al final de una cadena de texto (vacía al inicio) y que será lo que se devuelva como resultado de ejecutar la función</i>.</p><button  type="button" onclick="showHideIntermediate('solutions3i','encrypt.bly','exercise3i');" class="btn-primary display-4"><span class="mbri-preview mbr-iconfont mbr-iconfont-btn"></span></button>
+					&nbsp;<button type="button"  class="btn-primary display-4" onclick="showHideIntermediateCode('solutions3i','encrypt.bly','exercise3i','exercise3ic');"><span class="mbri-align-justify mbr-iconfont mbr-iconfont-btn"></span></button>
 					<a onclick="onFileDownloaded('encrypt.bly');">
 					<button  type="button" class="btn-primary display-4"><span class="mbri-save mbr-iconfont mbr-iconfont-btn"></span></button></a></li>
                 </ol>
@@ -370,7 +377,7 @@
 					<strong>Ejercicio Intermedio 1</strong>
 				</div>
 			</div>
-			<div class="media-container-row"><div id='exercise1i'></div></div>
+			<div class="media-container-row"><div id='exercise1i'></div><div id='exercise1ic'></div></div>
 		</div>
 	</section>
 
@@ -381,7 +388,7 @@
 					<strong>Ejercicio Intermedio 2</strong>
 				</div>
 			</div>
-			<div class="media-container-row"><div id='exercise2i'></div></div>
+			<div class="media-container-row"><div id='exercise2i'></div><div id='exercise2ic'></div></div>
 		</div>
 	</section>
 
@@ -392,7 +399,7 @@
 					<strong>Ejercicio Intermedio 3</strong>
 				</div>
 			</div>
-			<div class="media-container-row"><div id='exercise3i'></div></div>
+			<div class="media-container-row"><div id='exercise3i'></div><div id='exercise3ic'></div></div>
 		</div>
 	</section>
 
