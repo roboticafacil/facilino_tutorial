@@ -105,25 +105,25 @@
             <div class="mbr-text counter-container col-12 col-md-8 mbr-fonts-style display-7">
                 <ol>
 									<li><strong>Static Text I</strong><p>Write “This is a very long text” with a single instruction and the setup of the program.</p><strong>Hint:</strong><p><i>Use the 'Define LCD I2C (16x2)' and the 'LCD Print' instructions (do not check the set text position option).</i></p>
-				<button  type="button" onclick="showHideBasic('solutions1b','long_text_lcd_i2c.bly','exercise1b');" class="btn-primary display-4"><span class="mbri-extension mbr-iconfont mbr-iconfont-btn"></span></button>
-				&nbsp;<button type="button"  class="btn-primary display-4" onclick="showHideBasicCode('solutions1b','long_text_lcd_i2c.bly','exercise1b','exercise1bc');"><span class="mbri-align-justify mbr-iconfont mbr-iconfont-btn"></span></button>
+				<button  type="button" title="Facilino code" onclick="showHideBasic('solutions1b','long_text_lcd_i2c.bly','exercise1b');" class="btn-primary display-4"><span class="mbri-extension mbr-iconfont mbr-iconfont-btn"></span></button>
+				&nbsp;<button type="button"  class="btn-primary display-4" title="Arduino code" onclick="showHideBasicCode('solutions1b','long_text_lcd_i2c.bly','exercise1b','exercise1bc');"><span class="mbri-align-justify mbr-iconfont mbr-iconfont-btn"></span></button>
 				<a onclick="onFileDownloaded('long_text_lcd_i2c.bly');">
-				<button  type="button" class="btn-primary display-4"><span class="mbri-save mbr-iconfont mbr-iconfont-btn"></span></button></a></li>
+				<button  type="button" class="btn-primary display-4"title="Download" ><span class="mbri-save mbr-iconfont mbr-iconfont-btn"></span></button></a></li>
 				<li><strong>Static Text II</strong><p>Write “This is a very long text” with a single instruction as before. Then, set the correct position so that words shown on each line are complete.</p><strong>Hint:</strong><p><i>As before, use the 'LCD Print' instruction, but now in order to fit the text on the LCD Screen, print on the first line 'This is a very' and on the second line 'long text' (check the set text position option and set the correct rows for each text, begin 0 the first row and 1 the second row).</i></p>
-<button  type="button" onclick="showHideBasic('solutions2b','long_text2_lcd_i2c.bly','exercise2b');" class="btn-primary display-4"><span class="mbri-extension mbr-iconfont mbr-iconfont-btn"></span></button>
-&nbsp;<button type="button"  class="btn-primary display-4" onclick="showHideBasicCode('solutions2b','long_text2_lcd_i2c.bly','exercise2b','exercise2bc');"><span class="mbri-align-justify mbr-iconfont mbr-iconfont-btn"></span></button>
+<button  type="button" title="Facilino code" onclick="showHideBasic('solutions2b','long_text2_lcd_i2c.bly','exercise2b');" class="btn-primary display-4"><span class="mbri-extension mbr-iconfont mbr-iconfont-btn"></span></button>
+&nbsp;<button type="button"  class="btn-primary display-4" title="Arduino code" onclick="showHideBasicCode('solutions2b','long_text2_lcd_i2c.bly','exercise2b','exercise2bc');"><span class="mbri-align-justify mbr-iconfont mbr-iconfont-btn"></span></button>
 <a onclick="onFileDownloaded('long_text2_lcd_i2c.bly');">
-<button  type="button" class="btn-primary display-4"><span class="mbri-save mbr-iconfont mbr-iconfont-btn"></span></button></a></li>
+<button  type="button" class="btn-primary display-4"title="Download" ><span class="mbri-save mbr-iconfont mbr-iconfont-btn"></span></button></a></li>
 									<li><strong>Printing number of clicks</strong><p>Print on the LCD screen the number of times that we have pressed (short-click) the pushbutton connected to D2.</p><strong>Hint: </strong><p><i>Use the pushbutton instruction to detect the number of clicks. Create a global variable to count the number of clicks and increse the value each time a short-click is detected.</i></p>
-									<button  type="button" onclick="showHideBasic('solutions3b','lcd_clicks'+window.board+'.bly','exercise3b');" class="btn-primary display-4"><span class="mbri-extension mbr-iconfont mbr-iconfont-btn"></span></button>
-									&nbsp;<button type="button"  class="btn-primary display-4" onclick="showHideBasicCode('solutions3b','lcd_clicks'+window.board+'.bly','exercise3b','exercise3bc');"><span class="mbri-align-justify mbr-iconfont mbr-iconfont-btn"></span></button>
+									<button  type="button" title="Facilino code" onclick="showHideBasic('solutions3b','lcd_clicks'+window.board+'.bly','exercise3b');" class="btn-primary display-4"><span class="mbri-extension mbr-iconfont mbr-iconfont-btn"></span></button>
+									&nbsp;<button type="button"  class="btn-primary display-4" title="Arduino code" onclick="showHideBasicCode('solutions3b','lcd_clicks'+window.board+'.bly','exercise3b','exercise3bc');"><span class="mbri-align-justify mbr-iconfont mbr-iconfont-btn"></span></button>
 									<a onclick="onFileDownloaded('lcd_clicks'+window.board+'.bly');">
-									<button  type="button" class="btn-primary display-4"><span class="mbri-save mbr-iconfont mbr-iconfont-btn"></span></button></a></li>
+									<button  type="button" class="btn-primary display-4"title="Download" ><span class="mbri-save mbr-iconfont mbr-iconfont-btn"></span></button></a></li>
 									<li><strong>Printing number of short-clicks and long-clicks</strong><p>Now, improve the previous exercise to print on the LCD screen the number of times that we have pressed the pushbutton connected to D2. Now, we have to distinguish between short-clicks and long-clicks, so that the number of clicks is printed on the first row and the number of long-clicks is printed on the second row.</p><strong>Hint: </strong><p><i>Use the pushbutton instruction to detect the number of short-clicks and long-clicks. Create two global variables to count the number of short-clicks/long-clicks and increse them each time a short-click/long-click is detected. You can reuse code if you create a procedure with four input arguments (two strings and two integers) to print the information on the LCD screen.</i></p>
-									<button  type="button" onclick="showHideBasic('solutions3b','lcd_clicks2'+window.board+'.bly','exercise3b');" class="btn-primary display-4"><span class="mbri-extension mbr-iconfont mbr-iconfont-btn"></span></button>
-									&nbsp;<button type="button"  class="btn-primary display-4" onclick="showHideBasicCode('solutions3b','lcd_clicks2'+window.board+'.bly','exercise3b','exercise3bc');"><span class="mbri-align-justify mbr-iconfont mbr-iconfont-btn"></span></button>
+									<button  type="button" title="Facilino code" onclick="showHideBasic('solutions3b','lcd_clicks2'+window.board+'.bly','exercise3b');" class="btn-primary display-4"><span class="mbri-extension mbr-iconfont mbr-iconfont-btn"></span></button>
+									&nbsp;<button type="button"  class="btn-primary display-4" title="Arduino code" onclick="showHideBasicCode('solutions3b','lcd_clicks2'+window.board+'.bly','exercise3b','exercise3bc');"><span class="mbri-align-justify mbr-iconfont mbr-iconfont-btn"></span></button>
 									<a onclick="onFileDownloaded('lcd_clicks2'+window.board+'.bly');">
-									<button  type="button" class="btn-primary display-4"><span class="mbri-save mbr-iconfont mbr-iconfont-btn"></span></button></a></li>
+									<button  type="button" class="btn-primary display-4"title="Download" ><span class="mbri-save mbr-iconfont mbr-iconfont-btn"></span></button></a></li>
                 </ol>
             </div>
         </div>
@@ -200,20 +200,20 @@
             <div class="mbr-text counter-container col-12 col-md-8 mbr-fonts-style display-7">
                 <ol>
                     <li><strong>Centered Text</strong><p>Write "This is a very" and "long text" in seperated lines (centered).</p><strong>Hint:</strong><p><i>Create two different strings that can be cast individual.</i></p>
-					<button  type="button" onclick="showHideIntermediate('solutions1i','centered_text.bly','exercise1i');" class="btn-primary display-4"><span class="mbri-extension mbr-iconfont mbr-iconfont-btn"></span></button>
-					&nbsp;<button type="button"  class="btn-primary display-4" onclick="showHideIntermediateCode('solutions1i','centered_text.bly','exercise1i','exercise1ic');"><span class="mbri-align-justify mbr-iconfont mbr-iconfont-btn"></span></button>
+					<button  type="button" title="Facilino code" onclick="showHideIntermediate('solutions1i','centered_text.bly','exercise1i');" class="btn-primary display-4"><span class="mbri-extension mbr-iconfont mbr-iconfont-btn"></span></button>
+					&nbsp;<button type="button"  class="btn-primary display-4" title="Arduino code" onclick="showHideIntermediateCode('solutions1i','centered_text.bly','exercise1i','exercise1ic');"><span class="mbri-align-justify mbr-iconfont mbr-iconfont-btn"></span></button>
 					<a onclick="onFileDownloaded('centered_text.bly');">
-					<button  type="button" class="btn-primary display-4"><span class="mbri-save mbr-iconfont mbr-iconfont-btn"></span></button></a></li>
+					<button  type="button" class="btn-primary display-4"title="Download" ><span class="mbri-save mbr-iconfont mbr-iconfont-btn"></span></button></a></li>
 					<li><strong>Scrolling Text</strong><p>Print "Facilino" (centered) on the first row and then scroll a text on the second row print "This software is awesome". </p><strong>Hint:</strong><p><i>Print a static text on the first row as indicated, and on the second row, to scroll the text, use the 'LCD Scroll' instruction with a 100ms delay.</i></p>
-					<button  type="button" onclick="showHideIntermediate('solutions2i','scrolling_text.bly','exercise2i');" class="btn-primary display-4"><span class="mbri-extension mbr-iconfont mbr-iconfont-btn"></span></button>
-					&nbsp;<button type="button"  class="btn-primary display-4" onclick="showHideIntermediateCode('solutions2i','scrolling_text.bly','exercise2i','exercise2ic');"><span class="mbri-align-justify mbr-iconfont mbr-iconfont-btn"></span></button>
+					<button  type="button" title="Facilino code" onclick="showHideIntermediate('solutions2i','scrolling_text.bly','exercise2i');" class="btn-primary display-4"><span class="mbri-extension mbr-iconfont mbr-iconfont-btn"></span></button>
+					&nbsp;<button type="button"  class="btn-primary display-4" title="Arduino code" onclick="showHideIntermediateCode('solutions2i','scrolling_text.bly','exercise2i','exercise2ic');"><span class="mbri-align-justify mbr-iconfont mbr-iconfont-btn"></span></button>
 					<a onclick="onFileDownloaded('scrolling_text.bly');">
-					<button  type="button" class="btn-primary display-4"><span class="mbri-save mbr-iconfont mbr-iconfont-btn"></span></button></a></li>
+					<button  type="button" class="btn-primary display-4"title="Download" ><span class="mbri-save mbr-iconfont mbr-iconfont-btn"></span></button></a></li>
 					<li><strong>Setting Backlight</strong><p>Print “Facilino” and highlight the text by setting the backlight to LOW or HIGH.</p><strong>Hint:</strong><p><i>Use, in the main loop, the 'LCD SetBacklight' instruction to set it to LOW or HIGH with a delay of 2000ms.</i></p>
-					<button  type="button" onclick="showHideIntermediate('solutions3i','lcd_set_backlight.bly','exercise3i');" class="btn-primary display-4"><span class="mbri-extension mbr-iconfont mbr-iconfont-btn"></span></button>
-					&nbsp;<button type="button"  class="btn-primary display-4" onclick="showHideIntermediateCode('solutions3i','lcd_set_backlight.bly','exercise3i','exercise3ic');"><span class="mbri-align-justify mbr-iconfont mbr-iconfont-btn"></span></button>
+					<button  type="button" title="Facilino code" onclick="showHideIntermediate('solutions3i','lcd_set_backlight.bly','exercise3i');" class="btn-primary display-4"><span class="mbri-extension mbr-iconfont mbr-iconfont-btn"></span></button>
+					&nbsp;<button type="button"  class="btn-primary display-4" title="Arduino code" onclick="showHideIntermediateCode('solutions3i','lcd_set_backlight.bly','exercise3i','exercise3ic');"><span class="mbri-align-justify mbr-iconfont mbr-iconfont-btn"></span></button>
 					<a onclick="onFileDownloaded('lcd_set_backlight.bly');">
-					<button  type="button" class="btn-primary display-4"><span class="mbri-save mbr-iconfont mbr-iconfont-btn"></span></button></a></li>
+					<button  type="button" class="btn-primary display-4"title="Download" ><span class="mbri-save mbr-iconfont mbr-iconfont-btn"></span></button></a></li>
 				</ol>
             </div>
         </div>
