@@ -18,6 +18,14 @@
 	</section>
 </section>
 
+<section class="cid-qYh0wSah5G" id="image3-50">
+    <figure class="mbr-figure container">
+            <div class="image-block" style="width: 50%;">
+                <img src="tutorial/assets/images/Electronics/wemosD1_shield.png" width="1400" alt="RELAY_SERVO_FAN" title=""></img>
+            </div>
+    </figure>
+</section>
+
 <section class="mbr-section article content1 cid-qYh0wSDsTN" id="content2-51">
     <div class="container">
         <div class="media-container-row">
@@ -91,20 +99,20 @@
         <div class="media-container-row">
             <div class="mbr-text counter-container col-12 col-md-8 mbr-fonts-style display-7">
                 <ol>
-                    <li><strong>Fan Control with a Relay</strong><p>xxxx.</p><strong>Hint: </strong><p><i>xxx.</i></p>
+                    <li><strong>Fan Control with a Relay</strong><p>With a relay connected to pin D7 and a pushbutton connected to pin D2, activate the relay each time you press the pushbutton. You can control a PC fan with a relay so that every time you push the button, the fan will start spinning.</p><strong>Hint: </strong><p><i>Use the 'Pushbutton' instruction so that every time it is on a pressed state, you set the relay to HIGH, otherwise, you set the relay to LOW.</i></p>
 					<button type="button" title="Facilino code" onclick="showHideBasic('solutions1b','relay_button'+window.board+'.bly','exercise1b');" class="btn-primary display-4"><span class="mbri-extension mbr-iconfont mbr-iconfont-btn"></span></button>
 					&nbsp;<button type="button"  class="btn-primary display-4" title="Arduino code" onclick="showHideBasicCode('solutions1b','relay_button'+window.board+'.bly','exercise1b','exercise1bc');"><span class="mbri-align-justify mbr-iconfont mbr-iconfont-btn"></span></button>
 					<a onclick="onFileDownloaded('relay_button'+window.board+'.bly');">
 					<button type="button" class="btn-primary display-4" title="Download" ><span class="mbri-save mbr-iconfont mbr-iconfont-btn"></span></button></a></li>
-					<li><strong>Fan Control with a Relay and Potentiometer</strong><p>xxxx.</p><strong>Hint: </strong><p><i>xxxx.</i></p>
+					<li><strong>Fan Control with a Relay and Potentiometer</strong><p>With a relay connected to pin D7 and a potentiometer connected to pin A0, activate the relay if the potentiometer value is above 800 (in Arduino) or 3200 (in ESP).</p><strong>Hint: </strong><p><i>Use an 'if' instruction to detect the case where the potentiometer value is above 800 (or 3200).</i></p>
 					<button type="button" title="Facilino code" onclick="showHideBasic('solutions2b','relay_pot'+window.board+'.bly','exercise2b');" class="btn-primary display-4"><span class="mbri-extension mbr-iconfont mbr-iconfont-btn"></span></button>
 					&nbsp;<button type="button"  class="btn-primary display-4" title="Arduino code" onclick="showHideBasicCode('solutions2b','relay_pot'+window.board+'.bly','exercise2b','exercise2bc');"><span class="mbri-align-justify mbr-iconfont mbr-iconfont-btn"></span></button>
 					<a onclick="onFileDownloaded('relay_pot'+window.board+'.bly');">
 					<button type="button" class="btn-primary display-4" title="Download" ><span class="mbri-save mbr-iconfont mbr-iconfont-btn"></span></button></a></li>
-					<li><strong>Moving a servo</strong><p>xxx.</p><strong> Hint: </strong><p><i>xxx.</i></p><button  type="button" title="Facilino code" onclick="showHideBasic('solutions3b','servo'+window.board+'.bly','exercise3b');" class="btn-primary display-4"><span class="mbri-extension mbr-iconfont mbr-iconfont-btn"></span></button>
+					<li><strong>Moving a servo</strong><p>Move a servo to its 0º position and 3000ms move it to its 180º and back again to 0º after 3000ms. You can attach a blade waved by the servo to produce a air flow similar to a fan waved by hand.</p><strong> Hint: </strong><p><i>Use the servo instruction to set it to 0º or 180º and the proper delays in the main loop.</i></p><button  type="button" title="Facilino code" onclick="showHideBasic('solutions3b','servo'+window.board+'.bly','exercise3b');" class="btn-primary display-4"><span class="mbri-extension mbr-iconfont mbr-iconfont-btn"></span></button>
 					&nbsp;<button type="button"  class="btn-primary display-4" title="Arduino code" onclick="showHideBasicCode('solutions3b','servo'+window.board+'.bly','exercise3b','exercise3bc');"><span class="mbri-align-justify mbr-iconfont mbr-iconfont-btn"></span></button>
 					<a onclick="onFileDownloaded('servo'+window.board+'.bly');"><button type="button" class="btn-primary display-4" title="Download" ><span class="mbri-save mbr-iconfont mbr-iconfont-btn"></span></button></a></li>
-					<li><strong>Servo Sweep</strong><p>xxx.</p><strong> Hint: </strong><p><i>xxx.</i></p> <button  type="button" title="Facilino code" onclick="showHideBasic('solutions4b','servo_sweep'+window.board+'.bly','exercise4b');" class="btn-primary display-4"><span class="mbri-extension mbr-iconfont mbr-iconfont-btn"></span></button>
+					<li><strong>Servo Sweep</strong><p>Make a servo sweep of all possible positions between 0º and 180º with a 10º step (increment) each 500ms. Once the last position is reached, move back to 0º in a rapid movement of just 500ms.</p><strong> Hint: </strong><p><i>Use a 'for' instruction to loop between 0 and 18. On each iteration set the servo position based on the loop iteration times 10. Once the loop is done, then move to 0º.</i></p> <button  type="button" title="Facilino code" onclick="showHideBasic('solutions4b','servo_sweep'+window.board+'.bly','exercise4b');" class="btn-primary display-4"><span class="mbri-extension mbr-iconfont mbr-iconfont-btn"></span></button>
 						&nbsp;<button type="button"  class="btn-primary display-4" title="Arduino code" onclick="showHideBasicCode('solutions4b','servo_sweep'+window.board+'.bly','exercise4b','exercise4bc');"><span class="mbri-align-justify mbr-iconfont mbr-iconfont-btn"></span></button>
 						<a onclick="onFileDownloaded('servo_sweep'+window.board+'.bly');"><button type="button" class="btn-primary display-4" title="Download" ><span class="mbri-save mbr-iconfont mbr-iconfont-btn"></span></button></a></li>
 				</ol>
@@ -182,11 +190,11 @@
         <div class="media-container-row">
             <div class="mbr-text counter-container col-12 col-md-8 mbr-fonts-style display-7">
                 <ol>
-									<li><strong>xxx</strong><p>xx.</p><strong> Hint: </strong><p><i>xxx.</i></p><button  type="button" title="Facilino code" onclick="showHideIntermediate('solutions1i','temperature_control_relay'+window.board+'.bly','exercise1i');" class="btn-primary display-4"><span class="mbri-extension mbr-iconfont mbr-iconfont-btn"></span></button>
+									<li><strong>Temperature Control with a Relay</strong><p>Now, following the ideas of exercise 2, use a temperature sensor DHT11 connected to pin D4 and if the temperature is above 25ºC, then activate the relay, which connects a fan to decrease the temperature.</p><strong> Hint: </strong><p><i>Replace the 'AnalogRead' instruction of a 'Temperature Read' one. You need to set proper temperature conditions for this example to work.</i></p><button  type="button" title="Facilino code" onclick="showHideIntermediate('solutions1i','temperature_control_relay'+window.board+'.bly','exercise1i');" class="btn-primary display-4"><span class="mbri-extension mbr-iconfont mbr-iconfont-btn"></span></button>
 										&nbsp;<button type="button"  class="btn-primary display-4" title="Arduino code" onclick="showHideIntermediateCode('solutions1i','temperature_control_relay'+window.board+'.bly','exercise1i','exercise1ic');"><span class="mbri-align-justify mbr-iconfont mbr-iconfont-btn"></span></button>
 										<a onclick="onFileDownloaded('temperature_control_relay'+window.board+'.bly');">
 									<button type="button" class="btn-primary display-4" title="Download" ><span class="mbri-save mbr-iconfont mbr-iconfont-btn"></span></button></a></li>
-									<li><strong>Servo Wave</strong>. <p>xxx.</p><strong> Hint: </strong><p><i>xxx.</i></p>
+									<li><strong>Servo Wave</strong><p>Generate a sinusoidal wave with a servo so that the position varies between 45º and 135º (this might be helpful for walking patterns in some robots or for generating a air flow to decrease temperature with a blade attache to the servo emulating a fan waved in hand).</p><strong> Hint: </strong><p><i>Use the 'Sinusoid' instruction so that the amplitud is 45, the frequency should be slow, say 0.1Hz and the offset 90º (the phase is not that relevant in this case).</i></p>
 										<button  type="button" title="Facilino code" onclick="showHideIntermediate('solutions2i','servo_wave'+window.board+'.bly','exercise2i');" class="btn-primary display-4"><span class="mbri-extension mbr-iconfont mbr-iconfont-btn"></span></button>
 										&nbsp;<button type="button"  class="btn-primary display-4" title="Arduino code" onclick="showHideIntermediateCode('solutions2i','servo_wave'+window.board+'.bly','exercise2i','exercise2ic');"><span class="mbri-align-justify mbr-iconfont mbr-iconfont-btn"></span></button>
 										<a onclick="onFileDownloaded('servo_wave'+window.board+'.bly');">
