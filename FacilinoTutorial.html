@@ -317,40 +317,15 @@ document.addEventListener("DOMContentLoaded", function () {
 			}
 		}
 
-<<<<<<< HEAD
-    function showAllBasicCode() {
-      var solutions_basic = document.getElementById('solutions_basic');
-      var exercises_basic = document.getElementById('exercises_basic');
-=======
     function showAllCode(sol_div,ex_div,showHideFnc) {
       var solutions_basic = document.getElementById(sol_div);
       var exercises_basic = document.getElementById(ex_div);
->>>>>>> 03fb7e4c060abf6f4eb0c078c449081140639593
       if (solutions_basic && exercises_basic)
       {
         solutions_basic.style.display="block";
         var exercises_list = exercises_basic.getElementsByTagName('li');
         for (var i=0;i<exercises_list.length;i++){
           var button_list = exercises_list[i].getElementsByTagName('button');
-<<<<<<< HEAD
-          if (button_list.length>=2)
-          {
-              var str = button_list[0].getAttribute('onclick');
-              str=str.replace('showHideBasic(','');
-              str=str.replace(');','');
-              var str_list = str.split(',');
-              var sol = document.getElementById(str_list[0]);
-              var example_div = document.getElementById(str_list[2]);
-              if (y.style.display === "block"){
-              }
-
-          }
-          if (button_list.length==3)
-          {
-
-          }
-
-=======
           var str = button_list[0].getAttribute('onclick');
           str=str.replace(showHideFnc+'(','');
           str=str.replace(');','');
@@ -367,7 +342,6 @@ document.addEventListener("DOMContentLoaded", function () {
           div.setAttribute("id",str_list[2]);
           parent.appendChild(div);
           injectExample(str_list[1],str_list[2]);
->>>>>>> 03fb7e4c060abf6f4eb0c078c449081140639593
         }
       }
 		}
