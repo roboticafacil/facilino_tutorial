@@ -317,6 +317,36 @@ document.addEventListener("DOMContentLoaded", function () {
 			}
 		}
 
+    function showAllBasicCode() {
+      var solutions_basic = document.getElementById('solutions_basic');
+      var exercises_basic = document.getElementById('exercises_basic');
+      if (solutions_basic && exercises_basic)
+      {
+        solutions_basic.style.display="block";
+        var exercises_list = exercises_basic.getElementsByTagName('li');
+        for (var i=0;i<exercises_list.length;i++){
+          var button_list = exercises_list[i].getElementsByTagName('button');
+          if (button_list.length>=2)
+          {
+              var str = button_list[0].getAttribute('onclick');
+              str=str.replace('showHideBasic(','');
+              str=str.replace(');','');
+              var str_list = str.split(',');
+              var sol = document.getElementById(str_list[0]);
+              var example_div = document.getElementById(str_list[2]);
+              if (y.style.display === "block"){
+              }
+
+          }
+          if (button_list.length==3)
+          {
+
+          }
+
+        }
+      }
+		}
+
 		function HideButton(el)
 		{
 			if (localStorage.getItem("solutions")===undefined || localStorage.getItem("solutions")===null)

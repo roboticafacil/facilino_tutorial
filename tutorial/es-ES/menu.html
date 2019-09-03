@@ -45,7 +45,7 @@
 		<option value="ArduinoUno" class="text-black dropdown-item display-6">Arduino Uno</option>
 		<option value="WEMOS D1R32 SHIELD" class="text-black dropdown-item display-6">WeMos D1R32 (Sensor Shield)</option>
 		</select></li>
-      <li class="nav-item"><button class="btn btn-sm btn-primary-outline display-4" title="Imprimir" onclick="print()" style=" padding-left: 6px;padding-right: 0px;margin-right: 0px;margin-left: 6px;"><span class="mbri-print mbr-iconfont mbr-iconfont-btn" style="color: rgb(255,148,0);"></span></button></li>
+      <li class="nav-item"><button class="btn btn-sm btn-primary-outline display-4" title="Imprimir" onclick="printAll()" style=" padding-left: 6px;padding-right: 0px;margin-right: 0px;margin-left: 6px;"><span class="mbri-print mbr-iconfont mbr-iconfont-btn" style="color: rgb(255,148,0);"></span></button></li>
 			</ul>
 			<!-- <div class="navbar-buttons mbr-section-btn"><button class="btn btn-sm btn-primary-outline display-4" title="Hardware settings" onclick="showHideProcessor()"><span class="mbri-setting3 mbr-iconfont mbr-iconfont-btn" style="color: rgb(255, 148, 0);"></span></button></div>-->
         </div>
@@ -118,6 +118,12 @@
 			else
 				proc.style.display='none';
 		}
+
+    function printAll()
+    {
+      showAllBasicCode();
+      print();
+    }
 		</script>
 		<!-- <div class="navbar-buttons mbr-section-btn"><button class="btn btn-sm btn-primary-outline display-4" title="Language settings" onclick="showHideLanguage()"><span class="mbri-flag mbr-iconfont mbr-iconfont-btn" style="color: rgb(255, 148, 0);"></span></button></div>
 			<select id="language" class="text-black dropdown-toggle display-6 icon-menu" onchange="langChange(this.value)" style="display: none">
