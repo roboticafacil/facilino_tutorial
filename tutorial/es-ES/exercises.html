@@ -449,8 +449,20 @@
 	window.roboblocksProcessor = localStorage.getItem("processor");
 	$("#language").val(window.roboblocksLanguage);
 	$("#processor").val(window.roboblocksProcessor);
+  if (window.roboblocksProcessor==='WEMOS D1R32 SHIELD')
+  {
+    window.board='_wemosD1R32';
+  }
+  else if (window.roboblocksProcessor==='ArduinoUno')
+  {
+    window.board='_uno';
+  }
+  else {
+    window.board='_wemosD1R32';
+  }
 	function onExercise(num)
 	{
+    window.title='exercise'+num+'_'+window.roboblocksLanguage+window.board;
 		$(function(){var file= 'tutorial/'+window.roboblocksLanguage+'/exercise'+num+'.html'; $.ajax({url:file,async:false,type:"HEAD",error: function(){file= 'tutorial/'+'en-GB/exercise'+num+'.html';},success: function(){}}); $('#main').load(file); location.href = "#menu";});
 	}
 </script></body></html>

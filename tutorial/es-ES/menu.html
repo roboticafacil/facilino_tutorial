@@ -45,7 +45,7 @@
 		<option value="ArduinoUno" class="text-black dropdown-item display-6">Arduino Uno</option>
 		<option value="WEMOS D1R32 SHIELD" class="text-black dropdown-item display-6">WeMos D1R32 (Sensor Shield)</option>
 		</select></li>
-      <li class="nav-item"><button class="btn btn-sm btn-primary-outline display-4" title="Imprimir" onclick="print()" style=" padding-left: 6px;padding-right: 0px;margin-right: 0px;margin-left: 6px;"><span class="mbri-print mbr-iconfont mbr-iconfont-btn" style="color: rgb(255,148,0);"></span></button></li>
+      <li class="nav-item"><button class="btn btn-sm btn-primary-outline display-4" title="Imprimir" onclick="printAll()" style=" padding-left: 6px;padding-right: 0px;margin-right: 0px;margin-left: 6px;"><span class="mbri-print mbr-iconfont mbr-iconfont-btn" style="color: rgb(255,148,0);"></span></button></li>
 			</ul>
 			<!-- <div class="navbar-buttons mbr-section-btn"><button class="btn btn-sm btn-primary-outline display-4" title="Hardware settings" onclick="showHideProcessor()"><span class="mbri-setting3 mbr-iconfont mbr-iconfont-btn" style="color: rgb(255, 148, 0);"></span></button></div>-->
         </div>
@@ -56,7 +56,7 @@
 			localStorage.setItem('processor', 'WEMOS D1R32 SHIELD');
 		window.roboblocksLanguage = localStorage.getItem("language");
 		window.roboblocksProcessor = localStorage.getItem("processor");
-		$("#language").val(window.roboblocksLanguage);
+    $("#language").val(window.roboblocksLanguage);
 		$("#processor").val(window.roboblocksProcessor);
     if (window.roboblocksProcessor==='WEMOS D1R32 SHIELD')
     {
@@ -69,23 +69,29 @@
     else {
       window.board='_wemosD1R32';
     }
+    window.title='home_'+window.roboblocksLanguage;
+
     function onHome()
 		{
+      window.title='home_'+window.roboblocksLanguage;
 			$(function(){var file='tutorial/'+ window.roboblocksLanguage+'/home.html'; $.ajax({url:file,async:false,type:"HEAD",error: function(){file='tutorial/en-GB/home.html';},success: function(){}}); $('#main').load(file); location.href = "#menu";});
 		}
 
 		function onElectronics()
 		{
+      window.title='electronics_'+window.roboblocksLanguage;
 			$(function(){var file='tutorial/'+ window.roboblocksLanguage+'/electronics.html'; $.ajax({url:file,async:false,type:"HEAD",error: function(){file='tutorial/en-GB/electronics.html';},success: function(){}}); $('#main').load(file); location.href = "#menu";});
 		}
 
 		function onFacilino()
 		{
+      window.title='facilino_programming_'+window.roboblocksLanguage;
 			$(function(){var file='tutorial/'+ window.roboblocksLanguage+'/facilino_programming.html'; $.ajax({url:file,async:false,type:"HEAD",error: function(){file='tutorial/en-GB/facilino_programming.html';},success: function(){}}); $('#main').load(file); location.href = "#menu";});
 		}
 
 		function onExercises()
 		{
+      window.title='exercises_'+window.roboblocksLanguage;
 			$(function(){var file='tutorial/'+ window.roboblocksLanguage+'/exercises.html'; $.ajax({url:file,async:false,type:"HEAD",error: function(){file='tutorial/en-GB/exercises.html';},success: function(){}}); $('#main').load(file); location.href = "#menu";} );
 		}
 
@@ -118,6 +124,16 @@
 			else
 				proc.style.display='none';
 		}
+
+    function printAll()
+    {
+      showAllCode('solutions_basic','exercises_basic','showHideBasic');
+      showAllCode('solutions_intermediate','exercises_intermediate','showHideIntermediate');
+      window.orig_title=document.title;
+      document.title=window.title;
+      print();
+      document.title=window.orig_title;
+    }
 		</script>
 		<!-- <div class="navbar-buttons mbr-section-btn"><button class="btn btn-sm btn-primary-outline display-4" title="Language settings" onclick="showHideLanguage()"><span class="mbri-flag mbr-iconfont mbr-iconfont-btn" style="color: rgb(255, 148, 0);"></span></button></div>
 			<select id="language" class="text-black dropdown-toggle display-6 icon-menu" onchange="langChange(this.value)" style="display: none">

@@ -317,6 +317,36 @@ document.addEventListener("DOMContentLoaded", function () {
 			}
 		}
 
+    function showAllCode(sol_div,ex_div,showHideFnc) {
+      console.log('hello');
+      var solutions_basic = document.getElementById(sol_div);
+      var exercises_basic = document.getElementById(ex_div);
+      if (solutions_basic && exercises_basic)
+      {
+        solutions_basic.style.display="block";
+        var exercises_list = exercises_basic.getElementsByTagName('li');
+        for (var i=0;i<exercises_list.length;i++){
+          var button_list = exercises_list[i].getElementsByTagName('button');
+          var str = button_list[0].getAttribute('onclick');
+          str=str.replace(showHideFnc+'(','');
+          str=str.replace(');','');
+          var str_list = str.split(',');
+          for (var j=0;j<str_list.length;j++)
+            str_list[j]=eval(str_list[j]);
+          var sol = document.getElementById(str_list[0]);
+          var example_div = document.getElementById(str_list[2]);
+          sol.style.display = "block";
+          example_div.style.display = "block";
+          var parent = example_div.parentNode;
+          parent.removeChild(example_div);
+          var div = document.createElement("div");
+          div.setAttribute("id",str_list[2]);
+          parent.appendChild(div);
+          injectExample(str_list[1],str_list[2]);
+        }
+      }
+		}
+
 		function HideButton(el)
 		{
 			if (localStorage.getItem("solutions")===undefined || localStorage.getItem("solutions")===null)
