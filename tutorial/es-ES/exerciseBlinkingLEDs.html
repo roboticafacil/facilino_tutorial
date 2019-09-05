@@ -15,7 +15,6 @@
                     Parpadeo de LEDs</h2>
                 <h3 class="mbr-section-subtitle align-center mbr-light mbr-fonts-style display-5">
                     Aprende a trabajar con entradas y salidas digitales con Facilino para hacer que los LED parpadeen.</h3>
-
             </div>
         </div>
     </div>
@@ -43,7 +42,7 @@
 
 
 
-<section class="mbr-section article content9 cid-qYh5KdWW4b" id="content9-5u">
+<section class="mbr-section article content9 cid-qYh5KdWW4b" id="content9-5u" style="page-break-before: always">
     <div class="container">
         <div class="inner-container" style="width: 100%;">
             <hr class="line" style="width: 25%;">
@@ -90,7 +89,7 @@
     </div>
 </section>
 
-<section class="mbr-section article content9 cid-qYh5KdWW4b">
+<section class="mbr-section article content9 cid-qYh5KdWW4b" style="page-break-before: always">
     <div class="container">
         <div class="inner-container" style="width: 100%;">
             <hr class="line" style="width: 25%;">
@@ -117,7 +116,7 @@
     </div>
 </section>
 
-<section class="mbr-section article content9 cid-qYh0wTdIZC">
+<section class="mbr-section article content9 cid-qYh0wTdIZC" style="page-break-before: always">
     <div class="container">
         <div class="inner-container" style="width: 100%;">
             <hr class="line" style="width: 25%;">
@@ -131,7 +130,7 @@
     <div class="container">
         <div class="media-container-row">
             <div class="mbr-text counter-container col-12 col-md-8 mbr-fonts-style display-7">
-                <ol>
+                <ol id="exercises_basic">
                     <li><strong>Enciende un LED</strong><p>Al inicio, enciende el LED conectado al pin D12, pon su estado en ALTO (sí, ya sabemos que esto no es muy impresionante, pero es el principio).</p><strong>Pista: </strong><p><i>Usa la instrucción 'Escribe en el pin digital...' y pon su estado en ALTO.</i></p>
 					<button type="button" title="Código Facilino" onclick="showHideBasic('solutions1b','set_led_setup'+window.board+'.bly','exercise1b');" class="btn-primary display-4"><span class="mbri-extension mbr-iconfont mbr-iconfont-btn"></span></button>
           &nbsp;<button type="button"  class="btn-primary display-4" title="Código Arduino" onclick="showHideBasicCode('solutions1b','set_led_setup'+window.board+'.bly','exercise1b','exercise1bc');"><span class="mbri-align-justify mbr-iconfont mbr-iconfont-btn"></span></button>
@@ -147,7 +146,7 @@
           &nbsp;<button type="button"  class="btn-primary display-4" title="Código Arduino" onclick="showHideBasicCode('solutions3b','set_led'+window.board+'.bly','exercise3b','exercise3bc');"><span class="mbri-align-justify mbr-iconfont mbr-iconfont-btn"></span></button>
           <a onclick="onFileDownloaded('set_led'+window.board+'.bly');">
 					<button type="button" class="btn-primary display-4"><span class="mbri-save mbr-iconfont mbr-iconfont-btn"></span></button></a></li>
-					<li><strong>Parpadeo de LED</strong><p>Haz parpadear el LED rojo conectado al pin D12. La frecuencia de parpadero debe ser de 1Hz (una vez por segundo).</p><strong>Pista: </strong><p><i>Repita la secuencia 'Escribe en el pin digital...' con el LED en estado ALTO, espera 500ms, pon el LED en estado BAJO y vuelve a esperar 500ms.</i></p>
+          <li ><strong>Parpadeo de LED</strong><p>Haz parpadear el LED rojo conectado al pin D12. La frecuencia de parpadero debe ser de 1Hz (una vez por segundo).</p><strong>Pista: </strong><p><i>Repita la secuencia 'Escribe en el pin digital...' con el LED en estado ALTO, espera 500ms, pon el LED en estado BAJO y vuelve a esperar 500ms.</i></p>
 					<button type="button" title="Código Facilino" onclick="showHideBasic('solutions4b','blinking_LED'+window.board+'.bly','exercise4b');" class="btn-primary display-4"><span class="mbri-extension mbr-iconfont mbr-iconfont-btn"></span></button>
           &nbsp;<button type="button"  class="btn-primary display-4" title="Código Arduino" onclick="showHideBasicCode('solutions4b','blinking_LED'+window.board+'.bly','exercise4b','exercise4bc');"><span class="mbri-align-justify mbr-iconfont mbr-iconfont-btn"></span></button>
           <a onclick="onFileDownloaded('blinking_LED'+window.board+'.bly');">
@@ -243,7 +242,7 @@
     <div class="container">
         <div class="media-container-row">
             <div class="mbr-text counter-container col-12 col-md-8 mbr-fonts-style display-7">
-                <ol>
+                <ol id="exercises_intermediate">
 					<li><strong>Parpadeo de LEDs con frecuencia variable</strong><p>Siguiendo las ideas de los ejercicios anteriores haz que la espera de los LEDs sea un tiempo entre 100ms y 1000ms en función del valor del potenciómetro (conectado al pin A0).</p><strong>Pista: </strong><p><i>Usa la instrucción 'Mapea' para ajustar los valores devueltos por la instrucción 'Lee el pin analógico...' a los valores 100 y 1000. En los procesadores ESP, el valor devuelto por la instrucción de la señal analógica es un valor entre 0 y 4095 (Wemos D1 R32) o 0 y 1023 (Arduino Uno) que debemos mapear entre 100 y 1000. Utilizar este valor como entrada de la instrucción 'Esperar (ms)'.</i></p>
 					<button type="button" title="Código Facilino" onclick="showHideIntermediate('solutions1i','Blinking_LEDs_II'+window.board+'.bly','exercise1i');" class="btn-primary display-4"><span class="mbri-extension mbr-iconfont mbr-iconfont-btn"></span></button>
 					&nbsp;<button type="button"  class="btn-primary display-4" title="Código Arduino" onclick="showHideIntermediateCode('solutions1i','Blinking_LEDs_II'+window.board+'.bly','exercise1i','exercise1ic');"><span class="mbri-align-justify mbr-iconfont mbr-iconfont-btn"></span></button>
