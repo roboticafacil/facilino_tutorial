@@ -18,22 +18,41 @@
 	</section>
 </section>
 
-<section class="cid-qYh0wSah5G" id="image3-50">
-    <figure class="mbr-figure container">
-            <div class="image-block" style="width: 50%;">
-                <img src="tutorial/assets/images/Electronics/wemosD1_shield.png" width="1400" alt="GAS" title=""></img>
-            </div>
-    </figure>
-</section>
-
 <section class="mbr-section article content1 cid-qYh0wSDsTN" id="content2-51">
     <div class="container">
         <div class="media-container-R0w">
             <div class="mbr-text col-12 col-md-8 mbr-fonts-style display-7">
-                <blockquote><strong>Material requerido. </strong><ul><li>Tarjeta de Arduino o ESP, por ejemplo: <a onclick="onPageClicked('https://roboticafacil.es/prod/tarjeta-arduino-uno-r3usb/');" style="color:#1ec6c6" target="_blank">Arduino Uno</a>, <a onclick="onPageClicked('https://roboticafacil.es/prod/arduino-nano3/');" style="color:#1ec6c6" target="_blank">Arduino Nano</a>, <a style="color:#1ec6c6" target="_blank" onclick="onPageClicked('https://roboticafacil.es/prod/wemos-d1-r2/');">Wemos D1 R2</a>, <a style="color:#1ec6c6" target="_blank" onclick="onPageClicked('https://roboticafacil.es/prod/wemos-esp32/');">Wemos D1 R32</a>, <a onclick="onPageClicked('https://roboticafacil.es/prod/nodemcu-v3-esp8266-wifi/');" style="color:#1ec6c6" target="_blank">NodeMCU</a>, etc...</li><li>Una <a onclick="onPageClicked('https://roboticafacil.es/prod/tarjeta-multifuncion-arduino-uno/');" style="color:#1ec6c6" target="_blank">tarjeta  multisensor</a> y un <a style="color:#1ec6c6" target="_blank" onclick="onPageClicked('https://roboticafacil.es/prod/sensor-gas-combustible-humo-mq2/');">Sensor de Gas MQ2</a> (cualquiera de ellos funcionará) conectado al pin A3. Si no usas la tarjeta multisensor, necesitas un LED rojo (conectado al pin D12), un <a style="color:#1ec6c6" target="_blank" onclick="onPageClicked('https://roboticafacil.es/prod/zumbador-ky-006/');">zumbador</a> conectado al pin D5 y un <a style="color:#1ec6c6" target="_blank" onclick="onPageClicked('https://roboticafacil.es/prod/pulsador-ky-004/');">pulsador</a> conectado al pin D2.</li></ul></blockquote>
+                <blockquote><strong>Material requerido. </strong><ul><li>Tarjeta de Arduino o ESP, por ejemplo: <a onclick="onPageClicked('https://roboticafacil.es/prod/tarjeta-arduino-uno-r3usb/');" style="color:#1ec6c6" target="_blank">Arduino Uno</a>, <a onclick="onPageClicked('https://roboticafacil.es/prod/arduino-nano3/');" style="color:#1ec6c6" target="_blank">Arduino Nano</a>, <a style="color:#1ec6c6" target="_blank" onclick="onPageClicked('https://roboticafacil.es/prod/wemos-d1-r2/');">Wemos D1 R2</a>, <a style="color:#1ec6c6" target="_blank" onclick="onPageClicked('https://roboticafacil.es/prod/wemos-esp32/');">Wemos D1 R32</a>, <a onclick="onPageClicked('https://roboticafacil.es/prod/nodemcu-v3-esp8266-wifi/');" style="color:#1ec6c6" target="_blank">NodeMCU</a>, etc...</li><li>Una <a onclick="onPageClicked('https://roboticafacil.es/prod/tarjeta-multifuncion-arduino-uno/');" style="color:#1ec6c6" target="_blank">tarjeta  multisensor</a> y un <a style="color:#1ec6c6" target="_blank" onclick="onPageClicked('https://roboticafacil.es/prod/sensor-gas/');">Sensor de Gas MQ2</a> (cualquiera de ellos funcionará), estando la salida analógica del sensor conectada al pin A3 y la salida digital al pin D8. Si no usas la tarjeta multisensor, necesitas un LED rojo (conectado al pin D12), un <a style="color:#1ec6c6" target="_blank" onclick="onPageClicked('https://roboticafacil.es/prod/zumbador-ky-006/');">zumbador</a> conectado al pin D5 y un <a style="color:#1ec6c6" target="_blank" onclick="onPageClicked('https://roboticafacil.es/prod/pulsador-ky-004/');">pulsador</a> conectado al pin D2.</li></ul></blockquote>
             </div>
         </div>
     </div>
+</section>
+
+<section class="cid-qYh0wSah5G" id="image3-50">
+    <figure class="mbr-figure container">
+            <div class="mbr-text align-center mbr-fonts-style display-5">Multisensor</div>
+            <div class="image-block mbr-fonts-style display-7" style="width: 50%;">
+                <img id="schematic" src="tutorial/assets/images/Electronics/multisensor_wemosD1R32_gas_bb.png" width="1400" alt="Multisensor" title=""></img>
+            </div>
+    </figure>
+</section>
+
+<section class="cid-qYh0wSah5G" id="image3-50">
+    <figure class="mbr-figure container">
+            <div class="mbr-text align-center mbr-fonts-style display-5">Módulos</div>
+            <div class="image-block mbr-fonts-style display-7" style="width: 50%;">
+                <img id="schematic_modules" src="tutorial/assets/images/Electronics/multisensor_wemosD1R32_gas_LED_pushbutton_buzzer_modules_bb.png" width="1400" alt="Módulos" title=""></img>
+            </div>
+    </figure>
+</section>
+
+<section class="cid-qYh0wSah5G" id="image3-50">
+    <figure class="mbr-figure container">
+            <div class="mbr-text align-center mbr-fonts-style display-5">Prototipo</div>
+            <div class="image-block mbr-fonts-style display-7" style="width: 50%;">
+                <img id="schematic_proto" src="tutorial/assets/images/Electronics/multisensor_wemosD1R32_gas_LED_pushbutton_buzzer_bb.png" width="1400" alt="Prototipo" title=""></img>
+            </div>
+    </figure>
 </section>
 
 <section class="mbr-section article content9 cid-qYh5KdWW4b" id="content9-5u">
@@ -193,12 +212,12 @@
 					&nbsp;<button type="button"  class="btn-primary display-4" title="Código Arduino" onclick="showHideBasicCode('solutions1b','gas_raw_analog'+window.board+'.bly','exercise1b','exercise1bc');"><span class="mbri-align-justify mbr-iconfont mbr-iconfont-btn"></span></button>
 					<a onclick="onFileDownloaded('gas_raw_analog'+window.board+'.bly');">
 					<button type="button" class="btn-primary display-4" title="Descargar" ><span class="mbri-save mbr-iconfont mbr-iconfont-btn"></span></button></a></li>
-					<li><strong>Detector de Gas Básico</strong><p>Ahora, considerando que has anotado los valores para los que no hay presencia de gas y para el que hay presencia de gas, debes crear un detector básico que encienda el LED rojo (conectado al pin D12) si se detecta presencia de gas. El sensor de gas está conectado al pin A3 como antes.</p><strong>Pista: </strong><p><i>Usa una instrucción 'si' para discriminar entre los casos en los que hay presencia de gas (los valores están por encima del umbral 'gas') y en los que no hay presencia de gas (los valores están por debajo del umbral de 'no gas'). Cuando pongas el sensor cerca del gas, el LED debería encenderse. En cuanto lo quites, tardará un tiempo en decrementar el valor de la concentración, con lo que el LED seguirá encendido hasta que los valores estén por debajo del umbral indicado.</i></p>
+					<li><strong>Detector de Gas Básico</strong><p>Ahora, considerando que has anotado los valores para los que no hay presencia de gas y para el que hay presencia de gas, debes crear un detector básico que encienda el LED rojo (conectado al pin D12) si se detecta presencia de gas. La salida analógica del sensor de gas está conectada al pin A3 como antes.</p><strong>Pista: </strong><p><i>Usa una instrucción 'si' para discriminar entre los casos en los que hay presencia de gas (los valores están por encima del umbral 'gas') y en los que no hay presencia de gas (los valores están por debajo del umbral de 'no gas'). Cuando pongas el sensor cerca del gas, el LED debería encenderse. En cuanto lo quites, tardará un tiempo en decrementar el valor de la concentración, con lo que el LED seguirá encendido hasta que los valores estén por debajo del umbral indicado.</i></p>
 					<button type="button" title="Código Facilino" onclick="showHideBasic('solutions2b','gas_basic_detector'+window.board+'.bly','exercise2b');" class="btn-primary display-4"><span class="mbri-extension mbr-iconfont mbr-iconfont-btn"></span></button>
 					&nbsp;<button type="button"  class="btn-primary display-4" title="Código Arduino" onclick="showHideBasicCode('solutions2b','gas_basic_detector'+window.board+'.bly','exercise2b','exercise2bc');"><span class="mbri-align-justify mbr-iconfont mbr-iconfont-btn"></span></button>
 					<a onclick="onFileDownloaded('gas_basic_detector'+window.board+'.bly');">
 					<button type="button" class="btn-primary display-4" title="Descargar" ><span class="mbri-save mbr-iconfont mbr-iconfont-btn"></span></button></a></li>
-					<li><strong>Detector Digital de Gas</strong><p>Ahora, ajusta el potenciómetro para que la salida digital proporcione una indicación de la presencia de gas. Enciende y apaga el LED conectado al pin D12 según la entrada digital (también puede conectarse a A3, pero asegúrate de que el cable está conectado a la salida digital del sensor). </p> <strong>Pista: </strong><p><i>El sensor proporciona ALTO cuando no se detecta gas, lo que implica que se debe negar la lectura digital de A3 para establecer el valor del LED D12. Una vez que se ajusta el potenciómetro, debería verse un comportamiento similar al ejercicio anterior.</i></p><button  type="button" title="Código Facilino" onclick="showHideBasic('solutions3b','gas_digital_detector'+window.board+'.bly','exercise3b');" class="btn-primary display-4"><span class="mbri-extension mbr-iconfont mbr-iconfont-btn"></span></button>
+					<li><strong>Detector Digital de Gas</strong><p>Ahora, ajusta el potenciómetro para que la salida digital proporcione una indicación de la presencia de gas. Enciende y apaga el LED conectado al pin D12 según la salida digital del sensor que está conectada al pin D8. </p> <strong>Pista: </strong><p><i>El sensor proporciona ALTO cuando no se detecta gas, lo que implica que se debe negar la lectura digital de A3 para establecer el valor del LED D12. Una vez que se ajusta el potenciómetro, debería verse un comportamiento similar al ejercicio anterior.</i></p><button  type="button" title="Código Facilino" onclick="showHideBasic('solutions3b','gas_digital_detector'+window.board+'.bly','exercise3b');" class="btn-primary display-4"><span class="mbri-extension mbr-iconfont mbr-iconfont-btn"></span></button>
 					&nbsp;<button type="button"  class="btn-primary display-4" title="Código Arduino" onclick="showHideBasicCode('solutions3b','gas_digital_detector'+window.board+'.bly','exercise3b','exercise3bc');"><span class="mbri-align-justify mbr-iconfont mbr-iconfont-btn"></span></button>
 					<a onclick="onFileDownloaded('gas_digital_detector'+window.board+'.bly');"><button type="button" class="btn-primary display-4" title="Descargar" ><span class="mbri-save mbr-iconfont mbr-iconfont-btn"></span></button></a></li>
 					<li><strong>Alarma Digital de Gas</strong><p>Ahora, además de encender y apagar el LED, genera un sonido de alarma con el zumbador cuando se detecte un gas.</p><strong>Pista: </strong><p> <i>Usa una instrucción 'si' para distinguir entre el caso de 'gas detectado' y el caso de 'no gas'. En el caso 'gas detectado', puedes usar una instrucción 'Zumbador' con sonido predefinido 'Modo 1' y un retardo de 200 ms. Cuando no se detecte gas, usa la instrucción 'Zumbador ... sin tono' para detener el sonido.</i></p> <button  type="button" title="Código Facilino" onclick="showHideBasic('solutions4b','gas_digital_alarm'+window.board+'.bly','exercise4b');" class="btn-primary display-4"><span class="mbri-extension mbr-iconfont mbr-iconfont-btn"></span></button>
@@ -330,4 +349,10 @@
 	var solutions_intermediate = document.getElementById('solutions_intermediate');
 	solutions_basic.style.display="none";
 	solutions_intermediate.style.display="none";
+	var sch=document.getElementById('schematic');
+  sch.src='tutorial/assets/images/Electronics/multisensor'+window.board+'_gas_bb.png';
+  var sch_modules=document.getElementById('schematic_modules');
+  sch_modules.src='tutorial/assets/images/Electronics/multisensor'+window.board+'_gas_LED_pushbutton_buzzer_modules_bb.png';
+  var sch_proto=document.getElementById('schematic_proto');
+  sch_proto.src='tutorial/assets/images/Electronics/multisensor'+window.board+'_gas_LED_pushbutton_buzzer_bb.png';
 </script>
